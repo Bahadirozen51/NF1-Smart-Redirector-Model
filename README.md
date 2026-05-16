@@ -5,7 +5,7 @@ In Silico Exploration and Layer-2 Wet-Lab Calibration Protocols for Programmable
 
 ## 🔬 Scientific Disclaimer & TRL Status
 > [!WARNING]
-> **Scientific Disclaimer:** This repository presents a computational hypothesis-generation platform and exploratory structural modeling. All docking boundaries, spatial coordinates, and analytical projections are *in silico* predictions and must not be interpreted as experimentally validated therapeutic evidence.
+> **Scientific Disclaimer:** This repository presents a computational hypothesis-generation platform and exploratory structural modeling. All docking boundaries, spatial coordinates, and analytical projections are *in silico* predictions operating under idealized computational assumptions and must not be interpreted as experimentally validated therapeutic evidence.
 > 
 > **Technology Readiness Level (TRL):** **TRL-2** (Technology Concept Formulated). Computational models and wet-lab protocols are structured; experimental *in vitro* validation is in the readiness phase.
 
@@ -24,15 +24,15 @@ The fundamental therapeutic premise of the Smart-Redirector model is anchored in
 
 1. **The NF1 Brake Mechanisms:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
 2. **Loss-of-Function Cascade:** Loss or inactivation of NF1 obliterates this GAP-mediated catalytic switch, leaving KRAS permanently locked in its active configuration, triggering uncontrolled down-stream proliferation via the MAPK (RAF-MEK-ERK) pathway.
-3. **Allosterik Restoration:** The engineered *Smart-Redirector* RNA transcript acts as a structural surrogate, bypassing the missing Ras-GAP machinery by docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
+3. **Targeted Perturbation:** The engineered *Smart-Redirector* RNA transcript is hypothesized to act as a structural surrogate capable of partially perturbing KRAS-effector recruitment dynamics, bypassing the missing Ras-GAP machinery by docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
 
 ---
 
 ## 💻 Phase 1: In Silico Modeling & Structural Geometry
-Initial computational investigations utilizing **AlphaFold 3** multimer configurations and a local geometric analysis pipeline indicate that the engineered *Akilli_Saptirici_miRNA* transcript exhibits spatial complementarity with the effector-binding interfaces of critical KRAS mutations (G12C, G12D, G13D).
+Initial computational investigations utilizing **AlphaFold 3** multimer configurations and a local geometric analysis pipeline indicate that the engineered *Akilli_Saptirici_miRNA* transcript exhibits spatial complementarity with the effector-binding interfaces of critical KRAS mutations (**G12C, G12D, G13D**), selected due to their high oncogenic prevalence and clinically established resistance landscapes.
 
 * **Binding Geometry:** Structural topology snapshots suggest putative hydrogen-bond-compatible geometries in the **~2.85 Å** range at the target pockets.
-* **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive 500+ ns Molecular Dynamics (MD) trajectories, root-mean-square deviation (RMSD) profiles, and MM-PBSA binding free energy ($\Delta G_{binding}$) calculations are ongoing to analyze conformational stability under dynamic solvent conditions.
+* **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive **100–500 ns staged MD simulations** and MM-PBSA binding free energy ($\Delta G_{binding}$) calculations are ongoing to analyze conformational convergence and stability under dynamic solvent conditions.
 
 ---
 
@@ -44,7 +44,7 @@ Theoretical formulation constraints optimize the carrier phase within an explici
 ![DLS ve Western Blot Grafikleri](grafik1.png)
 
 ### 2. Dose-Response Profiles & Therapeutic Window Evaluation
-Mathematical modeling using the Hill Equation projects a hypothetical $IC_{50} = 0.45\text{ nM}$ against mutant cell lines, suggesting a modeled therapeutic window relative to wild-type homeostasis.
+Mathematical modeling using the Hill Equation projects a hypothetical $IC_{50} = 0.45\text{ nM}$ against mutant cell lines, suggesting a modeled therapeutic window relative to wild-type homeostasis under idealized computational assumptions.
 ![Dose Response Grafiği](grafik2.png)
 
 ---
@@ -59,8 +59,8 @@ Mathematical modeling using the Hill Equation projects a hypothetical $IC_{50} =
 ## 🗺️ Strategic Product Roadmap
 * [x] **Milestone 1:** Structural Multimer Docking (AlphaFold 3 / HADDOCK Structural Envelope).
 * [x] **Milestone 2:** System Topology Setup & Solvation Box Assembly (GROMACS 2021 Base Matrix).
-* [ ] **Milestone 3:** 500 ns Production MD Run & MM-PBSA Dynamic Free Energy Analysis.
-* [ ] **Milestone 4:** LNP Santezi ve Dynamic Light Scattering (DLS) Kalibrasyonu.
+* [ ] **Milestone 3:** 100-500 ns Production MD Run & MM-PBSA Dynamic Free Energy Analysis.
+* [ ] **Milestone 4:** LNP Formulation & Dynamic Light Scattering (DLS) Calibration.
 * [ ] **Milestone 5:** Structural Binding Kinetics Validation (SPR/BLI Affinity Assays).
 * [ ] **Milestone 6:** Intracellular Western Blot (p-ERK/p-MEK tracking) & MTT Viability Assays.
 
@@ -70,7 +70,7 @@ Mathematical modeling using the Hill Equation projects a hypothetical $IC_{50} =
 If you utilize this computational model, framework, or wet-lab protocol matrix in your research, please cite this repository using the standardized formats below:
 
 ### APA Format
-Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model
+Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com
 
 ### BibTeX Format
 ```bibtex
@@ -81,7 +81,8 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
   year         = 2026,
   publisher    = {GitHub},
   version      = {2.0.0},
-  url          = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
+  url          = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model},
+  doi          = {Pending / Sync with Zenodo}
 }
 ```
 

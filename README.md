@@ -1,11 +1,11 @@
 # NF1-Smart-Redirector-Model
-In Silico Design and Layer-2 Wet-Lab Validation Protocols for Programmable RNA-Protein Control Platforms
+In Silico Exploration and Layer-2 Wet-Lab Calibration Protocols for Programmable RNA-Protein Control Platforms
 
 ---
 
 ## 🔬 Scientific Disclaimer & TRL Status
 > [!WARNING]
-> **Scientific Disclaimer:** This repository presents a computational hypothesis-generation platform and proof-of-concept modeling. All docking distances, structural coordinates, and analytical projections are *in silico* predictions and should not be interpreted as experimentally validated therapeutic evidence.
+> **Scientific Disclaimer:** This repository presents a computational hypothesis-generation platform and exploratory structural modeling. All docking boundaries, spatial coordinates, and analytical projections are *in silico* predictions and must not be interpreted as experimentally validated therapeutic evidence.
 > 
 > **Technology Readiness Level (TRL):** **TRL-2** (Technology Concept Formulated). Computational models and wet-lab protocols are structured; experimental *in vitro* validation is in the readiness phase.
 
@@ -14,16 +14,25 @@ In Silico Design and Layer-2 Wet-Lab Validation Protocols for Programmable RNA-P
 ## 🎯 Project Overview & Core Hypothesis
 This repository explores a novel bio-nanotechnology paradigm: **Programmable RNA-Protein Control Platform**. Moving beyond the classical RNAi (DNA → mRNA → Protein) gene silencing paradigm, this project investigates the structural potential of a de novo designed **RNA Aptamer-like miRNA fragment** to directly intercept and allosterically modulate oncoprotein cascades at the structural level.
 
-* **Target Cascade:** Oncogenic KRAS hyperactivation (Switch I / Switch II hotspots).
-* **The Vector:** Ionizable Lipid Nanopartices (LNPs) augmented with a 5 kDa mPEG-NHS Molecular Armor to ensure systemic stability and maximize endosomal escape.
+* **Target Cascade:** Oncogenic KRAS hyperactivation induced by upstream loss-of-function variations.
+* **The Vector:** Ionizable Lipid Nanoparticles (LNPs) engineered with a 5 kDa mPEG-NHS Molecular Armor intended to improve systemic stability and potentially enhance endosomal escape.
+
+---
+
+## 🧬 Biological Rationale: The NF1-KRAS Axis
+The fundamental therapeutic premise of the Smart-Redirector model is anchored in restoring homeostatic pathway control after the disruption of natural tumor suppression mechanics:
+
+1. **The NF1 Brake Mechanisms:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
+2. **Loss-of-Function Cascade:** Loss or inactivation of NF1 obliterates this GAP-mediated catalytic switch, leaving KRAS permanently locked in its active configuration, triggering uncontrolled down-stream proliferation via the MAPK (RAF-MEK-ERK) pathway.
+3. **Allosterik Restoration:** The engineered *Smart-Redirector* RNA transcript acts as a structural surrogate, bypassing the missing Ras-GAP machinery by docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
 
 ---
 
 ## 💻 Phase 1: In Silico Modeling & Structural Geometry
-Initial computational investigations utilizing **AlphaFold 3** multimer configurations and local geometric analysis pipeline indicate that the engineered *Akilli_Saptirici_miRNA* transcript exhibits structural compatibility with the effector-binding interfaces of KRAS mutations (G12C, G12D, G13D).
+Initial computational investigations utilizing **AlphaFold 3** multimer configurations and a local geometric analysis pipeline indicate that the engineered *Akilli_Saptirici_miRNA* transcript exhibits spatial complementarity with the effector-binding interfaces of critical KRAS mutations (G12C, G12D, G13D).
 
-* **Binding Geometry:** Structural topology snapshots suggest a potential hydrogen-bonding envelope operating at an approximate **2.85 Å** boundary scale at the target pockets.
-* **Academic Limitation:** Static molecular docking scores are indicative of spatial complementarity rather than functional inhibition. Comprehensive 500+ ns Molecular Dynamics (MD) trajectories, root-mean-square deviation (RMSD) profiles, and MM-PBSA binding free energy ($\Delta G_{binding}$) calculations are ongoing to confirm conformational stability and overcome solvent-effect limitations.
+* **Binding Geometry:** Structural topology snapshots suggest putative hydrogen-bond-compatible geometries in the **~2.85 Å** range at the target pockets.
+* **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive 500+ ns Molecular Dynamics (MD) trajectories, root-mean-square deviation (RMSD) profiles, and MM-PBSA binding free energy ($\Delta G_{binding}$) calculations are ongoing to analyze conformational stability under dynamic solvent conditions.
 
 ---
 
@@ -32,10 +41,10 @@ The downstream biological efficacy and therapeutic selectivity of the LNP-encaps
 
 ### 1. DLS Size Distribution & Target Selectivity Matrix
 Theoretical formulation constraints optimize the carrier phase within an explicit $80 - 120\text{ nm}$ hydrodynamic radius to maximize intracellular uptake while suppressing aggregation metrics (target PDI $< 0.18$).
-![DLS and Western Blot Grafikleri](grafik1.png)
+![DLS ve Western Blot Grafikleri](grafik1.png)
 
 ### 2. Dose-Response Profiles & Therapeutic Window Evaluation
-Mathematical modeling using the Hill Equation establishes a simulated $IC_{50} = 0.45\text{ nM}$ against mutant cell lines, projecting a clear safety margin relative to wild-type homeostasis.
+Mathematical modeling using the Hill Equation projects a hypothetical $IC_{50} = 0.45\text{ nM}$ against mutant cell lines, suggesting a modeled therapeutic window relative to wild-type homeostasis.
 ![Dose Response Grafiği](grafik2.png)
 
 ---
@@ -51,7 +60,7 @@ Mathematical modeling using the Hill Equation establishes a simulated $IC_{50} =
 * [x] **Milestone 1:** Structural Multimer Docking (AlphaFold 3 / HADDOCK Structural Envelope).
 * [x] **Milestone 2:** System Topology Setup & Solvation Box Assembly (GROMACS 2021 Base Matrix).
 * [ ] **Milestone 3:** 500 ns Production MD Run & MM-PBSA Dynamic Free Energy Analysis.
-* [ ] **Milestone 4:** LNP Synthesis and Dynamic Light Scattering (DLS) Calibration.
+* [ ] **Milestone 4:** LNP Santezi ve Dynamic Light Scattering (DLS) Kalibrasyonu.
 * [ ] **Milestone 5:** Structural Binding Kinetics Validation (SPR/BLI Affinity Assays).
 * [ ] **Milestone 6:** Intracellular Western Blot (p-ERK/p-MEK tracking) & MTT Viability Assays.
 
@@ -61,12 +70,12 @@ Mathematical modeling using the Hill Equation establishes a simulated $IC_{50} =
 If you utilize this computational model, framework, or wet-lab protocol matrix in your research, please cite this repository using the standardized formats below:
 
 ### APA Format
-Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com
+Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model
 
 ### BibTeX Format
 ```bibtex
 @software{nf1_smart_redirector_2026,
-  author        = {Ozen, Bahadir saffat 83 84},
+  author        = {Ozen, Bahadir},
   title        = {NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols},
   month        = may,
   year         = 2026,

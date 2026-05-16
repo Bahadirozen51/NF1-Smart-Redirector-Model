@@ -19,12 +19,12 @@ This repository explores a novel bio-nanotechnology paradigm: **Programmable RNA
 
 ---
 
-## 🧬 Biological Rationale: The NF1-KRAS Axis
+## 🧬 Biological Rationale: The Neurofibromin Regulatory Axis
 The fundamental therapeutic premise of the Smart-Redirector model is anchored in restoring homeostatic pathway control after the disruption of natural tumor suppression mechanics:
 
-1. **The NF1 Brake Mechanisms:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
-2. **Loss-of-Function Cascade:** Loss or inactivation of NF1 obliterates this GAP-mediated catalytic switch, leaving KRAS permanently locked in its active configuration, triggering uncontrolled down-stream proliferation via the MAPK (RAF-MEK-ERK) pathway.
-3. **Targeted Perturbation:** The engineered *Smart-Redirector* RNA transcript is hypothesized to act as a structural surrogate capable of partially perturbing KRAS-effector recruitment dynamics, bypassing the missing Ras-GAP machinery by docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
+1. **NF1-Mediated Homeostatic Control:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
+2. **Loss-of-Function Cascade:** Loss or inactivation of NF1 obliterates this GAP-mediated catalytic switch, leaving KRAS permanently locked in its active configuration, triggering uncontrolled downstream proliferation via the MAPK (RAF-MEK-ERK) pathway.
+3. **Targeted Perturbation:** The engineered *Smart-Redirector* RNA transcript is hypothesized to act as a structural surrogate capable of functionally perturbing downstream effector recruitment independent of canonical Ras-GAP restoration, docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
 
 ---
 
@@ -66,11 +66,18 @@ Mathematical modeling using the Hill Equation projects a hypothetical $IC_{50} =
 
 ---
 
+## 🛡️ Reproducibility & Transparency
+This repository prioritizes computational reproducibility. All analytical projections, structural assumptions, and wet-lab readiness protocols are versioned and explicitly annotated to distinguish exploratory modeling from experimentally validated observations. 
+
+*Note: DOI issuance planned through Zenodo synchronization upon dynamic trajectory verification.*
+
+---
+
 ## 📄 Citation
 If you utilize this computational model, framework, or wet-lab protocol matrix in your research, please cite this repository using the standardized formats below:
 
 ### APA Format
-Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com
+Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model
 
 ### BibTeX Format
 ```bibtex
@@ -81,8 +88,7 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
   year         = 2026,
   publisher    = {GitHub},
   version      = {2.0.0},
-  url          = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model},
-  doi          = {Pending / Sync with Zenodo}
+  url          = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
 }
 ```
 

@@ -20,19 +20,20 @@ Elde edilen **2.85 Å** kilitlenme mesafesi, statik bir veriden ziyade **potansi
 Bu projeyi akademik çalışmalarınızda, makalelerinizde veya sunumlarınızda kaynak göstermek için aşağıdaki formatları kullanabilirsiniz:
 
 ### APA Format
-Kullanıcı-Adı. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com
+Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model
 
 ### BibTeX Format
 ```bibtex
 @software{nf1_smart_redirector_2026,
-  author        = {Kullanici-Adi},
+  author        = {Saffat 83,84},
   title        = {NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based Molecular Armor Encapsulation Protocols},
   month        = may,
   year         = 2026,
   publisher    = {GitHub},
   version      = {2.0.0},
-  url          = {https://github.com}
+  url          = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
 }
-```
+  
+
 
 

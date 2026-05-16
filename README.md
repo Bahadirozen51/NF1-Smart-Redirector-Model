@@ -143,4 +143,106 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
 ```
 
 
+---
+
+# 🇹🇷 NF1-Smart-Redirector-Model (Türkçe Proje Özeti)
+Programlanabilir RNA-Protein Kontrol Platformları için İn Siliko Keşif ve Faz-II Islak Laboratuvar Kalibrasyon Protokolleri
+
+---
+
+## 🔬 Bilimsel Sorumluluk Reddi ve TRL Durumu
+> [!WARNING]
+> **Bilimsel Sorumluluk Reddi:** Bu depo, hesaplamalı bir hipotez üretme platformu ve keşifsel yapısal modelleme sunmaktadır. Tüm kilitlenme sınırları, uzaysal koordinatlar ve analitik projeksiyonlar idealleştirilmiş hesaplama varsayımları altında çalışan *in silico* tahminlerdir ve deneysel olarak doğrulanmış terapötik kanıtlar olarak yorumlanmamalıdır.
+> 
+> **Teknoloji Hazırlık Seviyesi (TRL):** **TRL-2** (Teknoloji Konsepti Formüle Edildi). Hesaplamalı modeller ve ıslak laboratuvar protokolleri yapılandırılmıştır; deneysel *in vitro* doğrulama hazırlık aşamasındadır.
+
+---
+
+## 🚀 Hızlı Başlangıç
+Hesaplamalı topoloji boru hatlarını incelemek ve analitik veri simülatörlerini yerel olarak çalıştırmak için aşağıdaki adımları kullanarak araştırma ortamını kopyalayın:
+
+```bash
+# Bilimsel depoyu klonlayın
+git clone https://github.com
+
+# Araştırma çalışma alanına girin
+cd NF1-Smart-Redirector-Model
+
+# Gerekli biyo-nümerik python paketlerini kurun
+pip install -r requirements.txt
+```
+
+---
+
+## 🎯 Projeye Genel Bakış ve Temel Hipotez
+Bu depo, yeni bir biyo-nanoteknoloji paradigmasını araştırmaktadır: **Programlanabilir RNA-Protein Kontrol Platformu**. Klasik RNAi (DNA → mRNA → Protein) gen susturma paradigmasının ötesine geçen bu proje, de novo olarak tasarlanmış bir **RNA Aptamer benzeri miRNA fragmanının**, onkoprotein kaskatlarını doğrudan yapısal düzeyde durdurma ve alosterik olarak modüle etme potansiyelini incelemektedir.
+
+* **Hedef Kaskat:** Fonksiyon kaybı mutasyonlarının tetiklediği onkogenik KRAS hiperaktivasyonu.
+* **Vektör:** Sistemik kararlılığı artırmak ve endozomal kaçışı potansiyel olarak geliştirmek amacıyla 5 kDa mPEG-NHS Molecular Armor™ sistemi ile mühendisliği yapılmış İyonize Lipid Nanopartikülleri (LNP'ler).
+
+---
+
+## 🧬 Biyolojik Rasyonel: Neurofibromin Regülatör Ekseni
+Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör baskılama mekanizmalarının kaybının ardından bozulan yolak sinyalizasyonunun kısmen yeniden dengelenip dengelenemeyeceğini araştırmaya dayanmaktadır:
+
+1. **NF1 Aracılı Homeostatik Kontrol:** *NF1* geni, aktif KRAS-GTP'yi inaktif KRAS-GDP durumuna dönüştüren kritik bir Ras-GAP (GTPaz Aktive Eden Protein) olan Nörofibromin proteinini kodlar.
+2. **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı veya inaktivasyonu bu GAP aracılı katalitik anahtarı ortadan kaldırır; KRAS'ı kalıcı olarak aktif konfigürasyonunda bırakır ve MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre proliferasyonunu tetikler.
+3. **Hedefli Bozulma:** Mühendisliği yapılmış sentetik RNA yapısının (**SRX-RNA01**), kanonik Ras-GAP restorasyonundan bağımsız olarak, KRAS-effektör etkileşim dinamiklerini bozabilen geçici bir yapısal modülatör olarak işlev görmesi ve doğrudan aktif KRAS konfigürasyonlarına kilitlenerek aşağı akış efektör katılımını sterik/alosterik olarak engellemesi hipotezleştirilmiştir.
+
+### 🔬 Moleküler Tasarım Felsefesi
+**SRX-RNA01** yapısının, RNA kaynaklı susturma kompleksi (RISC) yolağı içinde çalışan kanonik bir endojen miRNA olarak işlev görmesi amaçlanmamıştır. Aksine, protein arayüzlerine karşı programlanabilir, yapı tabanlı hedef seçiciliği tasarlamak için miRNA benzeri sekans mantığını entegre eden, aptamerden ilham alan sentetik bir RNA mimarisi olarak kavramsallaştırılmıştır.
+
+---
+
+## 💻 Faz I: İn Siliko Modelleme ve Yapısal Geometri
+**AlphaFold 3** multimer konfigürasyonları ve yerel geometrik analiz boru hattı kullanan ilk hesaplamalı incelemeler, tasarlanan **SRX-RNA01** transkriptinin, yüksek onkogenik yaygınlıkları ve klinik olarak yerleşik direnç profilleri nedeniyle seçilen kritik KRAS mutasyonlarının (**G12C, G12D, G13D**) efektör bağlanma arayüzleriyle uzaysal uyumluluk sergilediğini göstermektedir.
+
+* **Bağlanma Geometrisi:** Yapısal topoloji anlık görüntüleri, hedef ceplerde **~2.85 Å** aralığında olası hidrojen bağı uyumlu geometrilere işaret etmektedir.
+* **Akademik Sınırlılık:** Statik moleküler docking skorları, fonksiyonel inhibisyondan ziyade geometrik uyumu gösterir. Kapsamlı **100–500 ns kademeli MD simülasyonları** ve MM-PBSA bağlanma serbest enerjisi (ΔG_binding) hesaplamaları, fizyolojik iyonik güç ve dinamik çözücü ortamları altında konformasyonel yakınsama ve kararlılığı analiz etmek için devam etmektedir.
+
+---
+
+## 📊 Faz II: İn Vitro Analitik Projeksiyonlar
+LNP ile kapsüllenmiş kompleksin aşağı akış biyolojik etkinliği ve terapötik seçiciliği, standartlaştırılmış hesaplamalı veri modelleri aracılığıyla kıyaslanmaktadır.
+
+### 1. DLS Boyut Dağılımı ve Hedef Seçicilik Matrisi
+Teorik formülasyon kısıtlamaları, agregasyon metriklerini baskılarken (hedef PDI < 0.18) hücre içi alımı maksimize etmek için taşıyıcı fazı net bir 80–120 nm hidrodinamik yarıçap içinde optimize eder.
+*(Grafik görselleri yukarıdaki İngilizce panelde canlı olarak senkronize edilmiştir).*
+
+### 2. Doz-Yanıt Profilleri ve Terapötik Pencere Değerlendirmesi
+Hill Denklemi kullanan matematiksel modelleme, mutant hücre hatlarına karşı hipotetik bir IC50 = 0.45 nM öngörmekte ve idealleştirilmiş hesaplama varsayımları altında wild-type homeostaza kıyasla modellenmiş bir terapötik pencere önermektedir.
+
+---
+
+## 📁 Depo Yapısı
+```text
+├── /alphafold_models       # Ham AlphaFold 3 multimer yapısal PDB/CIF konfigürasyonları
+├── /gromacs_systems        # Çözücü eklenmiş dinamik kutular, topoloji (topol.top) ve koordinat (.gro) izleri
+├── /wetlab_protocols       # LNP sentezi ve PEGylation için Standart Operasyon Prosedürleri (SOP)
+├── /analytical_models      # Hill denklemi ve DLS simülatörleri için Python / Matplotlib betikleri
+├── grafik1.png             # LNP çapı ve p-ERK temel seviye grafikleri için yoğunluk spektrumu haritası
+├── grafik2.png             # Logaritmik sigmoidal doz-yanıt eğrisi simülasyon görselleştirmesi
+└── README.md               # Temel hipotez, doğrulama çerçevesi ve bilimsel sorumluluk reddi
+```
+
+---
+
+## ⚠️ Teknik Riskler, Önlemler ve Beklenen Hata Modları
+### Tanımlanan Riskler ve Önlemler
+1. **Doğrudan RNA-Protein Etkileşimi (Yüksek Riskli Bileşen):** RNA aptamer konfigürasyonları aracılığıyla doğrudan hedef modülasyonu, standart dışı bir biyolojik paradigma olmaya devam etmektedir. *Önlem:* Kinetik çapraz reaktiviteyi izole etmek için geniş spektrumlu Yüzey Plazmon Rezonansı (SPR) ve Biyo-Tabaka Interferometrisi (BLI) bağlanma afinitesi çalışmaları planlanmıştır.
+2. **Sistemik Seçicilik ve Toksisite:** Wild-type KRAS yolaklarının hedef dışı baskılanması, ciddi sitotoksisite tehlikeleri oluşturur. *Önlem:* Terapötik pencerenin sıkı kısıt haritalaması ve çeşitli sağlıklı arka planlarda yüksek verimli hücre canlılığı analizleri (XTT/MTT).
+3. **Dağıtım Başarısızlıkları:** İn vivo ortamda endozomal hapsolma veya erken PEG degredasyonu. *Önlem:* Partikül morfolojisini kontrol etmek için Toplam Akış Hızlarını (TFR > 12 mL/dk) ayarlayan mikroakışkan optimizasyonu.
+
+### Beklenen Hata Modları
+* Fizyolojik iyonik güç ve dinamik çözücü ortamlarında yetersiz KRAS bağlanma doluluğu.
+* Karmaşık hücre içi işlemlerden sonra RNA yapısal bütünlüğünün/katlanma kinetiğinin kaybı.
+* Yükün lizozomal hapsolmasına yol açan yetersiz endozomal kaçış verimliliği.
+* Öngörülen biyolojik tolere edilebilirlik eşiklerini aşan wild-type sinyal bozulması.
+* Farklı KRAS mutasyonel alt tipleri arasında zayıf tekrarlanabilirlik ve yapısal varyans.
+
+---
+
+## 📋 Öngörülen Araştırma Kapsamı
+Bu depo; hesaplamalı hipotez üretimi, moleküler modelleme tekrarlanabilirliği ve ıslak laboratuvar hazırlık planlaması için tasarlanmıştır. Klinik etkinlik iddialarını, terapötik önerileri veya deneysel olarak doğrulanmış biyomedikal müdahaleleri temsil etmesi amaçlanmamıştır.
+
 

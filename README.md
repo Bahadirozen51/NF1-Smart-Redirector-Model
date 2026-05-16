@@ -46,5 +46,3 @@ Bu projeyi akademik çalışmalarınızda, makalelerinizde veya sunumlarınızda
 ```
 
 
-
-

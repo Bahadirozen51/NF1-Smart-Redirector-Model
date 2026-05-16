@@ -33,7 +33,7 @@ Bu projeyi akademik çalışmalarınızda, makalelerinizde veya sunumlarınızda
   version      = {2.0.0},
   url          = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
 }
-  
+```
 
 
 

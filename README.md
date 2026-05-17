@@ -64,6 +64,11 @@ Initial computational investigations utilizing **AlphaFold 3** multimer configur
 * 📂 **Raw Server Configuration:** 
   * **Server Job ID:** `115617b8575eafe`
   * **Archive Path:** All source coordinates, structural conformations (`.cif` models 0-4), and confidence matrices (`.json`) are permanently archived in the [`/alphafold_models`](https://github.com) directory.
+### 🧪 Proposed Chemical Modifications for In Vivo Stability
+To mitigate intracellular nuclease degradation and enhance endosomal escape, the de novo **SRX-RNA01** transcript is structurally engineered with targeted chemical modifications:
+* **Nuclease Shielding:** Selective incorporation of **2'-O-Methyl (2'-OMe)** and **2'-Deoxyfluoro (2'-F)** ribose modifications to maximize cytoplasmic half-life without disrupting AlphaFold-predicted binding geometry.
+* **Endosomal Escape Optimization:** Utilizing pH-sensitive ionizable lipids within the LNP co-formulation to trigger endosomal membrane disruption upon vesicular acidification (pH < 6.0).
+
 
 ---
 
@@ -227,6 +232,11 @@ Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör bask�
 * 📂 **Ham Sunucu Konfigürasyonu:** 
   * **Sunucu Görev Kimliği (Job ID):** `115617b8575eafe`
   * **Arşiv Dizini:** Tüm kaynak koordinatları, 3D yapısal konformasyonlar (`.cif` model 0 - 4) ve güven skoru matrisleri (`.json`) kalıcı olarak [`/alphafold_models`](https://github.com) klasöründe arşivlenmiştir.
+###  🧪 İn Vivo Kararlılık İçin Öngörülen Kimyasal Modifikasyonlar
+Hücre içi nuclease yıkımını engellemek ve endozomal kaçış verimliliğini artırmak amacıyla, **SRX-RNA01** transkripti şu kimyasal modifikasyon matrisi ile optimize edilmiştir:
+* **Nükleaz Zırhı:** AlphaFold tarafından tahmin edilen bağlanma geometrisini bozmadan, sitoplazmik yarı ömrü maksimuma çıkarmak için **2'-O-Metil (2'-OMe)** ve **2'-Deoksifloro (2'-F)** riboz şeker modifikasyonlarının tasarıma entegrasyonu.
+* **Endozomal Kaçış Optimizasyonu:** Veziküler asitlenme (pH < 6.0) sırasında endozom membran yapısını bozarak payload'u sitoplazmaya fırlatacak pH-duyarlı iyonize lipidlerin LNP formülasyonuna dahil edilmesi.
+
 
 ---
 

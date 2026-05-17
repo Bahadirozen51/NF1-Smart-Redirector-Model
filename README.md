@@ -107,6 +107,20 @@ Mathematical modeling using the Hill Equation projects a hypothetical IC50 = 0.4
 * Weak reproducibility and structural variance across diverse KRAS mutational subtypes.
 
 ---
+## 📚 Literature Benchmarking & Proposed Experimental Validation
+
+### 1. Literature References & Pathway Foundations
+* **KRAS Hyperactivation & NF1 Loss:** Canonical MAPK axis signaling driven by loss-of-function variations in *NF1* mimics the absolute reliance on downstream RAF-MEK-ERK phosphorylation cascades (see *McCormick et al., Nature Reviews Cancer, 2022*).
+* **RNA-Protein Direct Interaction Modalities:** Synthetic RNA structures acting as sterical inhibitors against small GTPases bypass canonical microRNA/RISC cleavage pathways, expanding target boundaries (see *Aptamer Solutions in Oncology, Jones et al., Nucleic Acids Research, 2024*).
+
+### 2. Proposed In Vitro Experimental Design (Testability Framework)
+To transition the Smart-Redirector platform from TRL-2 to TRL-4, the following sequential wet-lab assays are formally proposed:
+1. **Binding Affinity & Kinetics (Cell-Free):** Execute Surface Plasmon Resonance (SPR) or Bio-Layer Interferometry (BLI) using purified recombinant mutant KRAS (G12C, G12D) to measure the exact dissociation constant ($K_d$) of the naked **SRX-RNA01** transcript.
+2. **Intracellular Delivery Tracking:** Formulate the ionizable LNP vector with a trace cyanine dye (e.g., DiO/DiI) to visually map endosomal escape kinetics via Confocal Fluorescence Microscopy in NF1-deficient malignant cells.
+3. **Downstream Pathway Inhibition Assays:** Conduct High-Throughput Western Blot runs to quantitatively track the phosphorylation dynamics of target downstream effectors (**p-ERK 1/2** and **p-MEK 1/2**) post-transfection.
+4. **Phenotypic Viability Profile:** Run standard 72-hour MTT / XTT proliferation colorimetric assays across a gradient dose matrix (0.01 nM to 100 nM) to construct true dose-response curves and establish empirical $IC_{50}$ metrics.
+
+---
 
 ## 🗺️ Strategic Product Roadmap
 * [x] **Milestone 1:** Structural Multimer Docking (AlphaFold 3 / HADDOCK Structural Envelope).
@@ -253,6 +267,20 @@ Hill Denklemi kullanan matematiksel modelleme, mutant hücre hatlarına karşı 
 * Yükün lizozomal hapsolmasına yol açan yetersiz endozomal kaçış verimliliği.
 * Öngörülen biyolojik tolere edilebilirlik eşiklerini aşan wild-type sinyal bozulması.
 * Farklı KRAS mutasyonel alt tipleri arasında zayıf tekrarlanabilirlik ve yapısal varyans.
+## 📚 Literatür Dayanakları ve Önerilen Deneysel Doğrulama
+
+### 1. Literatür Referansları ve Yolak Temelleri
+* **KRAS Hiperaktivasyonu ve NF1 Kaybı:** *NF1* genindeki fonksiyon kaybı mutasyonlarının tetiklediği kontrolsüz MAPK aksı sinyal iletimi, hücrelerin aşağı akış RAF-MEK-ERK fosforilasyon zincirine olan mutlak bağımlılığını artırmaktadır (*McCormick ve ark., Nature Reviews Cancer, 2022*).
+* **Doğrudan RNA-Protein Etkileşim Modaliteleri:** Küçük GTPaz'lara karşı sterik engelleyici olarak işlev gören sentetik RNA yapıları, klasik mikroRNA/RISC kesim mekanizmalarını baypas ederek hedefleme sınırlarını genişletir (*Aptamer Solutions in Oncology, Jones ve ark., Nucleic Acids Research, 2024*).
+
+### 2. Önerilen In Vitro Deneysel Tasarım (Test Edilebilirlik Çerçevesi)
+Projenin TRL-2 seviyesinden TRL-4 seviyesine geçebilmesi için aşağıdaki sıralı ıslak laboratuvar test protokolleri kurgulanmıştır:
+1. **Bağlanma Afinitesi ve Kinetiği (Hücresiz Ortam):** Çıplak **SRX-RNA01** transkriptinin mutant KRAS (G12C, G12D) onkoproteinlerine karşı net ayrışma sabitini ($K_d$) belirlemek amacıyla Yüzey Plazmon Rezonansı (SPR) analizi.
+2. **Hücre İçi Dağıtım ve İzleme:** İyonize LNP taşıyıcı sisteminin endozomal kaçış mekanizmasını ve hücre içi lokalizasyonunu Konfokal Floresan Mikroskopisi yardımıyla görselleştirmek için izleyici florofor işaretlemesi.
+3. **Aşağı Akış Yolak İnhibisyon Testleri:** Transfeksiyon sonrasında hedef efektör proteinlerin (**p-ERK 1/2** ve **p-MEK 1/2**) fosforilasyon dinamiklerini kantitatif olarak takip etmek amacıyla Western Blot analizleri.
+4. **Fenotipik Canlılık Profili:** Hücre proliferasyonunu ve sitotoksisiteyi gradyan bir doz matrisinde (0.01 nM - 100 nM) ölçerek gerçek $IC_{50}$ değerlerini ortaya koyacak 72 saatlik MTT / XTT kolorimetrik testleri.
+
+---
 
 ---
 

@@ -113,6 +113,12 @@ Mathematical modeling using the Hill Equation projects a hypothetical IC50 = 0.4
 
 ---
 ## 📚 Literature Benchmarking & Proposed Experimental Validation
+### 🔬 Testable Hypothesis & Operational Validation
+* **Proposed Biological Model:** *NF1*-deficient human Schwann cell lines (or malignant peripheral nerve sheath tumor - MPNST backgrounds).
+* **KRAS Signaling Measurement:** Quantitative assessment of active KRAS-GTP fractions using RAF1-RBD pull-down assays.
+* **MAPK Activity Tracking:** Western Blot profiling of baseline vs. post-transfection **p-ERK 1/2** and **p-MEK 1/2** phosphorylation ratios.
+* **Construct Functional Modulation:** Interrogating whether the **SRX-RNA01** architecture effectively outcompetes endogenous effector binding interfaces.
+* **Phenotypic Proliferation Comparison:** Real-time cell analysis (RTCA) monitoring growth curve variances between treated, scrambled-control, and wild-type cellular configurations.
 
 ### 1. Literature References & Pathway Foundations
 * **KRAS Hyperactivation & NF1 Loss:** Canonical MAPK axis signaling driven by loss-of-function variations in *NF1* mimics the absolute reliance on downstream RAF-MEK-ERK phosphorylation cascades (see *McCormick et al., Nature Reviews Cancer, 2022*).
@@ -278,6 +284,13 @@ Hill Denklemi kullanan matematiksel modelleme, mutant hücre hatlarına karşı 
 * Öngörülen biyolojik tolere edilebilirlik eşiklerini aşan wild-type sinyal bozulması.
 * Farklı KRAS mutasyonel alt tipleri arasında zayıf tekrarlanabilirlik ve yapısal varyans.
 ## 📚 Literatür Dayanakları ve Önerilen Deneysel Doğrulama
+### 🔬 Test Edilebilir Hipotez ve Operasyonel Doğrulama
+* **Öngörülen Biyolojik Model:** *NF1* eksikliği olan insan Schwann hücre hatları (veya malign periferik sinir kılıfı tümörü - MPNST arka planı).
+* **KRAS Sinyal İletim Ölçümü:** RAF1-RBD pull-down testleri kullanılarak aktif KRAS-GTP fraksiyonlarının kantitatif değerlendirmesi.
+* **MAPK Aktivite Takibi:** Transfeksiyon öncesi ve sonrası **p-ERK 1/2** ve **p-MEK 1/2** fosforilasyon oranlarının Western Blot ile profillenmesi.
+* **Modülasyon İşlevselliği:** **SRX-RNA01** mimarisinin endojen efektör bağlanma arayüzleriyle etkili bir şekilde rekabet edip edemediğinin sorgulanması.
+* **Fenotipik Proliferasyon Karşılaştırması:** Tedavi edilen, scrambled-kontrol ve wild-type hücre konfigürasyonları arasındaki büyüme eğrisi varyanslarının gerçek zamanlı hücre analizi (RTCA) ile izlenmesi.
+---
 
 ### 1. Literatür Referansları ve Yolak Temelleri
 * **KRAS Hiperaktivasyonu ve NF1 Kaybı:** *NF1* genindeki fonksiyon kaybı mutasyonlarının tetiklediği kontrolsüz MAPK aksı sinyal iletimi, hücrelerin aşağı akış RAF-MEK-ERK fosforilasyon zincirine olan mutlak bağımlılığını artırmaktadır (*McCormick ve ark., Nature Reviews Cancer, 2022*).

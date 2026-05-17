@@ -58,6 +58,13 @@ Initial computational investigations utilizing **AlphaFold 3** multimer configur
 * **Binding Geometry:** Structural topology snapshots suggest putative hydrogen-bond-compatible geometries in the **~2.85 Å** range at the target pockets.
 * **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive **100–500 ns staged MD simulations** and MM-PBSA binding free energy (ΔG_binding) calculations are ongoing to analyze conformational convergence and stability under physiological ionic strength and dynamic solvent environments.
 
+### 🧬 AlphaFold 3 Multimer Validation & Raw Configuration
+* **System Assembly:** Simulated via AlphaFold 3 Multimer using 1x SRX-RNA01 (75-nt), targeted mutant KRAS pathways (221 aa & 369 aa domains), and structural $Zn^{2+}$ cofactors.
+* 🌐 **Interactive Simulation:** Access live structural conformations, pLDDT trajectories, and PAE error metrics directly via the [AlphaFold Server Dashboard](https://alphafoldserver.com).
+* 📂 **Raw Server Configuration:** 
+  * **Server Job ID:** `115617b8575eafe`
+  * **Archive Path:** All source coordinates, structural conformations (`.cif` models 0-4), and confidence matrices (`.json`) are permanently archived in the [`/alphafold_models`](https://github.com) directory.
+
 ---
 
 ## 📊 Phase II: In Vitro Analytical Projections
@@ -199,6 +206,13 @@ Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör bask�
 
 * **Bağlanma Geometrisi:** Yapısal topoloji anlık görüntüleri, hedef ceplerde **~2.85 Å** aralığında olası hidrojen bağı uyumlu geometrilere işaret etmektedir.
 * **Akademik Sınırlılık:** Statik moleküler docking skorları, fonksiyonel inhibisyondan ziyade geometrik uyumu gösterir. Kapsamlı **100–500 ns kademeli MD simülasyonları** ve MM-PBSA bağlanma serbest enerjisi (ΔG_binding) hesaplamaları, fizyolojik iyonik güç ve dinamik çözücü ortamları altında konformasyonel yakınsama ve kararlılığı analiz etmek için devam etmektedir.
+  
+### 🧬 AlphaFold 3 Multimer Doğrulama ve Ham Konfigürasyon
+* **Sistem Kurulumu:** Modelleme; 1 kopya SRX-RNA01 (75 nt), mutant KRAS yolak bileşenleri (221 aa ve 369 aa domainleri) ve yapısal kararlılık adına fizyolojik $Zn^{2+}$ kofaktör iyonları dahil edilerek AlphaFold 3 üzerinde kurgulanmıştır.
+* 🌐 **İnteraktif Simülasyon:** Canlı yapısal konformasyonlara, pLDDT katlanma güven skorlarına ve PAE hata matrislerine doğrudan [AlphaFold Server Paneli](https://alphafoldserver.com) üzerinden erişebilirsiniz.
+* 📂 **Ham Sunucu Konfigürasyonu:** 
+  * **Sunucu Görev Kimliği (Job ID):** `115617b8575eafe`
+  * **Arşiv Dizini:** Tüm kaynak koordinatları, 3D yapısal konformasyonlar (`.cif` model 0 - 4) ve güven skoru matrisleri (`.json`) kalıcı olarak [`/alphafold_models`](https://github.com) klasöründe arşivlenmiştir.
 
 ---
 

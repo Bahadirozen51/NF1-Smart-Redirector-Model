@@ -175,10 +175,10 @@ This repository hosts an advanced expansion exploring an adaptive theoretical si
 **Computational Architecture & Code Hierarchy:**
 * 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Complete mathematical framework, continuous regime interpolation (sigmoid blending), Langevin SDE noise models, and Fokker-Planck energy landscape equations.
 * 🐍 `simulations/coupled_ode_v1.py` — Core Python engine solving coupled deterministic ordinary differential equations (ODEs).
-* 📊 `notebooks/param_exploration.py` — Active parameter-space sweep tool tracking continuous stability scores, settling times, and amplitude metrics.
+* 📊 `notebooks/param_exploration.py` — Active parameter-space sweep tool tracking continuous stability scores under discrete Delay Differential Equation (DDE) history delay lines.
 * 🧮 `notebooks/jacobian_analysis.py` — Symbolic differentiation module computing the system's analytical Jacobian Matrix ($J_{ij}$) via SymPy.
-* 🔍 `notebooks/eigenvalue_scan.py` — Local stability evaluator performing eigenvalue spectrum analyses ($\lambda$) to verify steady-state convergence.
-* 🎲 `notebooks/stochastic_noise.py` — Stochastic simulator modeling intracellular shot noise via Euler-Maruyama integration of Langevin SDEs.
+* 🔍 `notebooks/eigenvalue_scan.py` — Dynamic stability evaluator transforming SymPy matrices via `sp.lambdify` to scan real eigenvalue spectrums ($\lambda$).
+* 🎲 `notebooks/stochastic_noise.py` — Stochastic simulator modeling mass-conservative intracellular Shot Noise via Euler-Maruyama integration under Fluctuation-Dissipation constraints.
 * 🖼️ `figures/` — Target directory for generated phase portraits, hysteresis loops, and stability heatmaps.
 
 ---
@@ -352,10 +352,10 @@ Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmede
 **Hesaplamalı Mimari ve Kod Hiyerarşisi:**
 * 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Matematiksel çerçeve, sürekli rejim entegrasyonu (sigmoid blending), Langevin SDE gürültü modelleri ve Fokker-Planck enerji peyzajı denklemleri.
 * 🐍 `simulations/coupled_ode_v1.py` — Bağlı deterministik diferansiyel denklemleri (ODE) çözen çekirdek Python motoru.
-* 📊 `notebooks/param_exploration.py` — Sürekli kararlılık skorlarını, homeostaz sürelerini (settling time) ve salınım genliklerini tarayan parametre uzayı keşif aracı.
+* 📊 `notebooks/param_exploration.py` — Ayrık Gecikmeli Diferansiyel Denklem (DDE) hafıza dizileri kullanarak sürekli kararlılık skorlarını ve sönümlenme sürelerini tarayan parametre uzayı keşif aracı.
 * 🧮 `notebooks/jacobian_analysis.py` — SymPy kütüphanesi kullanarak sistemin analitik Jacobian Matrisini ($J_{ij}$) çıkaran sembolik türev modülü.
-* 🔍 `notebooks/eigenvalue_scan.py` — Durağan evre yakınsamasını doğrulamak için özdeğer spektrumu ($\lambda$) analizi yürüten lokal kararlılık test motoru.
-* 🎲 `notebooks/stochastic_noise.py` — Langevin SDE denklemlerini Euler-Maruyama yöntemiyle bütünleştirerek hücre içi gürültü direncini simüle eden stokastik motor.
+* 🔍 `notebooks/eigenvalue_scan.py` — SymPy matrislerini `sp.lambdify` ile dönüştürerek, gerçek denklemler üzerinden özdeğer spektrumu ($\lambda$) analizi yürüten dinamik lokal kararlılık test motoru.
+* 🎲 `notebooks/stochastic_noise.py` — Dalgalanma-Sönümlenme teoremine uygun, kütle korunumlu Duruma Bağımlı Gürültü (State-Dependent Shot Noise) denklemlerini Euler-Maruyama yöntemiyle bütünleştiren stokastik motor.
 * 🖼️ `figures/` — Üretilen faz portreleri, histerezis döngüleri ve kararlılık ısı haritalarının hedef klasörü.
 
 ---

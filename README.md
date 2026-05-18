@@ -168,9 +168,9 @@ The framework **has not** undergone:
 
 ## 🌌 Theoretical Multi-Threshold Synthetic Biology Framework
 
-> ⚠️ **Notice:** This module represents a non-validated, conceptual, and exploratory systems-biology architecture operating under phenomenological regime labels. Astrophysics and mathematical metaphors used herein function strictly as qualitative behavior models (state-transition regimes) rather than literal biochemical mechanisms.
+> ⚠️ **Notice:** This module represents a non-validated, conceptual, and exploratory systems-biology architecture operating under phenomenological regime labels. Astrophysics and mathematical metaphors used herein function strictly as qualitative behavior models (state-transition regimes) rather than literal biochemical mechanisms. Astrophysical terminology is used strictly as a phenomenological analogy for nonlinear regime transitions.
 
-This repository hosts an advanced expansion exploring an adaptive theoretical signaling-control framework (AMTPRF) inspired by systems biology, bistable control theory, and nonlinear state-transition dynamics. The sub-architecture aims to model multi-threshold feedback responses and attractor basin transitions without altering the original core hypotheses of the NF1-Smart-Redirector.
+This repository hosts an advanced expansion exploring an adaptive theoretical signaling-control framework (AMTPRF) inspired by systems biology, bistable control theory, and nonlinear state-transition dynamics. This repository does not propose a therapeutic intervention. It explores whether adaptive nonlinear feedback architectures can theoretically redirect pathological signaling trajectories between metastable attractor basins in abstract dynamical systems. The sub-architecture aims to model multi-threshold feedback responses and attractor basin transitions without altering the original core hypotheses of the NF1-Smart-Redirector.
 
 **Computational Architecture & Code Hierarchy:**
 * 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Complete mathematical framework, continuous regime interpolation (sigmoid blending), Langevin SDE noise models, and Fokker-Planck energy landscape equations.
@@ -184,13 +184,19 @@ This repository hosts an advanced expansion exploring an adaptive theoretical si
   
 **Core Mathematical State Transition Regimes:**
 
-
 | Phenomenological Regime Label | Mathematical / Systems Biology Framework |
 | :--- | :--- |
 | **Catastrophic Clearance Regime** | Rapid Nonlinear Clearance triggered via primary threshold ($M_{c1}$). |
 | **Absorbing Senescent Basin** | Topological State Isolation routing parameters into a low-energy sink state. |
 | **Metabolic Collapse Transition** | Complete decoupling from the proliferative effector network. |
 | **Irreversible Low-Energy Sink State** | Non-proliferative, stable attractor configuration verified via eigenvalue spectra. |
+
+
+### 📊 Mathematical & Model Limitations
+* **Phenomenological Constants:** Kinetics operate on non-biophysical, optimized abstractions.
+* **No Molecular Validation:** Absolute absence of cell-line validation or wet-lab biochemical tracking.
+* **Abstract Systems-Level Only:** Designed strictly as an exploratory computational framework for attractor topology mapping.
+
 
 ---
 
@@ -356,9 +362,9 @@ Model henüz şu aşamalardan **geçmemiştir**:
 
 ## 🌌 Teorik Sistem Biyolojisi Genişlemesi
 
-> ⚠️ **Not:** Bu modül, yalnızca teorik modelleme ve hesaplamalı simülasyonlar için tasarlanmış, doğrulanmamış, kavramsal ve keşifsel bir sistem biyolojisi mimarisini temsil etmektedir. Astrofiziksel ve matematiksel metaforlar, gerçek biyokimyasal mekanizmalar değil; yalnızca rejim geçiş davranışlarını tanımlayan niteliksel soyutlama araçlarıdır.
+> ⚠️ **Not:** Bu modül, yalnızca teorik modelleme ve hesaplamalı simülasyonlar için tasarlanmış, doğrulanmamış, kavramsal ve keşifsel bir sistem biyolojisi mimarisini temsil etmektedir. Astrofiziksel ve matematiksel metaforlar, gerçek biyokimyasal mekanizmalar değil; yalnızca doğrusal olmayan rejim geçiş davranışlarını tanımlayan niteliksel soyutlama araçlarıdır. Astrofiziksel terminoloji, kesinlikle sadece fenomenolojik birer benzetme olarak konumlandırılmıştır.
 
-Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmeden; sistem biyolojisi, çift kararlı (bistable) kontrol teorisi ve doğrusal olmayan sinyal çekim alanı geçişlerinden (attractor basin diversion) ilham alan gelişmiş bir teorik genişlemedir.
+Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmeden; sistem biyolojisi, çift kararlı (bistable) kontrol teorisi ve doğrusal olmayan sinyal çekim alanı geçişlerinden ilham alan gelişmiş bir teorik genişlemedir. Bu çalışma herhangi bir terapötik veya tıbbi müdahale/tedavi iddiası taşımamaktadır. Yalnızca, adaptif doğrusal olmayan geri bildirim mimarilerinin patolojik sinyal yörüngelerini soyut dinamik sistemlerdeki metastabil çekim havzaları arasında teorik olarak saptırıp saptıramayacağını hesaplamalı düzeyde keşfetmeyi amaçlar.
 
 **Hesaplamalı Mimari ve Kod Hiyerarşisi:**
 * 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Matematiksel çerçeve, sürekli rejim entegrasyonu (sigmoid blending), Langevin SDE gürültü modelleri ve Fokker-Planck enerji peyzajı denklemleri.
@@ -373,6 +379,7 @@ Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmede
 **Temel Matematiksel Faz Geçiş Rejimleri:**
 
 
+
 | Fenomenolojik Rejim Etiketi | Matematiksel / Sistem Biyolojisi Çerçevesi |
 | :--- | :--- |
 | **Katastrofik Temizlik Rejimi** | Birincil eşik ($M_{c1}$) üzerinden tetiklenen hızlı, doğrusal olmayan temizlik fazı. |
@@ -384,5 +391,10 @@ Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmede
 
 ## 📋 Öngörülen Araştırma Kapsamı
 Bu depo; hesaplamalı hipotez üretimi, moleküler modelleme tekrarlanabilirliği ve ıslak laboratuvar hazırlık planlaması için tasarlanmıştır. Klinik etkinlik iddialarını, terapötik önerileri veya deneysel olarak doğrulanmış biyomedikal müdahaleleri temsil etmesi amaçlanmamıştır.
+
+### 📊 Matematiksel ve Model Kısıtlamaları
+* **Fenomenolojik Katsayılar:** Kinetik denklemler, biyofiziksel olmayan, optimize edilmiş soyutlamalar üzerinde çalışır.
+* **Moleküler Doğrulama Yoktur:** Hücre hattı validasyonu veya ıslak laboratuvar biyokimyasal takibi içermez.
+* **Yalnızca Soyut Sistem Seviyesi:** Tamamen çekim havzası topolojisini haritalandırmayı amaçlayan keşifsel bir hesaplamalı çerçevedir.
 
 

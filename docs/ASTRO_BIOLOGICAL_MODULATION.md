@@ -1,12 +1,14 @@
-# 🌌 Theoretical Multi-Threshold Synthetic Biology Framework
-*Adaptive Theoretical Signaling-Control Framework Inspired by Systems Biology and Nonlinear State-Transition Dynamics.*
+# 🌌 Adaptive Multi-Threshold Proteostatic Regulation Framework (AMTPRF)
+*Astrophysics-inspired state-transition modeling for theoretical systems biology.*
 
 ⚠️ **CRITICAL DISCLAIMER:** This module represents a non-validated, conceptual, and exploratory systems-biology architecture intended solely for theoretical modeling and computational simulations. It contains no biochemical data, wet-lab validation, or clinical parametric fitting.
 
 ## 1. Giriş ve Konsept Konumlandırması
-Bu çalışma, klasik tek-hedef/tek-inhibitör modellerinin aksine, duruma ve yoğunluğa duyarlı, feedback kontrollü bir **Conceptual Adaptive Signaling Control Architecture** modelidir. Sistem, sürekli baskılama yapmak yerine hücre içi gürültüyü filtreleyerek sadece kritik stres eşiklerinde otonom kararlar alan bir hücresel otomat (state machine) gibi kurgulanmıştır.
+The framework explores whether adaptive threshold-governed signaling control architectures can theoretically stabilize pathological signaling loads without requiring continuous inhibitory pressure. 
 
-Astrofiziksel kütleçekim çöküş sınırları (Chandrasekhar ve Schwarzschild), bu modelde biyokimyasal sinyal yüklerinin lineer olmayan faz geçişlerini (nonlinear state-transitions) matematiksel olarak tanımlamak adına dinamik birer davranış metaforu ve soyutlama aracı olarak konumlandırılmıştır.
+Klasik tek-hedef/tek-inhibitör modellerinin aksine, duruma ve yoğunluğa duyarlı, feedback kontrollü bir **Conceptual Adaptive Signaling Control Architecture** modelidir. Sistem, sürekli baskılama yapmak yerine hücre içi gürültüyü filtreleyerek sadece kritik stres eşiklerinde otonom kararlar alan bir hücresel otomat (state machine) gibi kurgulanmıştır.
+
+*Conceptually inspired by gravitational collapse limits (Chandrasekhar and Schwarzschild limits),* bu modelde biyokimyasal sinyal yüklerinin lineer olmayan faz geçişleri (nonlinear state-transitions) matematiksel olarak soyutlanmıştır. Metaforlar mekanizmanın kendisi değil, matematiksel davranış biçiminin birer soyutlama aracıdır.
 
 ---
 
@@ -21,7 +23,7 @@ Sistemde yapay bir küresel değişken (global state) kullanmak yerine, biyoloji
 \[\tau_m \frac{dM}{dt} = \Theta(S) - M\]
 
 ### 🧫 C. Doygunluğa Ulaşan Koşullu Yıkım (Saturating Degradation)
-Schwarzschild fazına geçildiğinde hücreyi kontrolsüz bir çöküşe (rebound activation) sokmamak adına, yıkım mekanizması Michaelis-Menten tipi doygunluğa ulaşan bir kinetikle sınırlandırılmıştır:
+Sistemin geri dönüşümsüz geçiş eşiği (*irreversible transition threshold*) aşılıp temizlik fazına geçildiğinde hücreyi kontrolsüz bir çöküşe (rebound activation) sokmamak adına, yıkım mekanizması Michaelis-Menten tipi doygunluğa ulaşan bir kinetikle sınırlandırılmıştır:
 \[\frac{d[KRAS]}{dt} = k_{prod} - \left( \frac{k_{deg} \cdot [KRAS]}{K_m + [KRAS]} \right) \cdot M\]
 
 ### 📉 D. Metabolik Bağlı Negatif Feedback ve ROS Dinamiği

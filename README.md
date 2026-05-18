@@ -180,6 +180,16 @@ This repository hosts an advanced expansion exploring an adaptive theoretical si
 * 🔍 `notebooks/eigenvalue_scan.py` — Dynamic stability evaluator transforming SymPy matrices via `sp.lambdify` to scan real eigenvalue spectrums ($\lambda$).
 * 🎲 `notebooks/stochastic_noise.py` — Stochastic simulator modeling mass-conservative intracellular Shot Noise via Euler-Maruyama integration under Fluctuation-Dissipation constraints.
 * 🖼️ `figures/` — Target directory for generated phase portraits, hysteresis loops, and stability heatmaps.
+  
+**Core Mathematical State Transition Regimes:**
+
+
+| Phenomenological Regime Label | Mathematical / Systems Biology Framework |
+| :--- | :--- |
+| **Catastrophic Clearance Regime** | Rapid Nonlinear Clearance triggered via primary threshold ($M_{c1}$). |
+| **Absorbing Senescent Basin** | Topological State Isolation routing parameters into a low-energy sink state. |
+| **Metabolic Collapse Transition** | Complete decoupling from the proliferative effector network. |
+| **Irreversible Low-Energy Sink State** | Non-proliferative, stable attractor configuration verified via eigenvalue spectra. |
 
 ---
 
@@ -357,6 +367,16 @@ Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmede
 * 🔍 `notebooks/eigenvalue_scan.py` — SymPy matrislerini `sp.lambdify` ile dönüştürerek, gerçek denklemler üzerinden özdeğer spektrumu ($\lambda$) analizi yürüten dinamik lokal kararlılık test motoru.
 * 🎲 `notebooks/stochastic_noise.py` — Dalgalanma-Sönümlenme teoremine uygun, kütle korunumlu Duruma Bağımlı Gürültü (State-Dependent Shot Noise) denklemlerini Euler-Maruyama yöntemiyle bütünleştiren stokastik motor.
 * 🖼️ `figures/` — Üretilen faz portreleri, histerezis döngüleri ve kararlılık ısı haritalarının hedef klasörü.
+  
+**Temel Matematiksel Faz Geçiş Rejimleri:**
+
+
+| Fenomenolojik Rejim Etiketi | Matematiksel / Sistem Biyolojisi Çerçevesi |
+| :--- | :--- |
+| **Katastrofik Temizlik Rejimi** | Birincil eşik ($M_{c1}$) üzerinden tetiklenen hızlı, doğrusal olmayan temizlik fazı. |
+| **Yutucu Yaşlanma Havzası** | Parametreleri düşük enerjili bir çöküş havuzuna yönlendiren Topolojik Durum İzolasyonu. |
+| **Metabolik Çöküş Geçişi** | Proliferatif efektör ağ bağlantısının (kopyalamanın) tamamen kesilmesi. |
+| **Geri Dönüşsüz Düşük Enerjili Durağan Evre** | Özdeğer spektrumlarıyla kanıtlanmış, bölünmeyen kararlı çekim havzası topolojisi. |
 
 ---
 

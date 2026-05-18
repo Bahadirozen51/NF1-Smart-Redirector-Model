@@ -1,5 +1,7 @@
 # NF1-Smart-Redirector-Model
-In Silico Exploration and Phase-II Wet-Lab Calibration Protocols for Programmable RNA-Protein Control Platforms
+
+A phenomenological nonlinear attractor-transition framework for exploratory adaptive signaling dynamics under delayed feedback and stochastic perturbation.
+
 
 ![TRL](https://img.shields.io/badge/TRL-2-orange)
 ![Status](https://img.shields.io/badge/Status-Hypothesis%20Generation-blue)
@@ -225,7 +227,8 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
 ---
 
 # 🇹🇷 NF1-Smart-Redirector-Model (Türkçe Proje Özeti)
-Programlanabilir RNA-Protein Kontrol Platformları için İn Siliko Keşif ve Faz-II Islak Laboratuvar Kalibrasyon Protokolleri
+Gecikmeli geri bildirim ve stokastik pertürbasyon altında keşifsel adaptif sinyal dinamikleri için fenomenolojik doğrusal olmayan bir çekim havzası geçiş çerçevesi.
+
 
 ---
 

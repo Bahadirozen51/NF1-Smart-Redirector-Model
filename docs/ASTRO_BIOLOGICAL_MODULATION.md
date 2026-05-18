@@ -36,3 +36,13 @@ Bu doğrultuda kurgulanan potansiyel enerji peyzajında ($V(x) = -\ln P_{ss}(x)$
 *   **Attractor State A (Patolojik Proliferatif Vadi):** Hücrenin gürültü dalgalanmalarıyla sürekli uyarıldığı, yüksek serbest enerjili, metastabil bir yarı-kararlı havzadır.
 *   **Attractor State B (Absorbing Senescent Basin):** AMTPRF modülasyonu ve bellek çekirdeği ($M > 0.8$) tetiklendiğinde sistemin sığındığı, küresel olarak en kararlı, en düşük enerjili ve geri dönüşsüz yeni vadi (**Global Energy Minimum Sink**) olarak konumlandırılmıştır. Sistem gürültü şiddetine rağmen bu derin vadiden bir daha geri çıkamaz; böylece patolojik döngü tamamen kırılır.
 
+---
+
+## 3. Gelecek Araştırma Kapsamı ve Kısıtlamalar (Future Research Scope & Limitations)
+Bu çalışma, konsept aşamasında bir hesaplamalı sistem biyolojisi çerçevesi (TRL-2) olduğundan, ilerleyen fazlarda derinleştirilmesi öngörülen hesaplamalı ve deneysel yol haritası şu şekildedir:
+
+*   **A. Deneysel Parametre Kalibrasyonu (Data Fitting):** Modelde kullanılan idealize kinetik katsayılar, ilerleyen fazlarda NF1-mutant Schwann veya nörofibrom hücre hatlarından (in vitro Western Blot/Kütle Spektrometrisi) elde edilecek gerçek biyokimyasal veri setleri ile Monte Carlo Parametre Tahmini (Parameter Estimation) algoritmaları üzerinden kalibre edilecektir.
+*   **B. Analitik Hopf Bifurkasyon Sınırları:** Sistem parametre uzayının limit döngüsü (osilasyon rejimi) sınırları, Jacobian matrisinin özdeğer spektrumunun gerçel kısmının sıfıra eşitlendiği durumlar ($\text{Re}(\lambda) = 0$) üzerinden analitik kararlılık eğrileri olarak matematiksel olarak türetilecektir.
+*   **C. Fokker-Planck Sayısal Çözümü (Olasılık Peyzajı):** Langevin SDE motorundan elde edilecek binlerce stokastik yörüngenin histogram veri analizi yapılarak, durum uzayındaki çift kararlı potansiyel enerji peyzajının olasılık yoğunluk dağılım grafikleri (Probability Density Function Heatmap) görselleştirilecektir.
+
+

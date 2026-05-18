@@ -19,3 +19,20 @@ Sistemde numerik integrasyonu kararsızlaştıran keskin eşik geçişleri (hard
 *   **Rejim I: Catastrophic Clearance Regime (Hızlı Doğrusal Olmayan Temizlik):** Sinyal yükü hafıza çekirdeğinde ilk geçiş merkezini ($M_{c1}$) uyardığında devreye giren hızlı ve hedefli moleküler temizlik fazıdır (**Rapid Nonlinear Clearance**).
 *   **Rejim II: Absorbing Senescent Basin & Topological State Isolation:** Sinyal yükünün ekstrem fazlara ulaşması durumunda, kopyalama katsayısı fenomenolojik olarak saptırılır (**phenomenological diversion coefficient** $\rightarrow 0$), proliferatif ağ ile olan bağ kesilir ve hücre geri dönüşümsüz düşük enerjili durağan bir faza (**Irreversible Low-Energy Sink State**) yönlendirilir.
 
+---
+
+## 3. Stokastik Dinamikler ve Fokker-Planck Enerji Peyzajı (Energy Landscape Theory)
+
+### 🎲 A. Langevin Stokastik Gürültü Modeli
+Hücre içi transkripsiyon patlamaları (transcription bursts) ve moleküler gürültülerin (shot noise) sistem kararlılığı üzerindeki etkisini ölçmek amacıyla, deterministik drift (sürüklenme) terimleri Wiener Süreci ($dW_t$) ve Brownian dalgalanmalarıyla birleştirilerek Langevin Stokastik Diferansiyel Denklemlerine (SDE) dönüştürülmüştür:
+\[dX_i = f_i(X, t)dt + \sigma_i dW_t\]
+*Burada $\sigma_i$ katsayısı, sistemin yanlış pozitif aktivasyonlara karşı direncini (false activation resistance) belirleyen gürültü şiddetini temsil eder.*
+
+### 🏔️ B. Olasılık Yoğunluğu ve Global Enerji Minimumu (Sink State Transition)
+Langevin yörüngelerinin zamanla nasıl bir olasılık dağılımına dönüştüğü ve kararlılık vadileri arasındaki geçiş olasılıkları (transition probability) Fokker-Planck kısmi diferansiyel denklemi ile modellenmiştir:
+\[\frac{\partial P(x,t)}{\partial t} = -\sum_{i} \frac{\partial}{\partial x_i} \left[ f_i(x)P(x,t) \right] + \sum_{i} \frac{\sigma_i^2}{2} \frac{\partial^2 P(x,t)}{\partial x_i^2}\]
+
+Bu doğrultuda kurgulanan potansiyel enerji peyzajında ($V(x) = -\ln P_{ss}(x)$):
+*   **Attractor State A (Patolojik Proliferatif Vadi):** Hücrenin gürültü dalgalanmalarıyla sürekli uyarıldığı, yüksek serbest enerjili, metastabil bir yarı-kararlı havzadır.
+*   **Attractor State B (Absorbing Senescent Basin):** AMTPRF modülasyonu ve bellek çekirdeği ($M > 0.8$) tetiklendiğinde sistemin sığındığı, küresel olarak en kararlı, en düşük enerjili ve geri dönüşsüz yeni vadi (**Global Energy Minimum Sink**) olarak konumlandırılmıştır. Sistem gürültü şiddetine rağmen bu derin vadiden bir daha geri çıkamaz; böylece patolojik döngü tamamen kırılır.
+

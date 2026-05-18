@@ -38,7 +38,7 @@ Bu doğrultuda kurgulanan potansiyel enerji peyzajında ($V(x) = -\ln P_{ss}(x)$
 
 ---
 
-## 3. Gelecek Araştırma Kapsamı ve Kısıtlamalar (Future Research Scope & Limitations)
+## 4. Gelecek Araştırma Kapsamı ve Kısıtlamalar (Future Research Scope & Limitations)
 Bu çalışma, konsept aşamasında bir hesaplamalı sistem biyolojisi çerçevesi (TRL-2) olduğundan, ilerleyen fazlarda derinleştirilmesi öngörülen hesaplamalı ve deneysel yol haritası şu şekildedir:
 
 *   **A. Deneysel Parametre Kalibrasyonu (Data Fitting):** Modelde kullanılan idealize kinetik katsayılar, ilerleyen fazlarda NF1-mutant Schwann veya nörofibrom hücre hatlarından (in vitro Western Blot/Kütle Spektrometrisi) elde edilecek gerçek biyokimyasal veri setleri ile Monte Carlo Parametre Tahmini (Parameter Estimation) algoritmaları üzerinden kalibre edilecektir.

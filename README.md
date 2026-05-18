@@ -178,6 +178,7 @@ This repository hosts an advanced expansion exploring an adaptive theoretical si
 * 📊 `notebooks/param_exploration.py` — Active parameter-space sweep tool tracking continuous stability scores under discrete Delay Differential Equation (DDE) history delay lines.
 * 🧮 `notebooks/jacobian_analysis.py` — Symbolic differentiation module computing the system's analytical Jacobian Matrix ($J_{ij}$) via SymPy.
 * 📊 `notebooks/jacobian_bifurcation_analysis.py` — Analytical bifurcation sweeps tracking Hopf transition boundaries and plotting phase portrait trajectories.
+* 📊 `notebooks/lyapunov_landscape.py` — Maps candidate Lyapunov functionals ($V(x)$) to simulate global energy descent vectors towards the senescent attractor sink under $dV/dt < 0$ constraints.
 * 🔍 `notebooks/eigenvalue_scan.py` — Dynamic stability evaluator transforming SymPy matrices via `sp.lambdify` to scan real eigenvalue spectrums ($\lambda$).
 * 🎲 `notebooks/stochastic_noise.py` — Stochastic simulator modeling mass-conservative intracellular Shot Noise via Euler-Maruyama integration under Fluctuation-Dissipation constraints.
 * 🖼️ `figures/` — Target directory for generated phase portraits, hysteresis loops, and stability heatmaps.
@@ -372,6 +373,7 @@ Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmede
 * 📊 `notebooks/param_exploration.py` — Ayrık Gecikmeli Diferansiyel Denklem (DDE) hafıza dizileri kullanarak sürekli kararlılık skorlarını ve sönümlenme sürelerini tarayan parametre uzayı keşif aracı.
 * 🧮 `notebooks/jacobian_analysis.py` — SymPy kütüphanesi kullanarak sistemin analitik Jacobian Matrisini ($J_{ij}$) çıkaran sembolik türev modülü.
 * 📊 `notebooks/jacobian_bifurcation_analysis.py` — Hopf geçiş sınırlarını tarayan ve durum uzayındaki faz portresi (phase portrait) yörüngelerini çizdiren analitik bifurkasyon motoru.
+* 📊 `notebooks/lyapunov_landscape.py` — Sistem genelinde $dV/dt < 0$ şartını doğrulayarak hücreyi yaşlanma havuzuna çeken küresel enerji iniş yörüngelerini ve aday Lyapunov fonksiyonellerini ($V(x)$) haritalandıran kararlılık motoru.
 * 🔍 `notebooks/eigenvalue_scan.py` — SymPy matrislerini `sp.lambdify` ile dönüştürerek, gerçek denklemler üzerinden özdeğer spektrumu ($\lambda$) analizi yürüten dinamik lokal kararlılık test motoru.
 * 🎲 `notebooks/stochastic_noise.py` — Dalgalanma-Sönümlenme teoremine uygun, kütle korunumlu Duruma Bağımlı Gürültü (State-Dependent Shot Noise) denklemlerini Euler-Maruyama yöntemiyle bütünleştiren stokastik motor.
 * 🖼️ `figures/` — Üretilen faz portreleri, histerezis döngüleri ve kararlılık ısı haritalarının hedef klasörü.

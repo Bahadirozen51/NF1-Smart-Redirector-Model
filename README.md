@@ -154,6 +154,7 @@ This repository prioritizes computational reproducibility. All analytical projec
 This repository is intended for computational hypothesis generation, molecular modeling reproducibility, and wet-lab readiness planning. It is not intended to represent clinical efficacy claims, therapeutic recommendations, or experimentally validated biomedical interventions.
 
 ---
+
 ## 📊 Current Development Status
 
 This project currently represents a conceptual systems-biology framework, a theoretical signaling-control architecture, and an exploratory computational modeling effort. 
@@ -165,20 +166,22 @@ The framework **has not** undergone:
 
 ---
 
-## Theoretical Systems Biology Expansion
+## 🌌 Theoretical Multi-Threshold Synthetic Biology Framework
 
-> ⚠️ **Notice:** This module represents a conceptual and exploratory systems-biology architecture intended solely for theoretical modeling and computational simulations. It is strictly non-validated and operating under ideal conditions.
+> ⚠️ **Notice:** This module represents a non-validated, conceptual, and exploratory systems-biology architecture operating under phenomenological regime labels. Astrophysics and mathematical metaphors used herein function strictly as qualitative behavior models (state-transition regimes) rather than literal biochemical mechanisms.
 
-This repository hosts an advanced expansion exploring an adaptive theoretical signaling-control framework inspired by systems biology, bistable control theory, and nonlinear state-transition dynamics. 
+This repository hosts an advanced expansion exploring an adaptive theoretical signaling-control framework (AMTPRF) inspired by systems biology, bistable control theory, and nonlinear state-transition dynamics. The sub-architecture aims to model multi-threshold feedback responses and attractor basin transitions without altering the original core hypotheses of the NF1-Smart-Redirector.
 
-The sub-architecture aims to model multi-threshold feedback responses (TAPC) without altering the original core hypotheses of the NF1-Smart-Redirector.
+**Computational Architecture & Code Hierarchy:**
+* 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Complete mathematical framework, continuous regime interpolation (sigmoid blending), Langevin SDE noise models, and Fokker-Planck energy landscape equations.
+* 🐍 `simulations/coupled_ode_v1.py` — Core Python engine solving coupled deterministic ordinary differential equations (ODEs).
+* 📊 `notebooks/param_exploration.py` — Active parameter-space sweep tool tracking continuous stability scores, settling times, and amplitude metrics.
+* 🧮 `notebooks/jacobian_analysis.py` — Symbolic differentiation module computing the system's analytical Jacobian Matrix ($J_{ij}$) via SymPy.
+* 🔍 `notebooks/eigenvalue_scan.py` — Local stability evaluator performing eigenvalue spectrum analyses ($\lambda$) to verify steady-state convergence.
+* 🎲 `notebooks/stochastic_noise.py` — Stochastic simulator modeling intracellular shot noise via Euler-Maruyama integration of Langevin SDEs.
+* 🖼️ `figures/` — Target directory for generated phase portraits, hysteresis loops, and stability heatmaps.
 
-**Repository Architecture for the Extension:**
-* `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Mathematical framework, hysteresis formulations, and memory kernel definitions.
-* `simulations/` — Python ODE coupled differential equations.
-* `notebooks/` — Parameter-space exploration and bifurcation analysis scripts.
-* `figures/` — Generated stability maps and hysteresis curves.
-
+---
 
 ## 📄 Citation
 If you utilize this computational model, framework, or wet-lab protocol matrix in your research, please cite this repository using the standardized formats below:
@@ -340,17 +343,20 @@ Model henüz şu aşamalardan **geçmemiştir**:
 
 ---
 
-## Teorik Sistem Biyolojisi Genişlemesi
+## 🌌 Teorik Sistem Biyolojisi Genişlemesi
 
-> ⚠️ **Not:** Bu modül, yalnızca teorik modelleme ve hesaplamalı simülasyonlar için tasarlanmış, doğrulanmamış, kavramsal ve keşifsel bir sistem biyolojisi mimarisini temsil etmektedir. Tamamen teorik olup, ideal koşullar altında çalışmaktadır.
+> ⚠️ **Not:** Bu modül, yalnızca teorik modelleme ve hesaplamalı simülasyonlar için tasarlanmış, doğrulanmamış, kavramsal ve keşifsel bir sistem biyolojisi mimarisini temsil etmektedir. Astrofiziksel ve matematiksel metaforlar, gerçek biyokimyasal mekanizmalar değil; yalnızca rejim geçiş davranışlarını tanımlayan niteliksel soyutlama araçlarıdır.
 
-Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini ve yapısını değiştirmeden; sistem biyolojisi, çift kararlı (bistable) kontrol teorisi ve doğrusal olmayan faz geçiş dinamiklerinden ilham alan adaptif bir teorik sinyal kontrol çerçevesini (TAPC) modellemeyi amaçlayan gelişmiş bir teorik genişlemedir.
+Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmeden; sistem biyolojisi, çift kararlı (bistable) kontrol teorisi ve doğrusal olmayan sinyal çekim alanı geçişlerinden (attractor basin diversion) ilham alan gelişmiş bir teorik genişlemedir.
 
-**Genişleme Paketinin Depo (Repository) Mimarisi:**
-* `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Matematiksel çerçeve, histerezis formülasyonları ve bellek çekirdeği tanımları.
-* `simulations/` — Python ODE bağlı diferansiyel denklemler.
-* `notebooks/` — Parametre uzayı keşfi ve bifurkasyon analizi betikleri.
-* `figures/` — Üretilen kararlılık haritaları ve histerezis eğrileri.
+**Hesaplamalı Mimari ve Kod Hiyerarşisi:**
+* 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Matematiksel çerçeve, sürekli rejim entegrasyonu (sigmoid blending), Langevin SDE gürültü modelleri ve Fokker-Planck enerji peyzajı denklemleri.
+* 🐍 `simulations/coupled_ode_v1.py` — Bağlı deterministik diferansiyel denklemleri (ODE) çözen çekirdek Python motoru.
+* 📊 `notebooks/param_exploration.py` — Sürekli kararlılık skorlarını, homeostaz sürelerini (settling time) ve salınım genliklerini tarayan parametre uzayı keşif aracı.
+* 🧮 `notebooks/jacobian_analysis.py` — SymPy kütüphanesi kullanarak sistemin analitik Jacobian Matrisini ($J_{ij}$) çıkaran sembolik türev modülü.
+* 🔍 `notebooks/eigenvalue_scan.py` — Durağan evre yakınsamasını doğrulamak için özdeğer spektrumu ($\lambda$) analizi yürüten lokal kararlılık test motoru.
+* 🎲 `notebooks/stochastic_noise.py` — Langevin SDE denklemlerini Euler-Maruyama yöntemiyle bütünleştirerek hücre içi gürültü direncini simüle eden stokastik motor.
+* 🖼️ `figures/` — Üretilen faz portreleri, histerezis döngüleri ve kararlılık ısı haritalarının hedef klasörü.
 
 ---
 

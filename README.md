@@ -154,6 +154,16 @@ This repository prioritizes computational reproducibility. All analytical projec
 This repository is intended for computational hypothesis generation, molecular modeling reproducibility, and wet-lab readiness planning. It is not intended to represent clinical efficacy claims, therapeutic recommendations, or experimentally validated biomedical interventions.
 
 ---
+## 📊 Current Development Status
+
+This project currently represents a conceptual systems-biology framework, a theoretical signaling-control architecture, and an exploratory computational modeling effort. 
+
+The framework **has not** undergone:
+* Wet-lab validation or biochemical verification,
+* Clinical testing or cellular line validation,
+* Parameter calibration against experimental datasets.
+
+---
 
 ## Theoretical Systems Biology Expansion
 
@@ -317,6 +327,16 @@ Projenin TRL-2 seviyesinden TRL-4 seviyesine geçebilmesi için aşağıdaki sı
 2. **Hücre İçi Dağıtım ve İzleme:** İyonize LNP taşıyıcı sisteminin endozomal kaçış mekanizmasını ve hücre içi lokalizasyonunu Konfokal Floresan Mikroskopisi yardımıyla görselleştirmek için izleyici florofor işaretlemesi.
 3. **Aşağı Akış Yolak İnhibisyon Testleri:** Transfeksiyon sonrasında hedef efektör proteinlerin (**p-ERK 1/2** ve **p-MEK 1/2**) fosforilasyon dinamiklerini kantitatif olarak takip etmek amacıyla Western Blot analizleri.
 4. **Fenotipik Canlılık Profili:** Hücre proliferasyonunu ve sitotoksisiteyi gradyan bir doz matrisinde (0.01 nM - 100 nM) ölçerek gerçek $IC_{50}$ değerlerini ortaya koyacak 72 saatlik MTT / XTT kolorimetrik testleri.
+
+---
+## 📊 Mevcut Geliştirme Durumu
+
+Bu proje an itibarıyla kavramsal bir sistem biyolojisi çerçevesini, teorik bir sinyal-kontrol mimarisini ve keşifsel bir hesaplamalı modelleme çalışmasını temsil etmektedir. 
+
+Model henüz şu aşamalardan **geçmemiştir**:
+* Islak laboratuvar doğrulaması veya biyokimyasal doğrulama,
+* Klinik testler veya hücresel hat validasyonu,
+* Deneysel veri setlerine dayalı parametre kalibrasyonu.
 
 ---
 

@@ -1,39 +1,21 @@
 # 🌌 Adaptive Multi-Threshold Proteostatic Regulation Framework (AMTPRF)
-*Astrophysics-inspired state-transition modeling for theoretical systems biology.*
+*Nonlinear Adaptive Signaling Framework for Exploratory Systems-Level Simulations.*
 
-⚠️ **CRITICAL DISCLAIMER:** This module represents a non-validated, conceptual, and exploratory systems-biology architecture intended solely for theoretical modeling and computational simulations. It contains no biochemical data, wet-lab validation, or clinical parametric fitting.
+⚠️ **CRITICAL DISCLAIMER:** This module represents a conceptual, non-validated, and exploratory synthetic biology architecture operating under phenomenological regime labels. Astrophysics and mathematical metaphors used herein function strictly as qualitative behavior models (state-transition regimes) rather than literal biochemical mechanisms.
 
-## 1. Giriş ve Konsept Konumlandırması
+## 1. Giriş ve Kararlı Çekim Alanı Geçişi (Attractor Basin Transition)
 The framework explores whether adaptive threshold-governed signaling control architectures can theoretically stabilize pathological signaling loads without requiring continuous inhibitory pressure. 
 
-Klasik tek-hedef/tek-inhibitör modellerinin aksine, duruma ve yoğunluğa duyarlı, feedback kontrollü bir **Conceptual Adaptive Signaling Control Architecture** modelidir. Sistem, sürekli baskılama yapmak yerine hücre içi gürültüyü filtreleyerek sadece kritik stres eşiklerinde otonom kararlar alan bir hücresel otomat (state machine) gibi kurgulanmıştır.
+Model, patolojik proliferatif kararlılık alanındaki (**Attractor State A**) sinyal yükünü kronik olarak baskılamak yerine; doğrusal olmayan geri bildirim ağları vasıtasıyla sistemi kontrol altına alarak, metastabil bir dinamik ağ üzerinden geri dönüşümsüz, düşük enerjili ve bölünmeyen bir uyuşukluk/yaşlanma çekim havzasına (**Attractor State B - Absorbing Senescent Basin**) taşımayı hedefler.
 
-*Conceptually inspired by gravitational collapse limits (Chandrasekhar and Schwarzschild limits),* bu modelde biyokimyasal sinyal yüklerinin lineer olmayan faz geçişleri (nonlinear state-transitions) matematiksel olarak soyutlanmıştır. Metaforlar mekanizmanın kendisi değil, matematiksel davranış biçiminin birer soyutlama aracıdır.
+## 2. Sürekli Rejim Entegrasyonu ve Matematiksel Mimari (Continuous Regime Interpolation)
 
----
+### 📊 A. Çift Kademeli Doğrusal Olmayan Temizlik Modeli (Two-Tiered Regime Blending)
+Sistemde numerik integrasyonu kararsızlaştıran keskin eşik geçişleri (hard thresholds) yerine, diferansiyel sürekliliği koruyan ve Jacobian analizine izin veren sigmoid tabanlı rejim harmanlaması (Regime Blending) kurgulanmıştır:
 
-## 2. İleri Seviye Matematiksel Mimari ve Denklemler
+\[\sigma_1(M) = \frac{1}{1 + e^{-k_1(M - M_{c1})}} \quad \text{(Catastrophic Clearance Weight)}\]
+\[\sigma_2(M) = \frac{1}{1 + e^{-k_2(M - M_{c2})}} \quad \text{(Absorbing Senescent Sink Weight)}\]
 
-### 📊 A. Kompozit Stres İndeksi (Composite Stress Index - CSI)
-Sinyal ağlarındaki anlık piklerin (transient spikes) sistemi yanlışlıkla aktive etmesini önlemek amacıyla, çoklu sensör entegrasyonu sunan bir stres fonksiyonu kurgulanmıştır:
-\[S(t) = \alpha [pERK] + \beta [KRAS\text{-}GTP] + \gamma [ROS]\]
+*   **Rejim I: Catastrophic Clearance Regime (Hızlı Doğrusal Olmayan Temizlik):** Sinyal yükü hafıza çekirdeğinde ilk geçiş merkezini ($M_{c1}$) uyardığında devreye giren hızlı ve hedefli moleküler temizlik fazıdır (**Rapid Nonlinear Clearance**).
+*   **Rejim II: Absorbing Senescent Basin & Topological State Isolation:** Sinyal yükünün ekstrem fazlara ulaşması durumunda, kopyalama katsayısı fenomenolojik olarak saptırılır (**phenomenological diversion coefficient** $\rightarrow 0$), proliferatif ağ ile olan bağ kesilir ve hücre geri dönüşümsüz düşük enerjili durağan bir faza (**Irreversible Low-Energy Sink State**) yönlendirilir.
 
-### 🔄 B. Diferansiyel Histerezis ve Bellek Çekirdeği (Memory Kernel)
-Sistemde yapay bir küresel değişken (global state) kullanmak yerine, biyolojik histerezis ve gürültü direnci (noise immunity) diferansiyel bir hafıza değişkeni ($M$) ve gecikme sabiti ($\tau_m$) ile modellenmiştir:
-\[\tau_m \frac{dM}{dt} = \Theta(S) - M\]
-
-### 🧫 C. Doygunluğa Ulaşan Koşullu Yıkım (Saturating Degradation)
-Sistemin geri dönüşümsüz geçiş eşiği (*irreversible transition threshold*) aşılıp temizlik fazına geçildiğinde hücreyi kontrolsüz bir çöküşe (rebound activation) sokmamak adına, yıkım mekanizması Michaelis-Menten tipi doygunluğa ulaşan bir kinetikle sınırlandırılmıştır:
-\[\frac{d[KRAS]}{dt} = k_{prod} - \left( \frac{k_{deg} \cdot [KRAS]}{K_m + [KRAS]} \right) \cdot M\]
-
-### 📉 D. Metabolik Bağlı Negatif Feedback ve ROS Dinamiği
-ROS (Oksidatif Stres) davranışı doğrudan hücre içi metabolik yüke ve KRAS aktivasyonuna bağlanarak sistemin kendi kendini söndüren (self-extinguishing) bir iç döngü kurması sağlanmıştır:
-\[\frac{d[ROS]}{dt} = k_{ROS}[KRAS] - k_{clear}[ROS]\]
-\[\frac{d[pERK]}{dt} = k_{act}[KRAS] - k_{fb} \cdot M \cdot [pERK]\]
-
----
-
-## 3. Parametre Uzayı Keşfi ve Bifurcation Sınırları
-Sistemin kararlılığı, parametrelerin duyarlılık analizine (parameter sensitivity analysis) bağlıdır.
-*   **Ultra-sensitivity Regülasyonu ($n$):** $n=1$ durumunda sistem lineer ve yumuşak bir tepki verirken, $n \geq 4$ durumunda ani bir faz geçişi (bifurcation) göstererek "Chandrasekhar Çöküş Limiti" davranışını taklit eder.
-*   **Kararlılık Rejimleri (Stability Landscape):** $k_{fb}$ (feedback gücü) ve $\tau_m$ (bellek gecikmesi) arasındaki oran, sistemin kararlı bir sönümlenmeye mi (attractor state) yoksa kronik osilasyonlara mı (limit cycle) gireceğini belirler.

@@ -173,6 +173,7 @@ The framework **has not** undergone:
 This repository hosts an advanced expansion exploring an adaptive theoretical signaling-control framework (AMTPRF) inspired by systems biology, bistable control theory, and nonlinear state-transition dynamics. This repository does not propose a therapeutic intervention. It explores whether adaptive nonlinear feedback architectures can theoretically redirect pathological signaling trajectories between metastable attractor basins in abstract dynamical systems. The sub-architecture aims to model multi-threshold feedback responses and attractor basin transitions without altering the original core hypotheses of the NF1-Smart-Redirector.
 
 **Computational Architecture & Code Hierarchy:**
+* 📄 `molecular_analysis.ipynb` — Core molecular data suite containing primary structural docking analytics, binding affinity logs, and AlphaFold-HADDOCK coordination data.
 * 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Complete mathematical framework, continuous regime interpolation (sigmoid blending), Langevin SDE noise models, and Fokker-Planck energy landscape equations.
 * 🐍 `simulations/coupled_ode_v1.py` — Core Python engine solving coupled deterministic ordinary differential equations (ODEs).
 * 📊 `notebooks/param_exploration.py` — Active parameter-space sweep tool tracking continuous stability scores under discrete Delay Differential Equation (DDE) history delay lines.
@@ -368,6 +369,7 @@ Model henüz şu aşamalardan **geçmemiştir**:
 Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini değiştirmeden; sistem biyolojisi, çift kararlı (bistable) kontrol teorisi ve doğrusal olmayan sinyal çekim alanı geçişlerinden ilham alan gelişmiş bir teorik genişlemedir. Bu çalışma herhangi bir terapötik veya tıbbi müdahale/tedavi iddiası taşımamaktadır. Yalnızca, adaptif doğrusal olmayan geri bildirim mimarilerinin patolojik sinyal yörüngelerini soyut dinamik sistemlerdeki metastabil çekim havzaları arasında teorik olarak saptırıp saptıramayacağını hesaplamalı düzeyde keşfetmeyi amaçlar.
 
 **Hesaplamalı Mimari ve Kod Hiyerarşisi:**
+* 📄 `molecular_analysis.ipynb` — Birincil yapısal yerleştirme (docking) analizlerini, bağlanma afinitesi kayıtlarını ve AlphaFold-HADDOCK koordinasyon verilerini barındıran çekirdek moleküler veri seti.
 * 📄 `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Matematiksel çerçeve, sürekli rejim entegrasyonu (sigmoid blending), Langevin SDE gürültü modelleri ve Fokker-Planck enerji peyzajı denklemleri.
 * 🐍 `simulations/coupled_ode_v1.py` — Bağlı deterministik diferansiyel denklemleri (ODE) çözen çekirdek Python motoru.
 * 📊 `notebooks/param_exploration.py` — Ayrık Gecikmeli Diferansiyel Denklem (DDE) hafıza dizileri kullanarak sürekli kararlılık skorlarını ve sönümlenme sürelerini tarayan parametre uzayı keşif aracı.

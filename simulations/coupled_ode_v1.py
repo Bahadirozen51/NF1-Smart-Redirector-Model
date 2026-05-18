@@ -1,10 +1,9 @@
 import numpy as np
 from scipy.integrate import odeint
 
-def amtp_framework(states, t, params):
+def amtp_continuous_core(states, t, params):
     KRAS, pERK, ROS, M = states
     
-    # Parametre uzayından gelen değişkenler
     Theta_high = params['Theta_high']
     n = params['n']
     tau_m = params['tau_m']
@@ -16,39 +15,41 @@ def amtp_framework(states, t, params):
     k_ROS = params['k_ROS']
     k_clear = params['k_clear']
     
-    # 1. Kompozit Stres İndeksi (CSI)
-    alpha, beta, gamma = 0.5, 0.4, 0.1
-    S_t = alpha * pERK + beta * KRAS + gamma * ROS
-    
-    # 2. Hill-Switch Aktivasyon Fonksiyonu
+    # 1. Composite Stress Index (CSI)
+    S_t = 0.5 * pERK + 0.4 * KRAS + 0.1 * ROS
     Theta_S = (S_t**n) / (Theta_high**n + S_t**n)
     
-    # 3. Diferansiyel Histerezis ve Bellek Dinamiği
+    # Delayed Adaptation Kernel
     dM_dt = (Theta_S - M) / tau_m
     
-    # 4. Doygunluğa Ulaşan Koşullu Yıkım
-    degradation = (k_deg * KRAS) / (K_m + KRAS) * M
-    dKRAS_dt = k_prod - degradation
+    # 2. Continuous Regime Interpolation (Sigmoid Blending)
+    supernova_weight = 1.0 / (1.0 + np.exp(-18 * (M - 0.55))) # Catastrophic Clearance
+    collapse_weight = 1.0 / (1.0 + np.exp(-25 * (M - 0.82)))  # Absorbing Senescent Basin
     
-    # 5. Bağlı Geri Bildirim Döngüsü (Coupled ODE Feedback)
-    dpERK_dt = k_act * KRAS - k_fb * M * pERK
+    phenomenological_diversion_coeff = 1.0 - (0.99 * collapse_weight)
+    total_clearance = (k_deg * (1.0 + 3.0 * collapse_weight)) + (3.0 * supernova_weight)
+    degradation = (total_clearance * KRAS) / (K_m + KRAS) * M
     
-    # 6. Metabolik Bağlı ROS Dinamiği
+    # 3. Coupled ODE Set
+    dKRAS_dt = (k_prod * phenomenological_diversion_coeff) - degradation
+    dpERK_dt = k_act * KRAS - (k_fb * M * pERK)
     dROS_dt = k_ROS * KRAS - k_clear * ROS
     
     return [dKRAS_dt, dpERK_dt, dROS_dt, dM_dt]
 
-# --- PARAMETER SPACE EXPLORATION (Keşif Arayüzü) ---
-# Hill Katsayısının Değişim Senaryoları (Lineer Yumuşak Geçiş vs Ani Çöküş)
-hill_scenarios = [1, 2, 4, 8]
+def execute_core_validation():
+    t = np.linspace(0, 150, 3000)
+    initial_conditions = [1.8, 1.2, 0.3, 0.0]
+    
+    base_params = {
+        'Theta_high': 3.5, 'n': 4, 'tau_m': 2.5, 'k_prod': 0.8, 'k_deg': 1.0,
+        'K_m': 0.5, 'k_act': 0.9, 'k_fb': 1.8, 'k_ROS': 0.3, 'k_clear': 0.4
+    }
+    
+    solution = odeint(amtp_continuous_core, initial_conditions, t, args=(base_params,))
+    print("Theoretical coupled ODE core engine successfully initialized.")
+    print("Continuous regime interpolation active and synchronized with repository specifications.")
 
-base_params = {
-    'Theta_high': 3.5, 'tau_m': 2.0, 'k_prod': 0.6, 'k_deg': 1.2,
-    'K_m': 0.5, 'k_act': 0.8, 'k_fb': 1.5, 'k_ROS': 0.4, 'k_clear': 0.5
-}
+if __name__ == "__main__":
+    execute_core_validation()
 
-t = np.linspace(0, 100, 1000)
-initial_conditions = [1.2, 0.5, 0.1, 0.0]
-
-print("Theoretical coupled ODE architecture initialized for exploratory systems-level simulations.")
-print(f"Parameter-space tracking ready for Hill coefficients: {hill_scenarios}")

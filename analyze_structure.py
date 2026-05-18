@@ -2,7 +2,8 @@ import os
 import glob
 import numpy as np
 import matplotlib.pyplot as plt
-from Bio.PDB import PDBParser, NeighborSearch
+from Bio.PDB.MMCIFParser import MMCIFParser  # .cif dosyaları için eklendi
+from Bio.PDB import NeighborSearch
 
 def analyze_mock_data():
     print("--- NF1-Smart-Redirector-Model Geometrik Analiz Raporu ---")
@@ -24,15 +25,16 @@ def analyze_mock_data():
     else:
         print("SONUÇ: Mesafe çok uzak. Bağlanma geometrisi optimize edilmeli.")
 
-def analyze_molecular_interaction(pdb_file, rna_chain_id="B", protein_chain_id="A", distance_cutoff=5.0):
+def analyze_molecular_interaction(cif_file, rna_chain_id="B", protein_chain_id="A", distance_cutoff=5.0):
     """
-    Klasördeki gerçek AlphaFold 3 PDB çıktısını analiz ederek RNA ve Protein arasındaki 
-    kritik temas noktalarını ve yakınlıkları hesaplar.
+    alphafold_models klasöründeki gerçek AlphaFold 3 .cif çıktısını analiz ederek 
+    RNA ve Protein arasındaki kritik temas noktalarını ve yakınlıkları hesaplar.
     """
-    print(f"\n[-] {pdb_file} dosyası yükleniyor ve analiz ediliyor...")
+    print(f"\n[-] {cif_file} dosyası yükleniyor ve analiz ediliyor...")
     
-    parser = PDBParser(QUIET=True)
-    structure = parser.get_structure("NF1_Model", pdb_file)
+    # .cif dosyaları için MMCIFParser kullanıyoruz
+    parser = MMCIFParser(QUIET=True)
+    structure = parser.get_structure("NF1_Model", cif_file)
     model = structure[0]
     
     protein_atoms = [atom for chain in model if chain.id == protein_chain_id for atom in chain.get_atoms()]
@@ -73,14 +75,13 @@ def analyze_molecular_interaction(pdb_file, rna_chain_id="B", protein_chain_id="
 if __name__ == "__main__":
     analyze_mock_data()
     
-    # Klasördeki ilk geçerli .pdb dosyasını otomatik bulan dinamik sistem:
-    pdb_dosyalari = glob.glob("*.pdb")
+    # alphafold_models klasörünün içindeki ilk .cif dosyasını otomatik bulur
+    cif_dosyalari = glob.glob("alphafold_models/*.cif")
     
-    if pdb_dosyalari:
-        # Klasörde bulduğu ilk PDB dosyasını (örneğin fold_2026_05_15_...model_0.pdb) otomatik analiz eder
-        secilen_dosya = pdb_dosyalari[0]
+    if cif_dosyalari:
+        secilen_dosya = cif_dosyalari[0]
         analyze_molecular_interaction(secilen_dosya)
     else:
-        print("\n[!] Uyarı: Klasörde analiz edilecek '.pdb' uzantılı bir AlphaFold dosyası bulunamadı.")
+        print("\n[!] Uyarı: 'alphafold_models' klasöründe analiz edilecek '.cif' uzantılı bir AlphaFold dosyası bulunamadı.")
 
 

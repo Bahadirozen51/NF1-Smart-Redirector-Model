@@ -155,6 +155,21 @@ This repository is intended for computational hypothesis generation, molecular m
 
 ---
 
+## Theoretical Systems Biology Expansion
+
+> ⚠️ **Notice:** This module represents a conceptual and exploratory systems-biology architecture intended solely for theoretical modeling and computational simulations. It is strictly non-validated and operating under ideal conditions.
+
+This repository hosts an advanced expansion exploring an adaptive theoretical signaling-control framework inspired by systems biology, bistable control theory, and nonlinear state-transition dynamics. 
+
+The sub-architecture aims to model multi-threshold feedback responses (TAPC) without altering the original core hypotheses of the NF1-Smart-Redirector.
+
+**Repository Architecture for the Extension:**
+* `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Mathematical framework, hysteresis formulations, and memory kernel definitions.
+* `simulations/` — Python ODE coupled differential equations.
+* `notebooks/` — Parameter-space exploration and bifurcation analysis scripts.
+* `figures/` — Generated stability maps and hysteresis curves.
+
+
 ## 📄 Citation
 If you utilize this computational model, framework, or wet-lab protocol matrix in your research, please cite this repository using the standardized formats below:
 
@@ -304,6 +319,18 @@ Projenin TRL-2 seviyesinden TRL-4 seviyesine geçebilmesi için aşağıdaki sı
 4. **Fenotipik Canlılık Profili:** Hücre proliferasyonunu ve sitotoksisiteyi gradyan bir doz matrisinde (0.01 nM - 100 nM) ölçerek gerçek $IC_{50}$ değerlerini ortaya koyacak 72 saatlik MTT / XTT kolorimetrik testleri.
 
 ---
+
+## Teorik Sistem Biyolojisi Genişlemesi
+
+> ⚠️ **Not:** Bu modül, yalnızca teorik modelleme ve hesaplamalı simülasyonlar için tasarlanmış, doğrulanmamış, kavramsal ve keşifsel bir sistem biyolojisi mimarisini temsil etmektedir. Tamamen teorik olup, ideal koşullar altında çalışmaktadır.
+
+Bu bölüm, NF1-Smart-Redirector'ın orijinal temel hipotezlerini ve yapısını değiştirmeden; sistem biyolojisi, çift kararlı (bistable) kontrol teorisi ve doğrusal olmayan faz geçiş dinamiklerinden ilham alan adaptif bir teorik sinyal kontrol çerçevesini (TAPC) modellemeyi amaçlayan gelişmiş bir teorik genişlemedir.
+
+**Genişleme Paketinin Depo (Repository) Mimarisi:**
+* `docs/ASTRO_BIOLOGICAL_MODULATION.md` — Matematiksel çerçeve, histerezis formülasyonları ve bellek çekirdeği tanımları.
+* `simulations/` — Python ODE bağlı diferansiyel denklemler.
+* `notebooks/` — Parametre uzayı keşfi ve bifurkasyon analizi betikleri.
+* `figures/` — Üretilen kararlılık haritaları ve histerezis eğrileri.
 
 ---
 

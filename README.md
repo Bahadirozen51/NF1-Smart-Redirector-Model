@@ -282,7 +282,7 @@ Hücre içi moleküler flüktüasyonlar ve transkripsiyonel çalkantılar, aditi
 
 ## 📋 Öngörülen Araştırma Kapsamı ve Kısıtlamalar
 * **Fenomenolojik Katsayılar:** Kinetik denklemler, biyofiziksel olmayan, optimize edilmiş soyutlamalar üzerinde çalışır.
-* **Moleküler Doğrulama Yoktur:** Hücre hattı validasyonu ellerinden veya ıslak laboratuvar biyokimyasal takibi içermez.
+* **Moleküler Doğrulama Yoktur:** Hücre hattı validasyonu veya ıslak laboratuvar biyokimyasal takibi içermez.
 * **Yalnızca Soyut Sistem Seviyesi:** Tamamen çekim havzası topolojisini haritalandırmayı amaçlayan keşifsel bir hesaplamalı çerçevedir.
 
 ---
@@ -297,5 +297,3 @@ Bu hesaplamalı modeli araştırmalarınızda kullanırsanız, lütfen aşağıd
 ⚠️ <strong>Technical Disclaimer & Framework Validation Notice:</strong> 
 Bu depoda sunulan sayısal metrikler, güven aralıkları ($\pm\text{SD}$), hata metrikleri ve yanlış aktivasyon yüzdeleri, yapısal doğrulama amacıyla tanımlanmış parametrik sınırlar altında oluşturulan prototip simülasyon çıktılarıdır. Temel deneysel in vitro veya in vivo analitik klinik verileri oluşturolarak yorumlanmamalıdır.
 </blockquote>
-
-

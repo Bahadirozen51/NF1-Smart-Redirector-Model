@@ -132,6 +132,17 @@ Lyapunov structural tracking dynamically demonstrates strict monotonous converge
  0.0 -----------------------------------------------
      0s                 50s                 100s                150s
 ```
+### 2. Stochastic Robustness & Dynamic Trajectories
+
+Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance intervals show that the system successfully bounds false positive pathway activation ((<1.95%)) even under heavy Pathological Stress rejoining bounds.
+
+![DLS ve Western Blot](grafik1.png)
+
+### 3. Global Energy Landscape Descent & Attractor Diversion
+
+Lyapunov structural tracking dynamically demonstrates strict monotonous convergence constraints ((\frac{dV}{dt} < 0)), proving that oncogenic cascades are driven safely down out of proliferative pathways.
+
+![Doz Yanıt Eğrisi](grafik2.png)
 
 ---
 

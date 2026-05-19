@@ -31,11 +31,11 @@ Initial computational investigations utilizing **AlphaFold 3** multimer configur
 ### 📐 Phase II: Deterministic System & Eigenvalue Topology
 The intracellular homeostatic cascade is modeled via coupled non-linear ordinary differential equations mapping the cross-talk between `[KRAS]`, `[pERK]`, `[ROS]`, and a slow-adapting cellular memory integration kernel `[M]`. 
 
-To capture real-world molecular latencies, the framework utilizes discrete history delay lines ($\tau_{delay}$) to solve a Delay Differential Equation (DDE) architecture:
-$$S(t) = 0.5 \cdot [pERK](t - \tau_{delay}) + 0.4 \cdot [KRAS](t) + 0.1 \cdot [ROS](t)$$
+To capture real-world molecular latencies, the framework utilizes discrete history delay lines (\(\tau_{delay}\)) to solve a Delay Differential Equation (DDE) architecture:
+\[S(t) = 0.5 \cdot [pERK](t - \tau_{delay}) + 0.4 \cdot [KRAS](t) + 0.1 \cdot [ROS](t)\]
 
-The system handles microenvironmental noise density matrix ($\sigma \in \{0.05, 0.15, 0.30\}$) via additive Gaussian white noise under Euler-Maruyama stochastic numerical integration (Langevin SDE Formalism):
-$$dX_t = f(X_t, t)dt + \sigma dW_t$$
+The system handles microenvironmental noise density matrix (\(\sigma \in \{0.05, 0.15, 0.30\}\)) via additive Gaussian white noise under Euler-Maruyama stochastic numerical integration (Langevin SDE Formalism):
+\[dX_t = f(X_t, t)dt + \sigma dW_t\]
 
 ---
 
@@ -58,11 +58,11 @@ Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör bask�
 ### 📐 Faz II: Deterministik Sistem ve Özdeğer Topolojisi
 Hücre içi homeostatik kaskat; `[KRAS]`, `[pERK]`, `[ROS]` ve yavaş uyum sağlayan bir hücresel hafıza entegrasyon çekirdeği `[M]` arasındaki etkileşimi haritalandıran doğrusal olmayan adi diferansiyel denklemler aracılığıyla modellenmiştir.
 
-Gerçek dünyadaki moleküler gecikmeleri yakalamak için çerçeve, bir Zaman Gecikmeli Diferansiyel Denklem (DDE) mimarisini çözmek üzere ayrık geçmiş gecikme hatlarını ($\tau_{delay}$) kullanır:
-$$S(t) = 0.5 \cdot [pERK](t - \tau_{delay}) + 0.4 \cdot [KRAS](t) + 0.1 \cdot [ROS](t)$$
+Gerçek dünyadaki moleküler gecikmeleri yakalamak için çerçeve, bir Zaman Gecikmeli Diferansiyel Denklem (DDE) mimarisini çözmek üzere ayrık geçmiş gecikme hatlarını (\(\tau_{delay}\)) kullanır:
+\[S(t) = 0.5 \cdot [pERK](t - \tau_{delay}) + 0.4 \cdot [KRAS](t) + 0.1 \cdot [ROS](t)\]
 
-Sistem, Euler-Maruyama stokastik sayısal entegrasyonu (Langevin SDE Biçimciliği) altında toplamsal Gaussian beyaz gürültüsü aracılığıyla mikroyevre gürültü yoğunluk matrisini ($\sigma \in \{0.05, 0.15, 0.30\}$) işler:
-$$dX_t = f(X_t, t)dt + \sigma dW_t$$
+Sistem, Euler-Maruyama stokastik sayısal entegrasyonu (Langevin SDE Biçimciliği) altında toplamsal Gaussian beyaz gürültüsü aracılığıyla mikroyevre gürültü yoğunluk matrisini (\(\sigma \in \{0.05, 0.15, 0.30\}\)) işler:
+\[dX_t = f(X_t, t)dt + \sigma dW_t\]
 
 ---
 
@@ -74,8 +74,8 @@ All simulation code operates under a completely dynamic, live-calculated framewo
 *   `simulations/coupled_ode_v1.py`: Continuous core ODE engine integrating homeostatic transition curves.
 *   `notebooks/jacobian_analysis.py`: Performs analytical exact symbolic differentiation via **SymPy**.
 *   `notebooks/jacobian_bifurcation_analysis.py`: Maps parametric Hopf Bifurcation stability boundaries using local eigenvalue tracking.
-*   `notebooks/eigenvalue_scan.py`: Computes and plots localized asymptotic stability spectra on the complex plane ($\text{Re}(\lambda) < 0$).
-*   `notebooks/lyapunov_landscape.py`: Maps trajectory energy descent ($\frac{dV}{dt} < 0$) to verify global attractor convergence.
+*   `notebooks/eigenvalue_scan.py`: Computes and plots localized asymptotic stability spectra on the complex plane (\(\text{Re}(\lambda) < 0\)).
+*   `notebooks/lyapunov_landscape.py`: Maps trajectory energy descent (\(\frac{dV}{dt} < 0\)) to verify global attractor convergence.
 *   `notebooks/stochastic_noise.py`: Computes True False-Positive Activation Rates (FPR) using true Euler-Maruyama SDE integration.
 *   `notebooks/param_exploration.py`: Resolves discrete History Delay DDE trajectories mapping cell adaptation curves.
 *   `analyze_structure.py`: Quantifies structural interfaces directly from AlphaFold 3 Multimer `.cif` files using **Biopython (MMCIFParser)**.
@@ -95,6 +95,7 @@ The localized eigen-spectrum evaluated under continuous parameterized Jacobians 
           Complex Plane (Re/Im)
  2.0 -------------------------
 
+
      |                       |
  1.0 |          x (λ1)       |
  0.0 |-----------|-----------|
@@ -110,6 +111,7 @@ Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance 
         Stochastic Noise Bounds (Langevin)
          pERK Concentration Over Time (s)
  4.0 ----------------------------------
+
 
      |   / \     / \     Physiological
  3.0 |  /   \___/   \___ Noise Bounds
@@ -132,6 +134,12 @@ Lyapunov structural tracking dynamically demonstrates strict monotonous converge
  0.0 -----------------------------------------------
      0s                 50s                 100s                150s
 ```
+
+---
+
+## 🔬 Wet-Lab Optimization & Calibration (Phase III)
+Computational parameters are tightly synchronized with empirical protocols detailed in [LAB_PROTOCOLS.md](LAB_PROTOCOLS.md). Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via `scipy.optimize.curve_fit` to continuously recalibrate model constants from empirical biological benchmarks.
+
 
 ---
 

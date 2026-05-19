@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -28,12 +29,12 @@ def amtp_delay_framework(states, i, dt, params, history_delay=5):
     
     dM_dt = (Theta_S - M) / tau_m
     
-    # 2. Rejim Harmanlaması
-    collapse_weight = 1.0 / (1.0 + np.exp(-25 * (M - 0.82)))
-    supernova_weight = 1.0 / (1.0 + np.exp(-18 * (M - 0.55)))
+    # 2. Biyolojik Baskılama Rejim Harmanlaması
+    suppression_high_weight = 1.0 / (1.0 + np.exp(-25 * (M - 0.82)))
+    suppression_low_weight = 1.0 / (1.0 + np.exp(-18 * (M - 0.55)))
     
-    phenomenological_diversion_coeff = 1.0 - (0.99 * collapse_weight)
-    total_clearance = (k_deg * (1.0 + 3.0 * collapse_weight)) + (3.0 * supernova_weight)
+    phenomenological_diversion_coeff = 1.0 - (0.99 * suppression_high_weight)
+    total_clearance = (k_deg * (1.0 + 3.0 * suppression_high_weight)) + (3.0 * suppression_low_weight)
     degradation = (total_clearance * KRAS) / (K_m + KRAS) * M
     
     dKRAS_dt = (k_prod * phenomenological_diversion_coeff) - degradation
@@ -43,6 +44,10 @@ def amtp_delay_framework(states, i, dt, params, history_delay=5):
     return [dKRAS_dt, dpERK_dt, dROS_dt, dM_dt]
 
 def run_discrete_dde_simulation():
+    # --- Klasör Kontrolü ---
+    if not os.path.exists('figures'):
+        os.makedirs('figures')
+
     T = 150.0
     N = 3000
     dt = T / N
@@ -56,15 +61,33 @@ def run_discrete_dde_simulation():
         'K_m': 0.5, 'k_act': 0.9, 'k_fb': 1.8, 'k_ROS': 0.3, 'k_clear': 0.4
     }
     
+    # Zaman Entegrasyon Döngüsü (Ayrık Gecikmeli Euler)
     for i in range(N - 1):
         derivs = amtp_delay_framework(states, i, dt, base_params)
         states[:, i+1] = states[:, i] + np.array(derivs) * dt
-        states[:, i+1] = np.clip(states[:, i+1], 0, None)
+        states[:, i+1] = np.clip(states[:, i+1], 0, None) # Konsantrasyon koruması
         
-    print("Theoretical coupled DDE architecture initialized for exploratory systems-level simulations.")
-    print("Instantaneous drift error fixed using discrete history delay lines.")
+    # --- Görselleştirme Bloğu (Eksik grafik çizimi sisteme eklendi) ---
+    plt.figure(figsize=(10, 6))
+    plt.plot(t, states[0, :], color='teal', linewidth=2, label='KRAS Konsantrasyonu')
+    plt.plot(t, states[1, :], color='crimson', linewidth=2, label='pERK Konsantrasyonu')
+    plt.plot(t, states[3, :], color='indigo', linewidth=1.5, linestyle='--', label='Hücresel Hafıza (M)')
+    
+    plt.title('Time-Delay Differential Equation (DDE) Simulation Trajectories', fontsize=12, fontweight='bold')
+    plt.xlabel('Zaman (Saniye)')
+    plt.ylabel('Konsantrasyon / Aktivasyon Seviyesi')
+    plt.grid(True, linestyle=':', alpha=0.6)
+    plt.legend(loc='upper right')
+    
+    plt.savefig('figures/dde_trajectory_exploration.png', dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    print("✅ Theoretical coupled DDE architecture initialized for exploratory systems-level simulations.")
+    print("✅ Instantaneous drift error fixed using discrete history delay lines.")
+    print("[GRAPHICS SUCCESS] 'figures/dde_trajectory_exploration.png' başarıyla üretildi.")
 
 if __name__ == "__main__":
     run_discrete_dde_simulation()
+
 
 

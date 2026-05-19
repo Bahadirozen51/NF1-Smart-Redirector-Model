@@ -1,6 +1,11 @@
+import os
 import sympy as sp
 
 def derive_symbolic_jacobian():
+    # --- Klasör Kontrolü ---
+    if not os.path.exists('figures'):
+        os.makedirs('figures')
+
     # --- 1. Sembolik Değişkenlerin Tanımlanması ---
     # Hücre içi durum değişkenleri (States)
     K, P, R, M = sp.symbols('KRAS pERK ROS M')
@@ -10,15 +15,14 @@ def derive_symbolic_jacobian():
     k_prod, k_deg, Km = sp.symbols('k_prod k_deg K_m')
     k_act, k_fb, k_ROS, k_clear = sp.symbols('k_act k_fb k_ROS k_clear')
     
-    # --- 2. Rejim Geçiş Diferansiyelleri (Sigmoid Blending) ---
-    # Süreklilik kazandırılmış rejim katsayıları
-    # center=0.82 (Mc2) ve sharpness=25 (k2) değerleri sembolik olarak kurgulanmıştır
-    collapse_weight = 1.0 / (1.0 + sp.exp(-25 * (M - 0.82)))
-    supernova_weight = 1.0 / (1.0 + sp.exp(-18 * (M - 0.55)))
+    # --- 2. Baskılama Rejim Geçiş Diferansiyelleri (Sigmoid Blending) ---
+    # Biyolojik terminolojiyle süreklilik kazandırılmış rejim katsayıları
+    suppression_high_weight = 1.0 / (1.0 + sp.exp(-25 * (M - 0.82)))
+    suppression_low_weight = 1.0 / (1.0 + sp.exp(-18 * (M - 0.55)))
     
     # Sinyal Saptırma ve Koşullu Yıkım Dinamikleri
-    diversion_coeff = 1.0 - (0.99 * collapse_weight)
-    total_clearance = (k_deg * (1.0 + 3.0 * collapse_weight)) + (3.0 * supernova_weight)
+    diversion_coeff = 1.0 - (0.99 * suppression_high_weight)
+    total_clearance = (k_deg * (1.0 + 3.0 * suppression_high_weight)) + (3.0 * suppression_low_weight)
     degradation = (total_clearance * K) / (Km + K) * M
     
     # Kompozit Stres Fonksiyonu Belirteçleri
@@ -38,13 +42,19 @@ def derive_symbolic_jacobian():
     print("=== Sembolik Jacobian Kısmi Türev Matrisi İnşa Ediliyor ===")
     Jacobian_matrix = sp.Matrix([[sp.diff(f, x) for x in states] for f in equations])
     
-    # Akademik raporlama için çıktı üretimi
-    for i in range(4):
-        for j in range(4):
-            print(f"J[{i}][{j}] (df_{i+1}/dx_{j+1}): {Jacobian_matrix[i, j]}")
-            
+    # Raporlama için metin dosyasının hazırlanması
+    report_path = 'figures/jacobian_symbolic_report.txt'
+    with open(report_path, 'w', encoding='utf-8') as f_out:
+        f_out.write("=== ANALYTICAL SYSTEM BIOLOGY REPORT: SYMBOLIC JACOBIAN MATRIX ===\n\n")
+        for i in range(4):
+            for j in range(4):
+                output_str = f"J[{i}][{j}] (df_{i+1}/dx_{j+1}): {Jacobian_matrix[i, j]}"
+                print(output_str)
+                f_out.write(output_str + "\n")
+                
+    print(f"\n[SUCCESS] Sembolik matris başarıyla haritalandı ve '{report_path}' dosyasına kaydedildi.")
     return Jacobian_matrix
 
 if __name__ == "__main__":
-    # Bu betik, sistemin diferansiyel topolojisini sembolik olarak haritalandırır
     derive_symbolic_jacobian()
+

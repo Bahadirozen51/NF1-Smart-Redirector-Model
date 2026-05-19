@@ -261,7 +261,7 @@ Bu depo, yeni bir biyo-nanoteknoloji paradigmasını araştırmaktadır: **Progr
 Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör baskılama mekanizmalarının kaybının ardından bozulan yolak sinyalizasyonunun kısmen yeniden dengelenip dengelenemeyeceğini araştırmaya dayanmaktadır:
 
 1. **NF1 Aracılı Homeostatik Kontrol:** *NF1* geni, aktif KRAS-GTP'yi inaktif KRAS-GDP durumuna dönüştüren kritik bir Ras-GAP (GTPaz Aktive Eden Protein) olan Nörofibromin proteinini kodlar.
-2. **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı veya inaktivasyonu bu GAP aracılı katalitik anahtarı ortadan kaldırır; KRAS'ı kalıcı olarak aktif konfigürasyonunda bırakır ve MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre proliferasyonunu tetikler.
+2. **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı ellerinden bu GAP aracılı katalitik anahtarı ortadan kaldırır; KRAS'ı kalıcı olarak aktif konfigürasyonunda bırakır ve MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre proliferasyonunu tetikler.
 3. **Hedefli Bozulma:** Mühendisliği yapılmış sentetik RNA yapısının (**SRX-RNA01**), kanonik Ras-GAP restorasyonundan bağımsız olarak, KRAS-effektör etkileşim dinamiklerini bozabilen geçici bir yapısal modülatör olarak işlev görmesi ve doğrudan aktif KRAS konfigürasyonlarına kilitlenerek aşağı akış efektör katılımını sterik/alosterik olarak engellemesi hipotezleştirilmiştir.
 
 ---
@@ -269,7 +269,7 @@ Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör bask�
 ## 📐 Faz V: Deterministik Sistem ve Özdeğer Topolojisi
 *Motor: notebooks/eigenvalue_scan.py*
 
-Hücre içi homeostatik kaskat; `[KRAS]`, `[pERK]`, `[ROS]` ve hafıza çekirdeği `[M]` arasındaki doğrusal olmayan diferansiyel denklemlerle (ODE) modellenmiştir. Sistem kararlılığı, Jakobiyen matrisinin özdeğer spektrumu üzerinden Lyapunov kriterlerine göre taranmaktadır. Negatif gerçel kısımlar ($\max(\text{Re}(\lambda_i)) < 0$) sistemin asimptotik olarak kararlı olduğunu ve patolojik sinyal girdilerini sönümleyebildiğini doğrulamaktadır. NF1-/- mutasyon rejimi altında hesaplanan karmaşık özdeğer çifti, sistemin bir kaotik çatallanmaya girmeden sönümlü bir osilasyon (Damped Oscillation) sergilediğini kanıtlar.
+Hücre içi homeostatik kaskat; `[KRAS]`, `[pERK]`, `[ROS]` ve hafıza çekirdeği `[M]` arasındaki doğrusal olmayan diferansiyel denklemlerle (ODE) modellenmiştir. Sistem kararlılığı, Jakobiyen matrisinin özdeğer spektrumu üzerinden Lyapunov kriterlerine göre taranmaktadır. Negatif gerçel kısımlar ($\max(\text{Re}(\lambda_i)) < 0$) sistemin asimptotik olarak kararlı olduğunu ve patolojik sinyal girdilerini sönümleyebildiğini doğrulamaktadır. NF1-/- mutasyon rejiminde hesaplanan karmaşık özdeğer çifti, sistemin bir kaotik çatallanmaya girmeden sönümlü bir osilasyon (Damped Oscillation) sergilediğini kanıtlar.
 
 ---
 
@@ -282,7 +282,7 @@ Hücre içi moleküler flüktüasyonlar ve transkripsiyonel çalkantılar, aditi
 
 ## 📋 Öngörülen Araştırma Kapsamı ve Kısıtlamalar
 * **Fenomenolojik Katsayılar:** Kinetik denklemler, biyofiziksel olmayan, optimize edilmiş soyutlamalar üzerinde çalışır.
-* **Moleküler Doğrulama Yoktur:** Hücre hattı validasyonu veya ıslak laboratuvar biyokimyasal takibi içermez.
+* **Moleküler Doğrulama Yoktur:** Hücre hattı validasyonu ellerinden veya ıslak laboratuvar biyokimyasal takibi içermez.
 * **Yalnızca Soyut Sistem Seviyesi:** Tamamen çekim havzası topolojisini haritalandırmayı amaçlayan keşifsel bir hesaplamalı çerçevedir.
 
 ---
@@ -295,8 +295,7 @@ Bu hesaplamalı modeli araştırmalarınızda kullanırsanız, lütfen aşağıd
 
 <blockquote>
 ⚠️ <strong>Technical Disclaimer & Framework Validation Notice:</strong> 
-Bu depoda sunulan sayısal metrikler, güven aralıkları ($\pm\text{SD}$), hata metrikleri ve yanlış aktivasyon yüzdeleri, yapısal doğrulama amacıyla tanımlanmış parametrik sınırlar altında oluşturulan prototip simülasyon çıktılarıdır. Temel deneysel in vitro veya in vivo analitik klinik verileri oluşturmazlar.
+Bu depoda sunulan sayısal metrikler, güven aralıkları ($\pm\text{SD}$), hata metrikleri ve yanlış aktivasyon yüzdeleri, yapısal doğrulama amacıyla tanımlanmış parametrik sınırlar altında oluşturulan prototip simülasyon çıktılarıdır. Temel deneysel in vitro veya in vivo analitik klinik verileri oluşturolarak yorumlanmamalıdır.
 </blockquote>
-
 
 

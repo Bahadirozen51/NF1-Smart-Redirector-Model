@@ -1,82 +1,64 @@
 import os
-import sys
+import json
+import numpy as np
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'notebooks')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'simulations')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'bridge_models')))
-
-def execute_master_pipeline():
-    print("=" * 80)
-    print("      NF1-SMART-REDIRECTOR-MODEL: MASTER COMPREHENSIVE ANALYSIS PIPELINE")
-    print("=" * 80)
-
-    # Klasör Kontrolü
-    if not os.path.exists('figures'):
-        os.makedirs('figures')
-
-    # FAZ 1: Sürekli Rejim Diferansiyel Denklem Çözümü
-    try:
-        from coupled_ode_v1 import execute_core_validation
-        execute_core_validation()
-    except Exception as e:
-        print(f"[!] Faz 1 Hatası: {str(e)}")
-
-    # FAZ 1.5: BIOPHYSICAL BRIDGE LAYER (Yeni Eklenen Köprü Katmanı)
-    print("\n" + "-"*50)
-    print("[FAZ 1.5] Multi-Scale Biophysical Translation Mapping Engine")
-    print("-"*50)
-    try:
-        from occupancy_to_signal import calculate_biophysical_bridge
-        # Biopython çıktısı olan 2.85 Å ve 45 temas noktası köprüye besleniyor
-        calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45)
-    except Exception as e:
-        print(f"[!] Faz 1.5 Köprü Hatası: {str(e)}")
-
-    # FAZ 2: SymPy Sembolik Jacobian Analizi
-    try:
-        from jacobian_analysis import derive_symbolic_jacobian
-        derive_symbolic_jacobian()
-    except Exception as e:
-        print(f"[!] Faz 2 Hatası: {str(e)}")
-
-    # FAZ 3: Hopf Bifurcation ve Sınır Taraması
-    try:
-        from jacobian_bifurcation_analysis import generate_bifurcation_and_phase_portrait
-        generate_bifurcation_and_phase_portrait()
-    except Exception as e:
-        print(f"[!] Faz 3 Hatası: {str(e)}")
-
-    # FAZ 4: Spektral Kararlılık Analizi
-    try:
-        from eigenvalue_scan import run_dynamic_eigenvalue_analysis
-        run_dynamic_eigenvalue_analysis()
-    except Exception as e:
-        print(f"[!] Faz 4 Hatası: {str(e)}")
-
-    # FAZ 5: Global Attractor Yakınsama İspatı
-    try:
-        from lyapunov_landscape import run_lyapunov_descent_analysis
-        run_lyapunov_descent_analysis()
-    except Exception as e:
-        print(f"[!] Faz 5 Hatası: {str(e)}")
-
-    # FAZ 6: Stokastik Langevin Gürültü Tolerans Testi
-    try:
-        from stochastic_noise import run_real_stochastic_simulation
-        run_real_stochastic_simulation()
-    except Exception as e:
-        print(f"[!] Faz 6 Hatası: {str(e)}")
-
-    # FAZ 7: Geçmiş Kuyruğu Zaman Gecikmeli Hücre Modeli
-    try:
-        from param_exploration import run_discrete_dde_simulation
-        run_discrete_dde_simulation()
-    except Exception as e:
-        print(f"[!] Faz 7 Hatası: {str(e)}")
-
-    print("\n" + "="*80)
-    print("✅ MASTER SUCCESS: Çok ölçekli biyofiziksel modelleme akışı tamamlandı.")
-    print("=" * 80)
+def calculate_biophysical_bridge(mean_distance_angstrom, num_contacts):
+    # Gaz sabiti ve fizyolojik sıcaklık tanımları
+    R = 8.314e-3  
+    T = 310.15     
+    
+    # Fenomenolojik afinite skorlaması (Proxy ΔG)
+    if mean_distance_angstrom > 0:
+        base_affinity = (num_contacts / mean_distance_angstrom) * 0.5
+    else:
+        base_affinity = 0
+        
+    delta_G = -base_affinity * 2.303 * (R * T)
+    
+    # Ayrışma sabiti ve fiziksel sınır filtreleme (Clamping)
+    K_d_raw = np.exp(delta_G / (R * T))
+    K_d = np.clip(K_d_raw, 1e-12, 1e-3) 
+    
+    # Langmuir Reseptör Doluluk Olasılığı (Occupancy θ)
+    ligand_concentration = 10e-9 
+    occupancy = ligand_concentration / (K_d + ligand_concentration) if (K_d + ligand_concentration) > 0 else 0
+    
+    # Çok Ölçekli Parametre Ağırlıklarının Güncellenmesi
+    kras_weight = 0.4 * (1.0 - occupancy)
+    perk_weight = 0.5 * (1.0 - occupancy)
+    ros_weight  = 0.1
+    
+    total_w = kras_weight + perk_weight + ros_weight
+    kras_weight_norm = kras_weight / total_w
+    perk_weight_norm = perk_weight / total_w
+    ros_weight_norm = ros_weight / total_w
+    
+    # Parametre Soykütüğü İzleme Matrisi (Provenance Tracking)
+    parameter_trace = {
+        "provenance_metadata": {
+            "framework_layer": "Multi-Scale Translational Mapping Bridge"
+        },
+        "upstream_structural_inputs": {
+            "mean_distance_angstrom": float(mean_distance_angstrom),
+            "num_contacts": int(num_contacts)
+        },
+        "downstream_systems_outputs": {
+            "fractional_occupancy_probability": float(occupancy),
+            "derived_normalized_weights": {
+                "KRAS_weight": float(kras_weight_norm),
+                "pERK_weight": float(perk_weight_norm),
+                "ROS_weight": float(ros_weight_norm)
+            }
+        }
+    }
+    
+    if not os.path.exists('bridge_models'):
+        os.makedirs('bridge_models')
+        
+    with open('bridge_models/parameter_trace.json', 'w', encoding='utf-8') as f_out:
+        json.dump(parameter_trace, f_out, indent=4, ensure_ascii=False)
+        
+    return parameter_trace
 
 if __name__ == "__main__":
-    execute_master_pipeline()
+    calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45)

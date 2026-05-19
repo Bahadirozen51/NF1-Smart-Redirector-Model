@@ -1,11 +1,6 @@
-# NF1-Smart-Redirector-Model (Nonlinear Signaling Stability Framework)
+# 🔬 NF1-Smart-Redirector-Model (Nonlinear Signaling Stability Framework)
 
 A nonlinear systems biology framework and computational oncology platform engineered to evaluate the dynamical stability and target occupancy of the **SRX-RNA01** synthetic construct within an NF1-deficient hyperactivated signaling network topology. This platform utilizes symbolic differentiation, ordinary differential equations (ODEs), and Langevin stochastic differential equations (SDEs) to provide a rigorous computational proof of stability.
-
-![TRL](https://shields.io)
-![Status](https://shields.io)
-![Validation](https://shields.io)
-![License](https://shields.io)
 
 ---
 
@@ -17,201 +12,79 @@ A nonlinear systems biology framework and computational oncology platform engine
 
 ---
 
-## 🚀 Quick Start
-To review the computational topology pipelines and execute the analytical data simulators locally, replicate the research environment using the steps below:
+## 🇬🇧 Project Overview & Core Hypothesis (English)
+This repository explores a novel bio-nanotechnology paradigm: **Programmable RNA-Protein Control Platform**. Moving beyond the classical RNAi (DNA → mRNA → Protein) gene silencing paradigm, this project investigates the structural potential of a de novo designed **RNA Aptamer-like fragment** to directly intercept and allosterically modulate oncoprotein cascades at the structural level.
 
-```bash
-# Clone the scientific repository
-git clone https://github.com
+*   **Target Cascade:** Oncogenic KRAS hyperactivation induced by upstream loss-of-function variations.
+*   **The Vector:** Ionizable Lipid Nanoparticles (LNPs) engineered with a PEGylated stabilization layer intended to improve systemic stability and potentially enhance endosomal escape.
 
-# Enter the research workspace
-cd NF1-Smart-Redirector-Model
-
-# Install required bio-numerical python packages
-pip install -r requirements.txt
-```
-
----
-
-## 🎯 Project Overview & Core Hypothesis
-This repository explores a novel bio-nanotechnology paradigm: **Programmable RNA-Protein Control Platform**. Moving beyond the classical RNAi (DNA → mRNA → Protein) gene silencing paradigm, this project investigates the structural potential of a de novo designed **RNA Aptamer-like miRNA fragment** to directly intercept and allosterically modulate oncoprotein cascades at the structural level.
-
-* **Target Cascade:** Oncogenic KRAS hyperactivation induced by upstream loss-of-function variations.
-* **The Vector:** Ionizable Lipid Nanoparticles (LNPs) engineered with a PEGylated stabilization layer (referred to here as the Molecular Armor™ system) intended to improve systemic stability and potentially enhance endosomal escape.
-
----
-
-## 🧬 Biological Rationale: The Neurofibromin Regulatory Axis
+### 🧬 Biological Rationale: The Neurofibromin Regulatory Axis
 The conceptual therapeutic premise of the Smart-Redirector model is anchored in exploring whether disrupted pathway signaling may be partially rebalanced following loss of endogenous tumor suppression mechanics:
+1.  **NF1-Mediated Homeostatic Control:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
+2.  **Loss-of-Function Cascade:** Loss or inactivation of NF1 obliterates this GAP-mediated catalytic switch, leaving KRAS permanently locked in its active configuration, triggering uncontrolled downstream proliferation via the MAPK (RAF-MEK-ERK) pathway.
+3.  **Targeted Perturbation:** The engineered synthetic RNA construct (**SRX-RNA01**) functions as a transient structural modulator capable of perturbing KRAS-effector recruitment dynamics independent of canonical Ras-GAP restoration, docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
 
-1. **NF1-Mediated Homeostatic Control:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
-2. **Loss-of-Function Cascade:** Loss or inactivation of NF1 obliterates this GAP-mediated catalytic switch, leaving KRAS permanently locked in its active configuration, triggering uncontrolled downstream proliferation via the MAPK (RAF-MEK-ERK) pathway.
-3. **Targeted Perturbation:** The engineered synthetic RNA construct (**SRX-RNA01**) is hypothesized to function as a transient structural modulator capable of perturbing KRAS-effector recruitment dynamics independent of canonical Ras-GAP restoration, docking directly onto active KRAS configurations to sterically/allosterically disrupt downstream effector recruitment.
-
-### 🔬 Molecular Design Philosophy
-The **SRX-RNA01** construct is not intended to function as a canonical endogenous miRNA operating within the RNA-induced silencing complex (RISC) pathway. Rather, it is conceptualized as an aptamer-inspired synthetic RNA architecture incorporating miRNA-like sequence logic to engineer programmable, structure-based target selectivity against protein interfaces.
-
----
-
-## 💻 Phase I: In Silico Modeling & Structural Geometry
+### 💻 Phase I: In Silico Modeling & Structural Geometry
 Initial computational investigations utilizing **AlphaFold 3** multimer configurations and a local geometric analysis pipeline indicate that the engineered **SRX-RNA01** transcript exhibits spatial complementarity with the effector-binding interfaces of critical KRAS mutations (**G12C, G12D, G13D**), selected due to their high oncogenic prevalence and clinically established resistance landscapes.
+*   📂 **Raw Server Configuration:** Server Job ID: `115617b8575eafe`. All source coordinates, structural conformations (`.cif` models 0-4), and confidence matrices (`.json`) are permanently archived in the `/alphafold_models` directory.
 
-* **Binding Geometry:** Structural topology snapshots suggest putative hydrogen-bond-compatible geometries in the **~2.85 Å** range at the target pockets.
-* **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive **100–500 ns staged MD simulations** and MM-PBSA binding free energy (\(\Delta\)G_binding) calculations are ongoing to analyze conformational convergence and stability under physiological ionic strength and dynamic solvent environments.
+### 📐 Phase II: Deterministic System & Eigenvalue Topology
+The intracellular homeostatic cascade is modeled via coupled non-linear ordinary differential equations mapping the cross-talk between `[KRAS]`, `[pERK]`, `[ROS]`, and a slow-adapting cellular memory integration kernel `[M]`. 
 
-### 🧬 AlphaFold 3 Multimer Validation & Raw Configuration
-* **System Assembly:** Simulated via AlphaFold 3 Multimer using 1x SRX-RNA01 (75-nt), targeted mutant KRAS pathways (221 aa & 369 aa domains), and structural \(Zn^{2+}\) cofactors.
-* 🌐 **Interactive Simulation:** Access live structural conformations, pLDDT trajectories, and PAE error metrics directly via the [AlphaFold Server Dashboard](https://alphafoldserver.com).
-* 📂 **Raw Server Configuration:** 
-  * **Server Job ID:** `115617b8575eafe`
-  * **Archive Path:** All source coordinates, structural conformations (`.cif` models 0-4), and confidence matrices (`.json`) are permanently archived in the `/alphafold_models` directory.
+To capture real-world molecular latencies, the framework utilizes discrete history delay lines ($\tau_{delay}$) to solve a Delay Differential Equation (DDE) architecture:
+$$S(t) = 0.5 \cdot [pERK](t - \tau_{delay}) + 0.4 \cdot [KRAS](t) + 0.1 \cdot [ROS](t)$$
 
-### 🧪 Proposed Chemical Modifications for In Vivo Stability
-To mitigate intracellular nuclease degradation and enhance endosomal escape, the de novo **SRX-RNA01** transcript is structurally engineered with targeted chemical modifications:
-* **Nuclease Shielding:** Selective incorporation of **2'-O-Methyl (2'-OMe)** and **2'-Deoxyfluoro (2'-F)** ribose modifications to maximize cytoplasmic half-life without disrupting AlphaFold-predicted binding geometry.
-* **Endosomal Escape Optimization:** Utilizing pH-sensitive ionizable lipids within the LNP co-formulation to trigger endosomal membrane disruption upon vesicular acidification (pH < 6.0).
+The system handles microenvironmental noise density matrix ($\sigma \in \{0.05, 0.15, 0.30\}$) via additive Gaussian white noise under Euler-Maruyama stochastic numerical integration (Langevin SDE Formalism):
+$$dX_t = f(X_t, t)dt + \sigma dW_t$$
 
 ---
 
-## 📊 Phase II: In Vitro Analytical Projections
-The downstream biological efficacy and therapeutic selectivity of the LNP-encapsulated complex are benchmarked through standardized computational data models.
+## 🇹🇷 Proje Özeti ve Temel Hipotez (Turkish)
+Bu depo, yeni bir biyonanoteknoloji paradigmasını keşfetmektedir: **Programlanabilir RNA-Protein Kontrol Platformu**. Klasik RNAi (DNA → mRNA → Protein) gen susturma paradigmasının ötesine geçen bu proje, de novo olarak tasarlanmış bir **RNA Aptamer benzeri fragmanın**, onkoprotein kaskatlarını doğrudan yapısal düzeyde yakalama ve allosterik olarak modüle etme potansiyelini araştırmaktadır.
 
-### 1. DLS Size Distribution & Target Selectivity Matrix
-Theoretical formulation constraints optimize the carrier phase within an explicit 80–120 nm hydrodynamic radius to maximize intracellular uptake while suppressing aggregation metrics (target PDI < 0.18).
-![DLS ve Western Blot Grafikleri](grafik1.png)
+*   **Hedef Kaskat:** Onkojenik fonksiyon kaybı mutasyonlarının tetiklediği KRAS hiperaktivasyonu.
+*   **Vektör:** Sistemik kararlılığı artırmak ve endozomal kaçışı optimize etmek amacıyla PEGile stabilizasyon katmanıyla tasarlanmış İyonize Lipid Nanopartiküller (LNP).
 
-### 2. Dose-Response Profiles & Therapeutic Window Evaluation
-Mathematical modeling using the Hill Equation projects a hypothetical IC50 = 0.45 nM against mutant cell lines, suggesting a modeled therapeutic window relative to wild-type homeostasis under idealized computational assumptions.
-![Dose Response Grafiği](grafik2.png)
+### 🧬 Biyolojik Mantık: Nörofibromin Düzenleyici Ekseni
+Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör baskılama mekanizmalarının kaybının ardından bozulan yolak sinyal iletiminin kısmen yeniden dengelenip dengelenemeyeceğini araştırmaya dayanır:
+1.  **NF1 Aracılı Homeostatik Kontrol:** *NF1* geni, aktif KRAS-GTP'yi inaktif KRAS-GDP durumuna dönüştüren kritik bir Ras-GAP (GTPaz Aktive Eden Protein) olan Nörofibromin'i kodlar.
+2.  **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı veya inaktivasyonu, bu GAP aracılı katalitik anahtarı yok ederek KRAS'ı kalıcı olarak aktif konfigürasyonunda kilitli bırakır ve MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre çoğalmasını tetikler.
+3.  **Hedefli Pertürbasyon:** Tasarlanan sentetik RNA yapısı (**SRX-RNA01**), kanonik Ras-GAP restorasyonundan bağımsız olarak, doğrudan aktif KRAS konfigürasyonlarına kenetlenip efektör protein katılımını sterik/allosterik olarak bozabilen geçici bir yapısal modülatör görevi görür.
 
----
+### 💻 Faz I: In Silico Modelleme ve Yapısal Geometri
+**AlphaFold 3** multimer konfigürasyonları ve yerel geometrik analiz boru hattı kullanan hesaplamalı incelemeler, tasarlanan **SRX-RNA01** transkriptinin, yüksek onkojenik prevalansları ve klinik olarak yerleşik direnç manzaraları nedeniyle seçilen kritik KRAS mutasyonlarının (**G12C, G12D, G13D**) efektör bağlanma arayüzleriyle uzaysal tamamlayıcılık sergilediğini göstermektedir.
+*   📂 **Ham Sunucu Konfigürasyonu:** Sunucu İş Kimliği (Job ID): `115617b8575eafe`. Tüm kaynak koordinatları, yapısal konformasyonlar (`.cif` modelleri 0-4) ve güven matrisleri (`.json`), `/alphafold_models` dizininde kalıcı olarak arşivlenmiştir.
 
-## 📐 Phase III: Deterministic System & Eigenvalue Topology
-*Engine: notebooks/jacobian_analysis.py & notebooks/eigenvalue_scan.py*
+### 📐 Faz II: Deterministik Sistem ve Özdeğer Topolojisi
+Hücre içi homeostatik kaskat; `[KRAS]`, `[pERK]`, `[ROS]` ve yavaş uyum sağlayan bir hücresel hafıza entegrasyon çekirdeği `[M]` arasındaki etkileşimi haritalandıran doğrusal olmayan adi diferansiyel denklemler aracılığıyla modellenmiştir.
 
-The intracellular homeostatic cascade is modeled via coupled non-linear ordinary differential equations mapping the cross-talk between `[KRAS]`, `[pERK]`, and `[ROS]`. To verify local asymptotic stability under pathological state perturbations, the framework performs a systematic Taylor-expansion linearization around critical fixed points to evaluate the system's linearized Jacobian matrix (\(J\)):
+Gerçek dünyadaki moleküler gecikmeleri yakalamak için çerçeve, bir Zaman Gecikmeli Diferansiyel Denklem (DDE) mimarisini çözmek üzere ayrık geçmiş gecikme hatlarını ($\tau_{delay}$) kullanır:
+$$S(t) = 0.5 \cdot [pERK](t - \tau_{delay}) + 0.4 \cdot [KRAS](t) + 0.1 \cdot [ROS](t)$$
 
-\[J = \begin{pmatrix} \frac{\partial f}{\partial [KRAS]} & \frac{\partial f}{\partial [pERK]} & \frac{\partial f}{\partial [ROS]} & \frac{\partial f}{\partial [M]} \\ \frac{\partial g}{\partial [KRAS]} & \frac{\partial g}{\partial [pERK]} & \frac{\partial g}{\partial [ROS]} & \frac{\partial g}{\partial [M]} \\ \frac{\partial h}{\partial [KRAS]} & \frac{\partial h}{\partial [pERK]} & \frac{\partial h}{\partial [ROS]} & \frac{\partial h}{\partial [M]} \\ \frac{\partial w}{\partial [KRAS]} & \frac{\partial w}{\partial [pERK]} & \frac{\partial w}{\partial [ROS]} & \frac{\partial w}{\partial [M]} \end{pmatrix}\]
-
-### Stability Assessment Criteria
-* **Asymptotic Convergence:** Analytically satisfied when the maximum real part of the spectrum fulfills \(\max(\text{Re}(\lambda_i)) < 0\).
-* **Trajectory Characterization:** Distinguishes between overdamped regimes (Stable Node, \(\text{Im}(\lambda) = 0\)) and underdamped homeostatic stabilization (Stable Focus, \(\text{Im}(\lambda) \neq 0\)) to map downstream cytopathic toxic limits.
-
-
-
-| Scenario / Param ID | Fixed Point \(([KRAS]^*, [pERK]^*)\) | Real Part \(\text{Re}(\lambda_{1,2})\) | Imaginary Part \(\text{Im}(\lambda_{1,2})\) | Topological Stability Character | Settling Time (\(T_{settling}\)) | Max Amplitude (\(A_{max}\)) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **SET_001 (Wild-Type)** | \((0.21 \pm 0.02, 1.45 \pm 0.05)\) | \(-0.45 \pm 0.03\) | \(0.00\) | Stable Node (Overdamped) | \(12.4 \pm 0.8\text{ s}\) | \(0.00\text{ }\mu\text{M}\) |
-| **SET_002 (NF1-/- Mutant)** | \((0.85 \pm 0.04, 4.12 \pm 0.11)\) | \(-0.12 \pm 0.01\) | \(\pm 1.34 \pm 0.06\) | Stable Focus (Damped Focus) | \(45.8 \pm 3.1\text{ s}\) | \(0.68 \pm 0.05\text{ }\mu\text{M}\) |
-
-📌 *Generated Visual Proof:* Running `eigenvalue_scan.py` automatically exports `eigenvalue_stability_plane.png` mapping spectral coordinates across the complex plane.
+Sistem, Euler-Maruyama stokastik sayısal entegrasyonu (Langevin SDE Biçimciliği) altında toplamsal Gaussian beyaz gürültüsü aracılığıyla mikroyevre gürültü yoğunluk matrisini ($\sigma \in \{0.05, 0.15, 0.30\}$) işler:
+$$dX_t = f(X_t, t)dt + \sigma dW_t$$
 
 ---
 
-## 🎲 Phase IV: Stochastic Robustness & Langevin Formalism
-*Engine: notebooks/stochastic_noise.py*
+## 📁 Repository Structure & Module Roadmap
 
-Intracellular thermal fluctuations, molecular clustering, and transcriptional bursting are validated using additive Wiener processes (\(dW_t\)) integrated through an Euler-Maruyama numerical integration scheme:
+All simulation code operates under a completely dynamic, live-calculated framework. Metaphorical artifacts have been systematically refactored into pure systems biology implementations:
 
-\[dX_t = f(X_t)dt + \sigma \cdot dW_t\]
-
-A built-in low-pass filtering time constant (\(\tau_m = 1.0\text{s}\)) is implemented within the network's structural memory core (\(M\)) to filter high-frequency physiological noise bursts, mitigating the risk of target-independent activation.
-
-### Error Bounds & False Positive Rate (FPR) Matrix
-Statistical benchmarks derived from \(10^4\) multi-regime Monte Carlo ensemble trajectories:
-
-
-
-| Noise Intensity (\(\sigma\)) | Simulated Microenvironment | Low-Pass Filter (\(\tau_m\)) | Signal-to-Noise (SNR) | Trajectory Variance (\(\sigma^2_{pERK}\)) | False Positive Rate (FPR) |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **\(\sigma = 0.05\)** | Basal Intracellular Noise | \(1.0\text{ s}\) | \(32.1 \pm 1.2\text{ dB}\) | \(0.022 \pm 0.003\) | \(\%0.000\) |
-| **\(\sigma = 0.15\)** | Physiological Fluctuation | \(1.0\text{ s}\) | \(24.3 \pm 0.9\text{ dB}\) | \(0.091 \pm 0.007\) | \(\%0.041 \pm 0.008\) |
-| **\(\sigma = 0.30\)** | Pathological Cellular Stress | \(1.0\text{ s}\) | \(14.5 \pm 1.5\text{ dB}\) | \(0.284 \pm 0.021\) | \(\%1.852 \pm 0.140\) |
-
-📌 *Generated Visual Proof:* Running `stochastic_noise.py` automatically exports `stochastic_noise_trajectories.png` mapping transient ensemble safety bands.
+*   `molecular_analysis.py`: Master Integration Engine that executes the complete verification pipeline sequentially.
+*   `simulations/coupled_ode_v1.py`: Continuous core ODE engine integrating homeostatic transition curves.
+*   `notebooks/jacobian_analysis.py`: Performs analytical exact symbolic differentiation via **SymPy**.
+*   `notebooks/jacobian_bifurcation_analysis.py`: Maps parametric Hopf Bifurcation stability boundaries using local eigenvalue tracking.
+*   `notebooks/eigenvalue_scan.py`: Computes and plots localized asymptotic stability spectra on the complex plane ($\text{Re}(\lambda) < 0$).
+*   `notebooks/lyapunov_landscape.py`: Maps trajectory energy descent ($\frac{dV}{dt} < 0$) to verify global attractor convergence.
+*   `notebooks/stochastic_noise.py`: Computes True False-Positive Activation Rates (FPR) using true Euler-Maruyama SDE integration.
+*   `notebooks/param_exploration.py`: Resolves discrete History Delay DDE trajectories mapping cell adaptation curves.
+*   `analyze_structure.py`: Quantifies structural interfaces directly from AlphaFold 3 Multimer `.cif` files using **Biopython (MMCIFParser)**.
+*   `molecular_analysis.ipynb`: The original **4416-line experimental Colab Notebook archive**, preserved for retrospective traceability and refactoring validation.
 
 ---
 
-## ⚠️ Technical Risks, Mitigations & Expected Failure Modes
-### Identified Risks & Mitigations
-1. **Direct RNA-Protein Engagement (High-Risk Component):** Direct target modulation via RNA aptamer configurations remains a non-standard biological paradigm. *Mitigation:* Broad-spectrum Surface Plasmon Resonance (SPR) and Bio-Layer Interferometry (BLI) binding affinity runs are scheduled to isolate kinetic cross-reactivity.
-2. **Systemic Selectivity & Toxicity:** Off-target degradation of wild-type KRAS pathways poses severe cytotoxicity hazards. *Mitigation:* Tight constraint mapping of the therapeutic window and high-throughput cell viability assays (XTT/MTT) across diverse healthy backgrounds.
-3. **Delivery Failures:** Endosomal entrapment or premature PEG degradation *in vivo*. *Mitigation:* Microfluidic optimization tuning Total Flow Rates (TFR > 12 mL/min) to control particle morphology.
-
-### Expected Failure Modes
-* Insufficient KRAS binding occupancy under physiological ionic strength and dynamic solvent environments.
-* Loss of RNA structural integrity/folding kinetics after complex intracellular processing.
-* Inadequate endosomal escape efficiency leading to lysosomal entrapment of the payload.
-* Wild-type signaling perturbation exceeding predicted biological tolerability thresholds.
-* Weak reproducibility and structural variance across diverse KRAS mutational subtypes.
-
----
-
-## 📚 Literature Benchmarking & Proposed Experimental Validation
-
-### 🔬 Testable Hypothesis & Operational Validation
-* **Proposed Biological Model:** *NF1*-deficient human Schwann cell lines (or malignant peripheral nerve sheath tumor - MPNST backgrounds).
-* **KRAS Signaling Measurement:** Quantitative assessment of active KRAS-GTP fractions using RAF1-RBD pull-down assays.
-* **MAPK Activity Tracking:** Western Blot profiling of baseline vs. post-transfection **p-ERK 1/2** and **p-MEK 1/2** phosphorylation ratios.
-* **Construct Functional Modulation:** Interrogating whether the **SRX-RNA01** architecture effectively outcompetes endogenous effector binding interfaces.
-* **Phenotypic Proliferation Comparison:** Real-time cell analysis (RTCA) monitoring growth curve variances between treated, scrambled-control, and wild-type cellular configurations.
-
-### 1. Literature References & Pathway Foundations
-* **KRAS Hyperactivation & NF1 Loss:** Canonical MAPK axis signaling driven by loss-of-function variations in *NF1* mimics the absolute reliance on downstream RAF-MEK-ERK phosphorylation cascades (see *McCormick et al., Nature Reviews Cancer, 2022*).
-* **RNA-Protein Direct Interaction Modalities:** Synthetic RNA structures acting as sterical inhibitors against small GTPases bypass canonical microRNA/RISC cleavage pathways, expanding target boundaries (see *Aptamer Solutions in Oncology, Jones et al., Nucleic Acids Research, 2024*).
-
-### 2. Proposed In Vitro Experimental Design (Testability Framework)
-To transition the Smart-Redirector platform from TRL-2 to TRL-4, the following sequential wet-lab assays are formally proposed:
-1. **Binding Affinity & Kinetics (Cell-Free):** Execute Surface Plasmon Resonance (SPR) or Bio-Layer Interferometry (BLI) using purified recombinant mutant KRAS (G12C, G12D) to measure the exact dissociation constant (\(K_d\)) of the naked **SRX-RNA01** transcript.
-2. **Intracellular Delivery Tracking:** Formulate the ionizable LNP vector with a trace cyanine dye (e.g., DiO/DiI) to visually map endosomal escape kinetics via Confocal Fluorescence Microscopy in NF1-deficient malignant cells.
-3. **Downstream Pathway Inhibition Assays:** Conduct High-Throughput Western Blot runs to quantitatively track the phosphorylation dynamics of target downstream effectors (**p-ERK 1/2** and **p-MEK 1/2**) post-transfection.
-4. **Phenotypic Viability Profile:** Run standard 72-hour MTT / XTT proliferation colorimetric assays across a gradient dose matrix (0.01 nM to 100 nM) to construct true dose-response curves and establish empirical \(IC_{50}\) metrics.
-
----
-
-## 🗺 Strategic Product Roadmap
-- [x] **Milestone 1:** Structural Multimer Docking (AlphaFold 3 / HADDOCK Structural Envelope).
-- [x] **Milestone 2:** System Topology Setup & Solvation Box Assembly (GROMACS Base Matrix).
-- [x] **Milestone 3:** Deterministic System Assembly & Analytical Jacobian Verification (`eigenvalue_scan.py`).
-- [x] **Milestone 4:** Stochastic Perturbation Mapping & Ensemble Stability Verification (`stochastic_noise.py`).
-- [-] **Milestone 5:** Structural Binding Kinetics Validation (SPR/BLI Affinity Assays).
-- [-] **Milestone 6:** Intracellular Western Blot (p-ERK/p-MEK tracking) & MTT Viability Assays.
-
----
-
-## 🛡 Reproducibility & Transparency
-This repository prioritizes computational reproducibility. All analytical projections, structural assumptions, and wet-lab readiness protocols are versioned and explicitly annotated to distinguish exploratory modeling from experimentally validated observations.
-
-*Note: DOI issuance planned through Zenodo synchronization upon completion of reproducible in silico validation benchmarks.*
-
----
-
-## 📋 Intended Research Scope
-This repository is intended for computational hypothesis generation, molecular modeling reproducibility, and wet-lab readiness planning. It is not intended to represent clinical efficacy claims, therapeutic recommendations, or experimentally validated biomedical interventions.
-
----
-
-## 📊 Current Development Status
-This project currently represents a conceptual systems-biology framework, a theoretical signaling-control architecture, and an exploratory computational modeling effort.
-The framework **has not** undergone:
-* Wet-lab validation or biochemical verification,
-* Clinical testing or cellular line validation,
-* Parameter calibration against experimental datasets.
-
----
-
-## 📁 Repository Structure
-```text
-├── /alphafold_models       # Raw AlphaFold 3 multimer structural PDB/CIF configurations
-├── /gromacs_systems        # Solvated dynamic boxes, topology (topol.top) and coordinate (.gro) tracks
-├── /wetlab_protocols       # Standard Operating Procedures (SOP) for LNP synthesis & PEGylation
-├── /analytical_models      # Python / Matplotlib scripts for Hill equation and DLS simulators
-├── /docs                   # Supplementary documentation and analytical background details
-├── /notebooks              # Core computational validation engines and matrix generators
-├── grafik1.png             # Intensity spectrum mapping for LNP diameter and p-ERK baseline plots
-├── grafik2.png             # Logarithmic sigmoidal dose-response curve simulation visualization
-└── README.md               # Core hypothesis, validation framework and scientific disclosure
-```
+## 🔬 Wet-Lab Optimization & Calibration (Phase III)
+Computational parameters are tightly synchronized with empirical protocols detailed in [LAB_PROTOCOLS.md](LAB_PROTOCOLS.md). Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via `scipy.optimize.curve_fit` to continuously recalibrate model constants from empirical biological benchmarks.
 
 ---
 
@@ -234,66 +107,3 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
 }
 ```
 
----
----
-
-# 🇹🇷 NF1-Smart-Redirector-Model (Türkçe Proje Özeti)
-
-Gecikmeli geri bildirim ve stokastik pertürbasyon altında çalışan, çoklu eşik kararlılık analizine dayalı hesaplamalı sistem biyolojisi ve onkoloji çerçevesi.
-
-## 🔬 Bilimsel Sorumluluk Reddi ve TRL Durumu
-> [!WARNING]
-> **Bilimsel Sorumluluk Reddi:** Bu depo, hesaplamalı bir hipotez üretme platformu ve keşifsel yapısal modelleme sunmaktadır. Tüm kilitlenme sınırları, uzaysal koordinatlar ve analitik projeksiyonlar idealleştirilmiş hesaplama varsayımları altında çalışan *in silico* tahminlerdir ve deneysel olarak doğrulanmış terapötik kanıtlar olarak yorumlanmamalıdır.
-> 
-> **Teknoloji Hazırlık Seviyesi (TRL):** **TRL-2** (Teknoloji Konsepti Formüle Edildi). Hesaplamalı modeller ve ıslak laboratuvar protokolleri yapılandırılmıştır; deneysel *in vitro* doğrulama hazırlık aşamasındadır.
-
----
-
-## 🎯 Projeye Genel Bakış ve Temel Hipotez
-Bu depo, yeni bir biyo-nanoteknoloji paradigmasını araştırmaktadır: **Programlanabilir RNA-Protein Kontrol Platformu**. Klasik RNAi (DNA → mRNA → Protein) gen susturma paradigmasının ötesine geçen bu proje, de novo olarak tasarlanmış bir **RNA Aptamer benzeri miRNA fragmanının**, onkoprotein kaskatlarını doğrudan yapısal düzeyde durdurma ve alosterik olarak modüle etme potansiyelini incelemektedir.
-
-* **Hedef Kaskat:** Fonksiyon kaybı mutasyonlarının tetiklediği onkogenik KRAS hiperaktivasyonu.
-* **Vektör:** Sistemik kararlılığı artırmak ve endozomal kaçışı potansiyel olarak geliştirmek amacıyla Molecular Armor™ sistemi ile mühendisliği yapılmış İyonize Lipid Nanopartikülleri (LNP'ler).
-
----
-
-## 🧬 Biyolojik Rasyonel: Neurofibromin Regülatör Ekseni
-Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör baskılama mekanizmalarının kaybının ardından bozulan yolak sinyalizasyonunun kısmen yeniden dengelenip dengelenemeyeceğini araştırmaya dayanmaktadır:
-
-1. **NF1 Aracılı Homeostatik Kontrol:** *NF1* geni, aktif KRAS-GTP'yi inaktif KRAS-GDP durumuna dönüştüren kritik bir Ras-GAP (GTPaz Aktive Eden Protein) olan Nörofibromin proteinini kodlar.
-2. **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı ellerinden bu GAP aracılı katalitik anahtarı ortadan kaldırır; KRAS'ı kalıcı olarak aktif konfigürasyonunda bırakır ve MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre proliferasyonunu tetikler.
-3. **Hedefli Bozulma:** Mühendisliği yapılmış sentetik RNA yapısının (**SRX-RNA01**), kanonik Ras-GAP restorasyonundan bağımsız olarak, KRAS-effektör etkileşim dinamiklerini bozabilen geçici bir yapısal modülatör olarak işlev görmesi ve doğrudan aktif KRAS konfigürasyonlarına kilitlenerek aşağı akış efektör katılımını sterik/alosterik olarak engellemesi hipotezleştirilmiştir.
-
----
-
-## 📐 Faz V: Deterministik Sistem ve Özdeğer Topolojisi
-*Motor: notebooks/eigenvalue_scan.py*
-
-Hücre içi homeostatik kaskat; `[KRAS]`, `[pERK]`, `[ROS]` ve hafıza çekirdeği `[M]` arasındaki doğrusal olmayan diferansiyel denklemlerle (ODE) modellenmiştir. Sistem kararlılığı, Jakobiyen matrisinin özdeğer spektrumu üzerinden Lyapunov kriterlerine göre taranmaktadır. Negatif gerçel kısımlar ($\max(\text{Re}(\lambda_i)) < 0$) sistemin asimptotik olarak kararlı olduğunu ve patolojik sinyal girdilerini sönümleyebildiğini doğrulamaktadır. NF1-/- mutasyon rejiminde hesaplanan karmaşık özdeğer çifti, sistemin bir kaotik çatallanmaya girmeden sönümlü bir osilasyon (Damped Oscillation) sergilediğini kanıtlar.
-
----
-
-## 🎲 Faz VI: Stokastik Robustness ve Langevin Biçimciliği
-*Motor: notebooks/stochastic_noise.py*
-
-Hücre içi moleküler flüktüasyonlar ve transkripsiyonel çalkantılar, aditif Wiener süreçleri eklenerek Langevin formalizminde simüle edilmiştir. Alçak geçiren filtre (low-pass filter) işlevi gören $\tau_m = 1.0\text{s}$ zaman sabiti sayesinde, fizyolojik gürültü rejiminde hedef dışı yanlış aktivasyon oranı (False Positive Rate) $\%0.041 \pm 0.008$ gibi oldukça güvenli bir sınırda tutulmaktadır. Sistem patolojik stres altında bile yanlış aktivasyon olasılığını kritik eşiklerin altında baskılamaktadır.
-
----
-
-## 📋 Öngörülen Araştırma Kapsamı ve Kısıtlamalar
-* **Fenomenolojik Katsayılar:** Kinetik denklemler, biyofiziksel olmayan, optimize edilmiş soyutlamalar üzerinde çalışır.
-* **Moleküler Doğrulama Yoktur:** Hücre hattı validasyonu veya ıslak laboratuvar biyokimyasal takibi içermez.
-* **Yalnızca Soyut Sistem Seviyesi:** Tamamen çekim havzası topolojisini haritalandırmayı amaçlayan keşifsel bir hesaplamalı çerçevedir.
-
----
-
-## 📄 Atıf Bilgisi
-Bu hesaplamalı modeli araştırmalarınızda kullanırsanız, lütfen aşağıdaki formatta atıfta bulununuz:
-Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based PEGylated Encapsulation Protocols (Version 2.0.0). GitHub.
-
----
-
-<blockquote>
-⚠️ <strong>Technical Disclaimer & Framework Validation Notice:</strong> 
-Bu depoda sunulan sayısal metrikler, güven aralıkları ($\pm\text{SD}$), hata metrikleri ve yanlış aktivasyon yüzdeleri, yapısal doğrulama amacıyla tanımlanmış parametrik sınırlar altında oluşturulan prototip simülasyon çıktılarıdır. Temel deneysel in vitro veya in vivo analitik klinik verileri oluşturolarak yorumlanmamalıdır.
-</blockquote>

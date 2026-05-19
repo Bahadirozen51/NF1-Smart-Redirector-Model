@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -50,6 +51,10 @@ def amtp_core_equations(states, t, params):
     return [dKRAS_dt, dpERK_dt, dROS_dt, dM_dt]
 
 def run_lyapunov_descent_analysis():
+    # FileNotFoundError koruması için klasör kontrolü
+    if not os.path.exists('figures'):
+        os.makedirs('figures')
+
     t = np.linspace(0, 150, 3000)
     initial_conditions = [1.8, 1.2, 0.3, 0.0] # Attractor A (Patolojik Başlangıç)
     
@@ -69,13 +74,13 @@ def run_lyapunov_descent_analysis():
         V_t = candidate_lyapunov_function(current_state, base_params)
         v_trajectory.append(V_t)
         
-        # Sayısal türev (dV/dt) hesabı
-        if idx > 0:
+        # Sayısal türev (dV/dt) hesabı ve boyut eşitleme optimizasyonu
+        if idx == 0:
+            dv_dt_trajectory.append(0.0) # Başlangıç anında türevi sıfır kabul ediyoruz
+        else:
             dv_dt = (v_trajectory[idx] - v_trajectory[idx-1]) / (t[idx] - t[idx-1])
             dv_dt_trajectory.append(dv_dt)
             
-    dv_dt_trajectory.append(dv_dt_trajectory[-1]) # Boyut eşitleme
-    
     # Grafiği Çizdirme (Energy Descent & Global Convergence Proof)
     plt.figure(figsize=(8, 5))
     plt.plot(t, v_trajectory, color='indigo', linewidth=2, label='Lyapunov Enerjisi V(x)')
@@ -95,3 +100,4 @@ def run_lyapunov_descent_analysis():
 
 if __name__ == "__main__":
     run_lyapunov_descent_analysis()
+

@@ -1,6 +1,6 @@
-# 🔬 NF1-Smart-Redirector-Model (Multi-Scale Computational Hypothesis Framework)
+# 🔬 NF1-Smart-Redirector-Model (Multi-Scale Biomimetic Hypothesis Framework)
 
-A multi-scale computational hypothesis-generation framework integrating structural interface analytics with systems-level nonlinear signaling dynamics to evaluate the trajectory abstraction profiles of the **SRX-RNA01** synthetic construct within modeled NF1-deficient network topologies.
+A multi-scale computational hypothesis-generation framework integrating structural interface analytics with systems-level signaling dynamics to evaluate the trajectory abstraction profiles of the **SRX-RNA01** synthetic construct within modeled NF1-deficient network topologies.
 
 ---
 
@@ -14,51 +14,51 @@ A multi-scale computational hypothesis-generation framework integrating structur
 
 ---
 
-## 🇬🇧 Project Overview & Core Multi-Scale Architecture (English)
-This repository investigates a multi-scale translational mapping paradigm: bridging atomic-scale interaction metrics with systems-level nonlinear signaling dynamics [g5yo7d]. The platform targets the hyperactive **KRAS** signaling cascade induced by Neurofibromin-1 (NF1) loss-of-function variations using a de novo designed synthetic RNA architecture (**SRX-RNA01**).
+## 🇬🇧 Project Overview & Biomimetic Hypothesis (English)
+This repository explores a multi-scale translational mapping paradigm inspired by advanced **biomimetic vector manipulation techniques** (e.g., how co-evolved organisms seamlessly bypass host regulatory checkpoints). Moving beyond the classical gene silencing paradigm, this project investigates the structural potential of a de novo designed RNA fragment to directly intercept oncoprotein cascades.
 
 ### 📐 The Causal Translational Flow
-To prevent isolated assumptions, the platform utilizes a deterministic, distribution-aware causal bridge layer mapping parameters sequentially [3k1l9y, nh9h9j]:
+To prevent isolated assumptions, the platform utilizes a deterministic causal bridge layer mapping parameters sequentially:
 ```text
-Atomic Structural Metrics (Biopython Coordinates) [wgxtn9]
+Atomic Structural Metrics (Biopython Coordinates) 
       ↓
-Phenomenological Proxy Affinity (Heuristic ΔG Surface Mapping)
+Phenomenological Proxy Affinity (ΔG Surface Mapping)
       ↓
-Langmuir Fractional Receptor Occupancy (θ Abstraction) [q8r9uh]
+Langmuir Fractional Receptor Occupancy (θ)
       ↓
-Pathway Signaling Coefficients Update via Monte Carlo Uncertainty Propagation [x1j9be]
+Pathway Signaling Coefficients Update (Provenance Tracking)
       ↓
-Systems-Level Nonlinear Dynamics (TAPC Computational Evaluation Engine) [0ydbn4]
+Systems-Level Nonlinear Dynamics (TAPC Computational Evaluation Engine)
 ```
 
-The **Systems Dynamics Layer (TAPC)** does not function as an actual biological cellular controller [7b7o2y]; instead, it is explicitly positioned as a **simulated systems abstraction and computational evaluation engine** to evaluate stability curves, parameter sweeps, and sensitivity profiles under modeled conditions [0ydbn4, zb8s3v].
+The **Systems Dynamics Layer (TAPC)** does not function as an actual biological cellular controller; instead, it is explicitly positioned as a **simulated systems abstraction and evaluation engine** to evaluate stability curves under modeled conditions.
 
 ---
 
-## 🇹🇷 Proje Özeti ve Çok Ölçekli Mimari Yapısı (Turkish)
-Bu depo, çok ölçekli bir translasyonel haritalama paradigmasını araştırmaktadır: atomik ölçekli etkileşim metrikleri ile sistem seviyesindeki doğrusal olmayan sinyal dinamikleri arasında nedensel bir köprü kurmak [g5yo7d]. Platform, Nörofibromin-1 (NF1) fonksiyon kaybı mutasyonlarının tetiklediği hiperaktif **KRAS** sinyal kaskatını, de novo tasarlanmış sentetik bir RNA mimarisi (**SRX-RNA01**) kullanarak analiz eder.
+## 🇹🇷 Proje Özeti ve Biyomimetik Hipotez (Turkish)
+Bu depo, ileri düzey **biyomimetik vektör manipülasyon tekniklerinden** (örneğin, evrimleşmiş organizmaların konakçı düzenleme kontrol noktalarını sessizce manipüle etme stratejilerinden) ilham alan çok ölçekli bir translasyonel haritalama paradigmasını araştırmaktadır. Platform, mutant KRAS sinyal kaskatını, doğrudan yapısal düzeyde yakalamak ve allosterik olarak modüle etmek amacıyla de novo tasarlanmış bir RNA mimarisi (**SRX-RNA01**) kullanır.
 
 ### 📐 Nedensel Translasyonel Akış
-Havada kalan varsayımları engellemek amacıyla platform, parametreleri dağılım farkındalıklı (distribution-aware) olarak sıralı eşleştiren biyofiziksel bir köprü katmanı kurgular [3k1l9y, nh9h9j]:
+Havada kalan varsayımları engellemek amacıyla platform,amp parametreleri sıralı olarak eşleştiren deterministik bir biyofiziksel köprü katmanı kurgular:
 ```text
-Atomik Yapısal Metrikler (Biopython Koordinatları) [wgxtn9]
+Atomik Yapısal Metrikler (Biopython Koordinatları)
       ↓
-Fenomenolojik Bağıl Afinite Skoru (Heuristic ΔG Proxy)
+Fenomenolojik Bağıl Afinite Skoru (ΔG Proxy)
       ↓
-Langmuir Kısmi Reseptör Doluluk Oranı (θ Soyutlaması) [q8r9uh]
+Langmuir Kısmi Reseptör Doluluk Oranı (θ)
       ↓
-Monte Carlo Belirsizlik Yayılımı ile Yolak Katsayılarının Güncellenmesi [x1j9be]
+Yolak Sinyal İletim Katsayılarının Güncellenmesi (Soykütük İzleme)
       ↓
-Sistem Seviyesinde Doğrusal Olmayan Dinamikler (TAPC Değerlendirme Motoru) [0ydbn4]
+Sistem Seviyesinde Doğrusal Olmayan Dinamikler (TAPC Değerlendirme Motoru)
 ```
 
-**Sistem Dinamikleri Katmanı (TAPC)**, hücre içi gerçek bir biyolojik kontrol cihazı olarak değil [7b7o2y]; modellenen koşullar altında kararlılık eğrilerini, parametre taramalarını ve duyarlılık (sensitivity) profillerini analiz eden soyut bir **hesaplamalı değerlendirme motoru (computational evaluation engine)** olarak konumlandırılmıştır [0ydbn4, zb8s3v].
+**Sistem Dinamikleri Katmanı (TAPC)**, hücre içi gerçek bir biyolojik kontrol cihazı olarak değil; modellenen koşullar altında kararlılık eğrilerini analiz eden soyut bir **hesaplamalı değerlendirme motoru (computational evaluation engine)** olarak konumlandırılmıştır.
 
 ---
 
 ## 📁 Repository Structure & Module Roadmap
 
-*   `bridge_models/occupancy_to_signal.py`: Biophysical bridge layer executing Monte Carlo uncertainty propagation from structural inputs to differential weights [8k5sgh, 0h3xmw].
+*   `bridge_models/occupancy_to_signal.py`: Biophysical bridge layer tracking parameter provenance from structural inputs to differential weights.
 *   `simulations/coupled_ode_v1.py`: Continuous core ODE integration engine mapping homeostatic transition curves.
 *   `notebooks/jacobian_analysis.py`: Performs analytical exact symbolic differentiation via **SymPy**.
 *   `notebooks/jacobian_bifurcation_analysis.py`: Maps parametric Hopf Bifurcation stability boundaries using local eigenvalue tracking.
@@ -73,7 +73,7 @@ Sistem Seviyesinde Doğrusal Olmayan Dinamikler (TAPC Değerlendirme Motoru) [0y
 
 ## 📊 Pre-Clinical Framework Validation Metrics
 
-Running the master execution pipeline (`molecular_analysis.py`) yields mathematically rigorous benchmarks, automatically generated and exported to the workspace:
+Running the master execution pipeline (`molecular_analysis.py`) yields mathematically rigorous benchmarks. Below are the structural behavior models derived under runtime integration metrics:
 
 ### 1. Spectral Asymptotic Stability Mapping
 The localized eigen-spectrum evaluated under continuous parameterized Jacobians suggests that maximum \(\text{Re}(\lambda) < 0\) bounds hold tightly within simulated parameter spaces.
@@ -84,8 +84,14 @@ The localized eigen-spectrum evaluated under continuous parameterized Jacobians 
  2.0 -------------------------
 
 
+
      |                       |
- 1.0 |          x \((\lambda1)       \vert{}  0.0 \vert{}-----------\vert{}-----------\vert{} -1.0 \vert{}\)          x \((\lambda2)       \vert{} -2.0 -------------------------     -1.5        0.0        0.5 \%\%\)MAGIT_PARSER_PROTECT%%```
+ 1.0 |          x (λ1)       |
+ 0.0 |-----------|-----------|
+-1.0 |          x (λ2)       |
+-2.0 -------------------------
+    -1.5        0.0        0.5
+```
 
 ### 2. Stochastic Robustness & Dynamic Trajectories
 Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance intervals show that the system successfully bounds false positive pathway activation ($<1.95\%$) even under heavy Pathological Stress rejoining bounds.

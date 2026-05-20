@@ -15,11 +15,11 @@ import os
 import json
 import numpy as np
 
-def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, num_mc_samples=1000):
+def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, num_mc_samples=1000, calculated_theta=None):
     print("[BRIDGE] Distribution-aware biomimetic translation engine activated...")
     
     # 1. Corrected Physical Chemistry Constants
-    R = 8.314e-3  # Corrected Gas constant syntax in kJ/(mol·K)
+    R = 8.314e-3  # Gas constant syntax in kJ/(mol·K)
     T = 310.15     # Core human physiological temperature in Kelvin
     
     # 2. Uncertainty Propagation via Monte Carlo Sampling (Uncertainty Layer)
@@ -33,17 +33,18 @@ def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, n
     
     # Entegre Monte Carlo Belirsizlik Döngüsü
     for d_sample in sampled_distances:
-        # Phenomenological Proxy Scoring Surface (Heuristic Affinity Mapping)
-        base_affinity = (num_contacts / d_sample) * 0.5
-        delta_G = -base_affinity * 2.303 * (R * T)
-        
-        # Dissociation Constant with Enforced Saturation Clamping (Enforced Boundary Clamping)
-        K_d_raw = np.exp(delta_G / (R * T))
-        K_d = np.clip(K_d_raw, 1e-12, 1e-3)
-        
-        # Langmuir Receptor Fractional Occupancy (Target Blockade Vector)
-        ligand_concentration = 10e-9  # Initial delivery saturation limit (10 nM)
-        occupancy_sample = ligand_concentration / (K_d + ligand_concentration)
+        if calculated_theta is not None:
+            # [YENİ METODOLOJİ] Eğer analyze_structure'dan gerçek Hill theta değeri geldiyse:
+            # Yapısal belirsizliği doğrudan bu asimptotik doluluk üzerinde %5 varyasyonla simüle et
+            occupancy_sample = np.random.normal(loc=calculated_theta, scale=0.05)
+        else:
+            # [GERİYE DÖNÜK UYUMLULUK] Eğer veri gelmediyse eski termodinamik proxy akışını koru
+            base_affinity = (num_contacts / d_sample) * 0.5
+            delta_G = -base_affinity * 2.303 * (R * T)
+            K_d_raw = np.exp(delta_G / (R * T))
+            K_d = np.clip(K_d_raw, 1e-12, 1e-3)
+            ligand_concentration = 10e-9  # Initial delivery saturation limit (10 nM)
+            occupancy_sample = ligand_concentration / (K_d + ligand_concentration)
         
         # Enforce Clamping to Prevent Total Weight Collapse (Saturation Control)
         occupancy_sample = np.clip(occupancy_sample, 0.0, 0.95)
@@ -76,7 +77,8 @@ def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, n
         "upstream_structural_stochastic_inputs": {
             "nominal_distance_angstrom": float(mean_distance_angstrom),
             "empirical_contacts_count": int(num_contacts),
-            "monte_carlo_ensembles_computed": int(num_mc_samples)
+            "monte_carlo_ensembles_computed": int(num_mc_samples),
+            "explicitly_calculated_hill_theta": float(calculated_theta) if calculated_theta is not None else None
         },
         "downstream_systems_outputs": {
             "mean_fractional_occupancy_probability": float(mean_occupancy),
@@ -101,5 +103,6 @@ def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, n
 
 if __name__ == "__main__":
     calculate_biophysical_bridge()
+
 
 

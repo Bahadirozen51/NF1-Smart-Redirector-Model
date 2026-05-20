@@ -5,10 +5,10 @@ into systems-level signaling attenuation coefficients with uncertainty propagati
 
 Scientific Disclaimer & Framework Validation Notice:
 ---------------------------------------------------
-This module provides a phenomenological mapping layer rather than atomistically 
-rigorous free-energy estimation (e.g., MM/PBSA, FEP, or umbrella sampling). 
-Operating under idealized TRL-2 assumptions, it establishes a distribution-aware
-bridge between structural proximity metrics and systems-level signaling inputs.
+NOTE: This module does not perform atomistically rigorous free-energy estimation 
+(e.g., MM/PBSA, FEP, or umbrella sampling). Operating under idealized TRL-2 assumptions, 
+it establishes a distribution-aware, phenomenological bridge layer that maps structural 
+proximity metrics into systems-level signaling attenuation coefficients.
 """
 
 import os
@@ -18,26 +18,26 @@ import numpy as np
 def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, num_mc_samples=1000):
     print("[BRIDGE] Distribution-aware biomimetic translation engine activated...")
     
-    # 1. Physical Chemistry Constants
+    # 1. Corrected Physical Chemistry Constants
     R = 8.314e-3  # Corrected Gas constant syntax in kJ/(mol·K)
     T = 310.15     # Core human physiological temperature in Kelvin
     
     # 2. Uncertainty Propagation via Monte Carlo Sampling (Uncertainty Layer)
     # Structural measurements contain intrinsic coordinate variances (σ_d = 0.2 Å)
-    np.random.seed(42)  # Enforced reproducibility
+    np.random.seed(42)  # Enforced reproducibility for framework validation
     sampled_distances = np.random.normal(mean_distance_angstrom, 0.2, num_mc_samples)
     sampled_distances = np.clip(sampled_distances, 1.0, 15.0)  # Physical distance boundaries
     
     macro_weights_ensemble = []
     occupancy_ensemble = []
     
-    # Entegre Monte Carlo Döngüsü
+    # Entegre Monte Carlo Belirsizlik Döngüsü
     for d_sample in sampled_distances:
         # Phenomenological Proxy Scoring Surface (Heuristic Affinity Mapping)
         base_affinity = (num_contacts / d_sample) * 0.5
         delta_G = -base_affinity * 2.303 * (R * T)
         
-        # Dissociation Constant with Saturation Clamping (Enforced Boundary Clamping)
+        # Dissociation Constant with Enforced Saturation Clamping (Enforced Boundary Clamping)
         K_d_raw = np.exp(delta_G / (R * T))
         K_d = np.clip(K_d_raw, 1e-12, 1e-3)
         
@@ -65,17 +65,22 @@ def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, n
     mean_occupancy = float(np.mean(occupancy_ensemble))
     mean_weights = np.mean(macro_weights_ensemble, axis=0)
     
-    # 4. CRITICAL ADDITION: Parameter Provenance Tracking File System
+    # 4. CRITICAL ADDITION: Parameter Provenance Tracking Output Matrix
     parameter_trace = {
         "provenance_metadata": {
             "framework_layer": "Multi-Scale Translational Mapping Bridge",
             "modulating_vector": "Biomimetic Attenuation Engine (TRL-2)",
-            "modeling_approach": "Distribution-Aware Phenomenological Architecture"
+            "modeling_approach": "Distribution-Aware Phenomenological Architecture",
+            "academic_definition": "A phenomenological bridge translating structural interaction metrics into systems-level signaling attenuation coefficients under idealized assumptions."
         },
         "upstream_structural_stochastic_inputs": {
             "nominal_distance_angstrom": float(mean_distance_angstrom),
             "empirical_contacts_count": int(num_contacts),
             "monte_carlo_ensembles_computed": int(num_mc_samples)
+        },
+        "phenomenological_thermodynamics_ensemble": {
+            "mean_delta_G_proxy_kj_mol": float(-np.mean((num_contacts / sampled_distances) * 0.5) * 2.303 * (R * T)),
+            "mean_Kd_clamped_molar": float(np.mean([np.clip(np.exp((-((num_contacts / d) * 0.5) * 2.303 * (R * T)) / (R * T)), 1e-12, 1e-3) for d in sampled_distances]))
         },
         "downstream_systems_outputs": {
             "mean_fractional_occupancy_probability": float(mean_occupancy),
@@ -87,7 +92,7 @@ def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, n
         }
     }
     
-    # Otomatik İzlenebilirlik Log Kaydı
+    # Otomatik İzlenebilirlik Log Kaydı (.json çıktısı)
     if not os.path.exists('bridge_models'):
         os.makedirs('bridge_models')
         

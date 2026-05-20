@@ -78,10 +78,6 @@ def calculate_biophysical_bridge(mean_distance_angstrom=2.85, num_contacts=45, n
             "empirical_contacts_count": int(num_contacts),
             "monte_carlo_ensembles_computed": int(num_mc_samples)
         },
-        "phenomenological_thermodynamics_ensemble": {
-            "mean_delta_G_proxy_kj_mol": float(-np.mean((num_contacts / sampled_distances) * 0.5) * 2.303 * (R * T)),
-            "mean_Kd_clamped_molar": float(np.mean([np.clip(np.exp((-((num_contacts / d) * 0.5) * 2.303 * (R * T)) / (R * T)), 1e-12, 1e-3) for d in sampled_distances]))
-        },
         "downstream_systems_outputs": {
             "mean_fractional_occupancy_probability": float(mean_occupancy),
             "derived_normalized_weights": {

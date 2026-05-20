@@ -2,7 +2,7 @@
 Module: molecular_analysis.py
 Description: Master Integration Engine for the NF1-Smart-Redirector-Model.
 Synthesizes symbolic differentiation, local/global stability landscapes, 
-stochastic noise profiling, and empirical structural analysis over conformational ensembles.
+stochastic noise profiling, empirical structural analysis, and wet-lab curve calibration.
 """
 
 import os
@@ -40,12 +40,12 @@ def execute_master_pipeline():
     
     if not cif_files:
         print("[!] Uyarı: 'alphafold_models/' klasöründe .cif dosyası bulunamadı, baseline/mock modunda devam ediliyor.")
-        ensemble_loop_targets = [None] # Mock modunu tetiklemek için boş liste elemanı
+        ensemble_loop_targets = [None]
     else:
         ensemble_loop_targets = sorted(cif_files)
         print(f"[+] Ensemble havuzunda {len(ensemble_loop_targets)} adet konformasyonel model tespit edildi.")
 
-    # Tüm yapısal varyasyon havuzunu (Render 1 ve Render 2) sırayla dönen dinamik döngü
+    # Tüm yapısal varyasyon havuzunu sırayla dönen dinamik döngü
     for idx, selected_cif in enumerate(ensemble_loop_targets):
         real_theta = None
         nominal_dist = 2.85
@@ -71,8 +71,6 @@ def execute_master_pipeline():
         print("-"*30)
         try:
             from occupancy_to_signal import calculate_biophysical_bridge
-            # `analyze_structure.py`'dan gelen dinamik Hill verileri köprü motoruna aktarılıyor
-            # (Uncertainty Propagation across scales)
             calculate_biophysical_bridge(
                 mean_distance_angstrom=nominal_dist, 
                 num_contacts=nominal_contacts, 
@@ -81,10 +79,8 @@ def execute_master_pipeline():
         except Exception as e:
             print(f"[!] Faz 1.5 Köprü Hatası: {str(e)}")
 
-    # NOT: Faz 2 - Faz 7 arasındaki makro kararlılık analizleri, pipeline'ın sonunda 
-    # en son güncellenen katsayı matrisi üzerinden küresel sistemi doğrulamak için bir kez koşturulur.
     print("\n" + "=" * 80)
-    print("      EXECUTING DOWNSTREAM MATHEMATICAL STABILITY ENGINES (PHASE 2 - 7)")
+    print("      EXECUTING DOWNSTREAM MATHEMATICAL STABILITY ENGINES (PHASE 2 - 8)")
     print("=" * 80)
 
     # FAZ 2: SymPy Sembolik Jacobian Motoru
@@ -129,12 +125,23 @@ def execute_master_pipeline():
     except Exception as e:
         print(f"[!] Faz 7 Hatası: {str(e)}")
 
+    # [YENİ ENTEGRASYON] FAZ 8: ISLAK LABORATUVAR KİNETİK KALİBRASYONU (CURVE_FIT)
+    print("\n" + "-"*50)
+    print("[FAZ 8] Wet-Lab Densitometry & Kinetic Recalibration Engine")
+    print("-"*50)
+    try:
+        from calibration_engine import run_wetlab_calibration
+        run_wetlab_calibration()
+    except Exception as e:
+        print(f"[!] Faz 8 Kalibrasyon Hatası: {str(e)}")
+
     print("\n" + "="*80)
-    print("✅ MASTER SUCCESS: Tüm translasyonel katmanlar ve konformasyon havuzu başarıyla doğrulandı.")
+    print("✅ MASTER SUCCESS: Tüm translasyonel katmanlar ve kalibrasyon motoru başarıyla doğrulandı.")
     print("=" * 80)
 
 if __name__ == "__main__":
     execute_master_pipeline()
+
 
 
 

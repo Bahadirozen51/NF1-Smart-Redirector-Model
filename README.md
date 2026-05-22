@@ -118,7 +118,7 @@ To validate the high-flexibility profile of our target open conformation, we byp
 
 The synchronized simulation below captures the exact visco-elastic continuum ensemble behavior, reflecting both **residence kinetics** and **conformational breathing**:
 
-![Ensemble Dynamics](docs/probabilistic_ensemble_dynamics.png)
+![Ensemble Dynamics](https://githubusercontent.com)
 
 > 📌 **Core Biophysical Manifesto:** *"The redirector reshapes the stochastic occupancy-weighted accessibility landscape rather than enforcing deterministic inhibition."* As proven by our stochastic solver, our open structure successfully undergoes a probabilistic population shift. Instead of a binary active/inactive state, the system explores a visco-elastic continuum ensemble, exhibiting realistic conformational breathing and residence time-dependent signaling leakage bursts.
 
@@ -133,7 +133,11 @@ Hedef açık konformasyonumuzun yüksek esneklik profilini doğrulamak amacıyla
 
 Yukarıda sergilenen senkronize simülasyon; hem **ligand rezidans kinetiğini** hem de proteinin **konformasyonel solunum (breathing)** davranışını yansıtarak visko-elastik sürekli topluluk (continuum ensemble) rejimini birebir yakalamaktadır.
 
-> 📌 **Çekirdek Biyofiziksel Manifesto:** *"Saptırıcı, deterministik bir inhibisyonu zorlamak yerine, stokastik ve işgal oranına duyarlı erişilebilirlik manzarasını yeniden şekillendirir."* Açık yapısal mimarimiz başarılı bir olasılıksal popülasyon kayması (population shift) sergiler. Sistem, ikili bir aktif/inaktif anahtarlaması yerine sürekli bir konformasyonel difüzyon alanını tarar. İnhibitörün ayrılma kinetiğine bağlı olarak ortaya çıkan anlık sinyal kaçakları (leakage bursts), gerçekçi direnç mekanizmalarıyla kusursuz uyum göstererek yapımızı matematiksel olarak savunulabilir kılmaktadır.
+![Ensemble Dynamics](https://githubusercontent.com)
+
+
+
+> 📌 **Çekirdek Biyofiziksel Manifesto:** *"Saptırıcı, deterministik bir inhibisyonu zorlamak yerine, stokastik ve işgal oranına duyarlı erişilebilirlik manzarasını yeniden şekillendirir." Açık yapısal mimarimiz başarılı bir olasılıksal popülasyon kayması (population shift) sergiler. Sistem, ikili bir aktif/inaktif anahtarlaması yerine sürekli bir konformasyonel difüzyon alanını tarar. İnhibitörün ayrılma kinetiğine bağlı olarak ortaya çıkan anlık sinyal kaçakları (leakage bursts), gerçekçi direnç mekanizmalaryla kusursuz uyum göstererek yapımızı matematiksel olarak savunulabilir kılmaktadır.
 
 ---
 

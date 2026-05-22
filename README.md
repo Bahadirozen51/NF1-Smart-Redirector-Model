@@ -1,4 +1,7 @@
 # NF1-Smart-Redirector-Model
+> [!NOTE]
+> **Active Biophysical Simulation Branch:** For the latest non-Markovian Langevin dynamics framework, rugged free-energy landscape topologies, and Ornstein–Uhlenbeck colored noise simulations, please visit our active development branch: [`feature/tapc-simulation`](https://github.com).
+
 In Silico Exploration and Phase-II Wet-Lab Calibration Protocols for Programmable RNA-Protein Control Platforms
 
 ![TRL](https://img.shields.io/badge/TRL-2-orange)
@@ -178,6 +181,8 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
 ---
 
 # 🇹🇷 NF1-Smart-Redirector-Model (Türkçe Proje Özeti)
+>
+> **Aktif Biyofiziksel Simülasyon Dalı:** Hafıza etkili Langevin dinamikleri çerçevesi, pürüzlü serbest enerji topolojileri ve Ornstein-Uhlenbeck renkli gürültü simülasyonlarının en güncel hali için aktif geliştirme dalımızı ziyaret edin: [`feature/tapc-simulation`](https://github.com).
 Programlanabilir RNA-Protein Kontrol Platformları için İn Siliko Keşif ve Faz-II Islak Laboratuvar Kalibrasyon Protokolleri
 
 ---

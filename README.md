@@ -93,6 +93,7 @@ The localized eigen-spectrum evaluated under continuous parameterized Jacobians 
 
 
 
+
      |                       |
  1.0 |          x (λ1)       |
  0.0 |-----------|-----------|
@@ -120,7 +121,7 @@ To validate the high-flexibility profile of our target open conformation, we byp
 
 The synchronized simulation below captures the exact visco-elastic continuum ensemble behavior, reflecting both **residence kinetics** and **conformational breathing**:
 
-![Ensemble Dynamics](https://githubusercontent.com)
+![Ensemble Dynamics](docs/ensemble_dynamics_v2.png)
 
 > 📌 **Core Biophysical Manifesto:** *"The redirector reshapes the stochastic occupancy-weighted accessibility landscape rather than enforcing deterministic inhibition."* As proven by our stochastic solver, our open structure successfully undergoes a probabilistic population shift. Instead of a binary active/inactive state, the system explores a visco-elastic continuum ensemble, exhibiting realistic conformational breathing and residence time-dependent signaling leakage bursts.
 
@@ -135,16 +136,15 @@ Hedef açık konformasyonumuzun yüksek esneklik profilini doğrulamak amacıyla
 
 Yukarıda sergilenen senkronize simülasyon; hem **ligand rezidans kinetiğini** hem de proteinin **konformasyonel solunum (breathing)** davranışını yansıtarak visko-elastik sürekli topluluk (continuum ensemble) rejimini birebir yakalamaktadır.
 
-![Ensemble Dynamics](https://githubusercontent.com)
+![Ensemble Dynamics](docs/ensemble_dynamics_v2.png)
 
+> 📌 **Çekirdek Biyofiziksel Manifesto:** *"Saptırıcı, deterministik bir inhibisyonu zorlamak yerine, stokastik ve işgal oranına duyarlı erişilebilirlik manzarasını yeniden şekillendirir."* Açık yapısal mimarimiz başarılı bir olasılıksal popülasyon kayması (population shift) sergiler. Sistem, ikili bir aktif/inaktif anahtarlaması yerine sürekli bir konformasyonel difüzyon alanını tarar. İnhibitörün ayrılma kinetiğine bağlı olarak ortaya çıkan anlık sinyal kaçakları (leakage bursts), gerçekçi direnç mekanizmalarıyla kusursuz uyum göstererek yapımızı matematiksel olarak savunulabilir kılmaktadır.
 
-
-> 📌 **Çekirdek Biyofiziksel Manifesto:** *"Saptırıcı, deterministik bir inhibisyonu zorlamak yerine, stokastik ve işgal oranına duyarlı erişilebilirlik manzarasını yeniden şekillendirir." Açık yapısal mimarimiz başarılı bir olasılıksal popülasyon kayması (population shift) sergiler. Sistem, ikili bir aktif/inaktif anahtarlaması yerine sürekli bir konformasyonel difüzyon alanını tarar. İnhibitörün ayrılma kinetiğine bağlı olarak ortaya çıkan anlık sinyal kaçakları (leakage bursts), gerçekçi direnç mekanizmalarıyla kusursuz uyum göstererek yapımızı matematiksel olarak savunulabilir kılmaktadır.
 
 ---
 
 ## 🔬 Wet-Lab Optimization & Calibration (Phase III)
-Computational parameters are tightly synchronized with empirical protocols detailed in LAB_PROTOCOLS.md. Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via scipy.optimize.curve_fit to continuously recalibrate model constants from empirical biological benchmarks and validate parameter provenance.
+Computational parameters are tightly synchronized with empirical protocols detailed in LAB_PROTOCOLS.md. Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via scipy.optimize.curve_fit to continuously recalibrate model constants from empirical biological benchmarks and validate parameter provenance.       
 
 ---
 

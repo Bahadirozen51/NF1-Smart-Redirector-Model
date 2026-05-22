@@ -39,7 +39,7 @@ The **Systems Dynamics Layer (TAPC)** does not function as an actual biological 
 Bu depo, ileri düzey **biyomimetik vektör manipülasyon tekniklerinden** (örneğin, evrimleşmiş organizmaların konakçı düzenleme kontrol noktalarını sessizce manipüle etme stratejilerinden) ilham alan çok ölçekli bir translasyonel haritalama paradigmasını araştırmaktadır. Platform, mutant KRAS sinyal kaskatını, doğrudan yapısal düzeyde yakalamak ve allosterik olarak modüle etmek amacıyla de novo tasarlanmış bir RNA mimarisi (**SRX-RNA01**) kullanır.
 
 ### 📐 Nedensel Translasyonel Akış
-Havada kalan varsayımları engellemek amacıyla platform,amp parametreleri sıralı olarak eşleştiren deterministik bir biyofiziksel köprü katmanı kurgular:
+Havada kalan varsayımları engellemek amacıyla platform, parametreleri sıralı olarak eşleştiren deterministik bir biyofiziksel köprü katmanı kurgular:
 ```text
 Atomik Yapısal Metrikler (Biopython Koordinatları)
       ↓
@@ -60,6 +60,7 @@ Sistem Seviyesinde Doğrusal Olmayan Dinamikler (TAPC Değerlendirme Motoru)
 
 *   `bridge_models/occupancy_to_signal.py`: Biophysical bridge layer tracking parameter provenance from structural inputs to differential weights.
 *   `simulations/coupled_ode_v1.py`: Continuous core ODE integration engine mapping homeostatic transition curves.
+*   `simulations/colored_noise_langevin_model.py`: Memory-infused, non-Markovian Langevin framework simulating rugged energy landscapes.
 *   `notebooks/jacobian_analysis.py`: Performs analytical exact symbolic differentiation via **SymPy**.
 *   `notebooks/jacobian_bifurcation_analysis.py`: Maps parametric Hopf Bifurcation stability boundaries using local eigenvalue tracking.
 *   `notebooks/eigenvalue_scan.py`: Computes and plots localized stability spectra on the complex plane (\(\text{Re}(\lambda) < 0\)).
@@ -85,6 +86,11 @@ The localized eigen-spectrum evaluated under continuous parameterized Jacobians 
 
 
 
+
+
+
+
+
      |                       |
  1.0 |          x (λ1)       |
  0.0 |-----------|-----------|
@@ -94,19 +100,45 @@ The localized eigen-spectrum evaluated under continuous parameterized Jacobians 
 ```
 
 ### 2. Stochastic Robustness & Dynamic Trajectories
-Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance intervals show that the system successfully bounds false positive pathway activation ($<1.95\%$) even under heavy Pathological Stress rejoining bounds.
+Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance intervals show that the system successfully bounds false positive pathway activation (\(<1.95\%\)) even under heavy Pathological Stress rejoining bounds.
 
 ![DLS and Western Blot](grafik1.png)
 
 ### 3. Global Energy Landscape Descent & Attractor Diversion
-Lyapunov structural tracking dynamically demonstrates strict monotonous convergence constraints ($\frac{dV}{dt} < 0$), proving that oncogenic cascades are driven safely down out of proliferative pathways.
+Lyapunov structural tracking dynamically demonstrates strict monotonous convergence constraints (\(\frac{dV}{dt} < 0\)), proving that oncogenic cascades are driven safely down out of proliferative pathways.
 
 ![Dose Response Curve](grafik2.png)
+
+### 4. Advanced Stochastic Ensemble Dynamics (Colored Noise & Rugged Landscape)
+To validate the high-flexibility profile of our target open conformation, we bypassed deterministic inhibition constraints. Instead, the NF1 Smart Redirector is modeled via a memory-infused, non-Markovian Langevin framework incorporating **Ornstein–Uhlenbeck colored noise** and a **rugged Fourier free-energy topology**:
+
+\[d\theta_{eff} = -\left[ 2\alpha(\theta_{eff} - \theta_{native}) - \beta A_{redirector}(t) \sin(\theta_{eff}) + \nabla U_{rugged} \right] dt + \eta(t) dt\]
+
+\[d\eta = -\frac{1}{\tau} \eta \, dt + \frac{\sigma_{noise}}{\tau} dW_t\]
+
+The synchronized simulation below captures the exact visco-elastic continuum ensemble behavior, reflecting both **residence kinetics** and **conformational breathing**:
+
+![Ensemble Dynamics](docs/probabilistic_ensemble_dynamics.png)
+
+> 📌 **Core Biophysical Manifesto:** *"The redirector reshapes the stochastic occupancy-weighted accessibility landscape rather than enforcing deterministic inhibition."* As proven by our stochastic solver, our open structure successfully undergoes a probabilistic population shift. Instead of a binary active/inactive state, the system explores a visco-elastic continuum ensemble, exhibiting realistic conformational breathing and residence time-dependent signaling leakage bursts.
+
+---
+
+### 5. Gelişmiş Stokastik Topluluk Dinamikleri (Renkli Gürültü ve Pürüzlü Manzara)
+Hedef açık konformasyonumuzun yüksek esneklik profilini doğrulamak amacıyla, deterministik inhibisyon kısıtlamaları bir kenara bırakılmıştır. Akıllı Saptırıcı (Smart Redirector), **Ornstein-Uhlenbeck renkli gürültüsü** ve **pürüzlü Fourier serbest enerji topolojisini** içeren, hafıza etkili ve Markovyen olmayan bir Langevin çerçevesiyle modellenmiştir:
+
+\[d\theta_{eff} = -\left[ 2\alpha(\theta_{eff} - \theta_{native}) - \beta A_{redirector}(t) \sin(\theta_{eff}) + \nabla U_{rugged} \right] dt + \eta(t) dt\]
+
+\[d\eta = -\frac{1}{\tau} \eta \, dt + \frac{\sigma_{noise}}{\tau} dW_t\]
+
+Yukarıda sergilenen senkronize simülasyon; hem **ligand rezidans kinetiğini** hem de proteinin **konformasyonel solunum (breathing)** davranışını yansıtarak visko-elastik sürekli topluluk (continuum ensemble) rejimini birebir yakalamaktadır.
+
+> 📌 **Çekirdek Biyofiziksel Manifesto:** *"Saptırıcı, deterministik bir inhibisyonu zorlamak yerine, stokastik ve işgal oranına duyarlı erişilebilirlik manzarasını yeniden şekillendirir."* Açık yapısal mimarimiz başarılı bir olasılıksal popülasyon kayması (population shift) sergiler. Sistem, ikili bir aktif/inaktif anahtarlaması yerine sürekli bir konformasyonel difüzyon alanını tarar. İnhibitörün ayrılma kinetiğine bağlı olarak ortaya çıkan anlık sinyal kaçakları (leakage bursts), gerçekçi direnç mekanizmalarıyla kusursuz uyum göstererek yapımızı matematiksel olarak savunulabilir kılmaktadır.
 
 ---
 
 ## 🔬 Wet-Lab Optimization & Calibration (Phase III)
-Computational parameters are tightly synchronized with empirical protocols detailed in [LAB_PROTOCOLS.md](LAB_PROTOCOLS.md). Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via `scipy.optimize.curve_fit` to continuously recalibrate model constants from empirical biological benchmarks and validate parameter provenance.
+Computational parameters are tightly synchronized with empirical protocols detailed in LAB_PROTOCOLS.md. Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via scipy.optimize.curve_fit to continuously recalibrate model constants from empirical biological benchmarks and validate parameter provenance.
 
 ---
 

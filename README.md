@@ -92,6 +92,7 @@ The localized eigen-spectrum evaluated under continuous parameterized Jacobians 
 
 
 
+
      |                       |
  1.0 |          x (λ1)       |
  0.0 |-----------|-----------|

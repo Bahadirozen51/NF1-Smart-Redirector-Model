@@ -113,11 +113,12 @@ Lyapunov structural tracking dynamically demonstrates strict monotonous converge
 ![Dose Response Curve](grafik2.png)
 
 ### 4. Advanced Stochastic Ensemble Dynamics (Colored Noise & Rugged Landscape)
+
 To validate the high-flexibility profile of our target open conformation, we bypassed deterministic inhibition constraints. Instead, the NF1 Smart Redirector is modeled via a memory-infused, non-Markovian Langevin framework incorporating **Ornstein–Uhlenbeck colored noise** and a **rugged Fourier free-energy topology**:
 
-\[d\theta_{eff} = -\left[ 2\alpha(\theta_{eff} - \theta_{native}) - \beta A_{redirector}(t) \sin(\theta_{eff}) + \nabla U_{rugged} \right] dt + \eta(t) dt\]
+$$d\theta_{eff} = -\left[ 2\alpha(\theta_{eff} - \theta_{native}) - \beta A_{redirector}(t) \sin(\theta_{eff}) + \nabla U_{rugged} \right] dt + \eta(t) dt$$
 
-\[d\eta = -\frac{1}{\tau} \eta \, dt + \frac{\sigma_{noise}}{\tau} dW_t\]
+$$d\eta = -\frac{1}{\tau} \eta , dt + \frac{\sigma_{noise}}{\tau} dW_t$$
 
 The synchronized simulation below captures the exact visco-elastic continuum ensemble behavior, reflecting both **residence kinetics** and **conformational breathing**:
 
@@ -128,19 +129,19 @@ The synchronized simulation below captures the exact visco-elastic continuum ens
 ---
 
 ### 5. Gelişmiş Stokastik Topluluk Dinamikleri (Renkli Gürültü ve Pürüzlü Manzara)
+
 Hedef açık konformasyonumuzun yüksek esneklik profilini doğrulamak amacıyla, deterministik inhibisyon kısıtlamaları bir kenara bırakılmıştır. Akıllı Saptırıcı (Smart Redirector), **Ornstein-Uhlenbeck renkli gürültüsü** ve **pürüzlü Fourier serbest enerji topolojisini** içeren, hafıza etkili ve Markovyen olmayan bir Langevin çerçevesiyle modellenmiştir:
 
-\[d\theta_{eff} = -\left[ 2\alpha(\theta_{eff} - \theta_{native}) - \beta A_{redirector}(t) \sin(\theta_{eff}) + \nabla U_{rugged} \right] dt + \eta(t) dt\]
+$$d\theta_{eff} = -\left[ 2\alpha(\theta_{eff} - \theta_{native}) - \beta A_{redirector}(t) \sin(\theta_{eff}) + \nabla U_{rugged} \right] dt + \eta(t) dt$$
 
-\[d\eta = -\frac{1}{\tau} \eta \, dt + \frac{\sigma_{noise}}{\tau} dW_t\]
+$$d\eta = -\frac{1}{\tau} \eta , dt + \frac{\sigma_{noise}}{\tau} dW_t$$
 
 Yukarıda sergilenen senkronize simülasyon; hem **ligand rezidans kinetiğini** hem de proteinin **konformasyonel solunum (breathing)** davranışını yansıtarak visko-elastik sürekli topluluk (continuum ensemble) rejimini birebir yakalamaktadır.
 
 ![Ensemble Dynamics](docs/ensemble_dynamics_v2.png)
 
 > 📌 **Çekirdek Biyofiziksel Manifesto:** *"Saptırıcı, deterministik bir inhibisyonu zorlamak yerine, stokastik ve işgal oranına duyarlı erişilebilirlik manzarasını yeniden şekillendirir."* Açık yapısal mimarimiz başarılı bir olasılıksal popülasyon kayması (population shift) sergiler. Sistem, ikili bir aktif/inaktif anahtarlaması yerine sürekli bir konformasyonel difüzyon alanını tarar. İnhibitörün ayrılma kinetiğine bağlı olarak ortaya çıkan anlık sinyal kaçakları (leakage bursts), gerçekçi direnç mekanizmalarıyla kusursuz uyum göstererek yapımızı matematiksel olarak savunulabilir kılmaktadır.
-
-
+ 
 ---
 
 ## 🔬 Wet-Lab Optimization & Calibration (Phase III)

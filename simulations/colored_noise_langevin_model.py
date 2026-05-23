@@ -1,5 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+# 0. ALPHAFlOLD ENTEGRASYON KÖPRÜSÜ (Eklendi)
+try:
+    from cif_coordinate_bridge import extract_real_theta_init
+    # CIF dosyasının konumunu dinamik olarak tespit et
+    cif_file_path = "../alphafold_models/fold_2026_05_15_18_38_model_0.cif"
+    if not os.path.exists(cif_file_path):
+        cif_file_path = "alphafold_models/fold_2026_05_15_18_38_model_0.cif"
+        
+    print(f"[*] AlphaFold yapısal verileri okunuyor: {cif_file_path}")
+    # Yapay değer yerine gerçek koordinat açısını çekiyoruz
+    theta_native = extract_real_theta_init(cif_file_path, protein_chain='A', rna_chain='B')
+except Exception as e:
+    print(f"[!] Köprü bağlantısı kurulamadı ({e}). Hevristik değere dönülüyor.")
+    theta_native = np.radians(20) # Yedek/Fallback güvenli varsayılan değer
 
 # 1. Zaman ve Alan Parametreleri
 T = 250.0        # Simülasyon süresi (ns)
@@ -12,7 +28,6 @@ A_effector = 10.0
 # 2. Biyofiziksel Manzara Parametreleri (Rugged Landscape)
 alpha = 1.4         # Doğal geri toparlanma gücü (Artırıldı)
 beta = 0.5          # Saptırıcı tork etkisi
-theta_native = np.radians(20)
 
 # Fourier Pürüzlülüğü (Ruggedness) Terimleri
 c1, k1 = 0.12, 10.0  
@@ -40,7 +55,7 @@ for i in range(N):
 
 # 5. Langevin Çözücü (Memory-infused Integration)
 theta_rugged = np.zeros(N)
-theta_rugged[0] = theta_native
+theta_rugged[0] = theta_native # İlk adımı doğrudan gerçek koordinat açısı yapar
 
 for i in range(1, N):
     curr_theta = theta_rugged[i-1]
@@ -84,7 +99,7 @@ ax2.set_title('Ornstein–Uhlenbeck Renkli Gürültüsü Altında Sürekli Konfo
 ax2.grid(True, linestyle=':', alpha=0.5)
 ax2.legend(loc='lower right')
 
-# Alt Grafik: Sinyal Profili
+# Alt Grafik: Sinyal Profilili
 ax3.plot(t, phi_rugged, 'g-', alpha=0.8, label='Efektif Sinyal Akışı ($\\Phi$)')
 ax3.set_xlabel('Zaman (ns)', fontsize=11)
 ax3.set_ylabel('Sinyal Yoğunluğu', fontsize=10)
@@ -93,4 +108,8 @@ ax3.grid(True, linestyle=':', alpha=0.5)
 ax3.legend(loc='upper right')
 
 plt.tight_layout()
+
+# Önbellek kilidini zorlayan v2 isimlendirmesi ile otomatik kaydetme
+plt.savefig('docs/ensemble_dynamics_v2.png', dpi=300, bbox_inches='tight')
 plt.show()
+

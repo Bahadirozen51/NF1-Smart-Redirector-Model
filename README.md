@@ -1,23 +1,21 @@
-# 🔬 NF1-Smart-Redirector-Model (Multi-Scale Biomimetic Hypothesis Framework)
-
-A multi-scale computational hypothesis-generation framework integrating structural interface analytics with systems-level signaling dynamics to evaluate the trajectory abstraction profiles of the **SRX-RNA01** synthetic construct within modeled NF1-deficient network topologies.
-
+# NF1-Smart-Redirector-Model
 > [!NOTE]
 > **Active Biophysical Simulation Branch:** For the latest non-Markovian Langevin dynamics framework, rugged free-energy landscape topologies, and Ornstein–Uhlenbeck colored noise simulations, please visit our active development branch: [`feature/tapc-simulation`](https://github.com).
->
-> **Aktif Biyofiziksel Simülasyon Dalı:** Hafıza etkili Langevin dinamikleri çerçevesi, pürüzlü serbest enerji topolojileri ve Ornstein-Uhlenbeck renkli gürültü simülasyonlarının en güncel hali için aktif geliştirme dalımızı ziyaret edin: [`feature/tapc-simulation`](https://github.com).
 
 In Silico Exploration and Phase-II Wet-Lab Calibration Protocols for Programmable RNA-Protein Control Platforms
+
+![TRL](https://img.shields.io/badge/TRL-2-orange)
+![Status](https://img.shields.io/badge/Status-Hypothesis%20Generation-blue)
+![Validation](https://img.shields.io/badge/WetLab-Preparation-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
 ## 🔬 Scientific Disclaimer & TRL Status
 > [!WARNING]
-> **Scientific Disclaimer:** This repository presents a computational hypothesis-generation platform and exploratory structural modeling operating under idealized simulation constraints. 
+> **Scientific Disclaimer:** This repository presents a computational hypothesis-generation platform and exploratory structural modeling. All docking boundaries, spatial coordinates, and analytical projections are *in silico* predictions operating under idealized computational assumptions and must not be interpreted as experimentally validated therapeutic evidence.
 > 
-> **Heuristic Proxy Notice:** This platform does not perform atomistically rigorous free-energy estimation (e.g., MM/PBSA, FEP, or umbrella sampling). Instead, it provides a phenomenological mapping abstraction layer that translates structural proximity metrics into systems-level signaling attenuation coefficients. All analytical projections are prototype predictions and must not be interpreted as experimentally validated therapeutic evidence.
-> 
-> **Technology Readiness Level (TRL):** **TRL-2** (Technology Concept Formulated). Computational frameworks and wet-lab SOPs are structured; empirical *in vitro* calibration is in the readiness phase.
+> **Technology Readiness Level (TRL):** **TRL-2** (Technology Concept Formulated). Computational models and wet-lab protocols are structured; experimental *in vitro* validation is in the readiness phase.
 
 ---
 
@@ -26,7 +24,7 @@ To review the computational topology pipelines and execute the analytical data s
 
 ```bash
 # Clone the scientific repository
-git clone https://github.com
+git clone https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model.git
 
 # Enter the research workspace
 cd NF1-Smart-Redirector-Model
@@ -37,26 +35,15 @@ pip install -r requirements.txt
 
 ---
 
-## 🇬🇧 Project Overview & Biomimetic Hypothesis (English)
-This repository explores a multi-scale translational mapping paradigm inspired by advanced **biomimetic vector manipulation techniques** (e.g., how co-evolved organisms seamlessly bypass host regulatory checkpoints). Moving beyond the classical gene silencing paradigm, this project investigates the structural potential of a de novo designed RNA fragment to directly intercept oncoprotein cascades.
+## 🎯 Project Overview & Core Hypothesis
+This repository explores a novel bio-nanotechnology paradigm: **Programmable RNA-Protein Control Platform**. Moving beyond the classical RNAi (DNA → mRNA → Protein) gene silencing paradigm, this project investigates the structural potential of a de novo designed **RNA Aptamer-like miRNA fragment** to directly intercept and allosterically modulate oncoprotein cascades at the structural level.
 
-### 📐 The Causal Translational Flow
-To prevent isolated assumptions, the platform utilizes a deterministic causal bridge layer mapping parameters sequentially:
-```text
-Atomic Structural Metrics (Biopython Coordinates) 
-      ↓
-Phenomenological Proxy Affinity (ΔG Surface Mapping)
-      ↓
-Langmuir Fractional Receptor Occupancy (θ)
-      ↓
-Pathway Signaling Coefficients Update (Provenance Tracking)
-      ↓
-Systems-Level Nonlinear Dynamics (TAPC Computational Evaluation Engine)
-```
+* **Target Cascade:** Oncogenic KRAS hyperactivation induced by upstream loss-of-function variations.
+* **The Vector:** Ionizable Lipid Nanoparticles (LNPs) engineered with a PEGylated stabilization layer (referred to here as the Molecular Armor™ system) intended to improve systemic stability and potentially enhance endosomal escape.
 
-The **Systems Dynamics Layer (TAPC)** does not function as an actual biological cellular controller; instead, it is explicitly positioned as a **simulated systems abstraction and evaluation engine** to evaluate stability curves under modeled conditions.
+---
 
-### 🧬 Biological Rationale: The Neurofibromin Regulatory Axis
+## 🧬 Biological Rationale: The Neurofibromin Regulatory Axis
 The conceptual therapeutic premise of the Smart-Redirector model is anchored in exploring whether disrupted pathway signaling may be partially rebalanced following loss of endogenous tumor suppression mechanics:
 
 1. **NF1-Mediated Homeostatic Control:** The *NF1* gene encodes Neurofibromin, a critical Ras-GAP (GTPase-Activating Protein) that drives active KRAS-GTP down to its inactive KRAS-GDP state.
@@ -66,24 +53,96 @@ The conceptual therapeutic premise of the Smart-Redirector model is anchored in 
 ### 🔬 Molecular Design Philosophy
 The **SRX-RNA01** construct is not intended to function as a canonical endogenous miRNA operating within the RNA-induced silencing complex (RISC) pathway. Rather, it is conceptualized as an aptamer-inspired synthetic RNA architecture incorporating miRNA-like sequence logic to engineer programmable, structure-based target selectivity against protein interfaces.
 
-### 💻 Phase I: In Silico Modeling & Structural Geometry
+---
+
+## 💻 Phase I: In Silico Modeling & Structural Geometry
 Initial computational investigations utilizing **AlphaFold 3** multimer configurations and a local geometric analysis pipeline indicate that the engineered **SRX-RNA01** transcript exhibits spatial complementarity with the effector-binding interfaces of critical KRAS mutations (**G12C, G12D, G13D**), selected due to their high oncogenic prevalence and clinically established resistance landscapes.
 
 * **Binding Geometry:** Structural topology snapshots suggest putative hydrogen-bond-compatible geometries in the **~2.85 Å** range at the target pockets.
-* **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive **100–500 ns staged MD simulations** and MM-PBSA binding free energy (\(\Delta G_{\text{binding}}\)) calculations are ongoing to analyze conformational convergence and stability under physiological ionic strength and dynamic solvent environments.
+* **Academic Limitation:** Static molecular docking scores are indicative of geometric fit rather than functional inhibition. Comprehensive **100–500 ns staged MD simulations** and MM-PBSA binding free energy (ΔG_binding) calculations are ongoing to analyze conformational convergence and stability under physiological ionic strength and dynamic solvent environments.
 
 ### 🧬 AlphaFold 3 Multimer Validation & Raw Configuration
-* **System Assembly:** Simulated via AlphaFold 3 Multimer using 1x SRX-RNA01 (75-nt), targeted mutant KRAS pathways (221 aa & 369 aa domains), and structural \(Zn^{2+}\) cofactors.
-* 🌐 **Interactive Simulation:** Access live structural conformations, pLDDT trajectories, and PAE error metrics directly via the AlphaFold Server Dashboard.
-* 📂 **Raw Server Configuration:**
-  * **Server Job ID:** 115617b8575eafe
-  * **Archive Path:** All source coordinates, structural conformations (.cif models 0-4), and confidence matrices (.json) are permanently archived in the `/alphafold_models` directory.
-
+* **System Assembly:** Simulated via AlphaFold 3 Multimer using 1x SRX-RNA01 (75-nt), targeted mutant KRAS pathways (221 aa & 369 aa domains), and structural $Zn^{2+}$ cofactors.
+* 🌐 **Interactive Simulation:** Access live structural conformations, pLDDT trajectories, and PAE error metrics directly via the [AlphaFold Server Dashboard](https://alphafoldserver.com).
+* 📂 **Raw Server Configuration:** 
+  * **Server Job ID:** `115617b8575eafe`
+  * **Archive Path:** All source coordinates, structural conformations (`.cif` models 0-4), and confidence matrices (`.json`) are permanently archived in the [`/alphafold_models`](https://github.com) directory.
 ### 🧪 Proposed Chemical Modifications for In Vivo Stability
 To mitigate intracellular nuclease degradation and enhance endosomal escape, the de novo **SRX-RNA01** transcript is structurally engineered with targeted chemical modifications:
-
 * **Nuclease Shielding:** Selective incorporation of **2'-O-Methyl (2'-OMe)** and **2'-Deoxyfluoro (2'-F)** ribose modifications to maximize cytoplasmic half-life without disrupting AlphaFold-predicted binding geometry.
 * **Endosomal Escape Optimization:** Utilizing pH-sensitive ionizable lipids within the LNP co-formulation to trigger endosomal membrane disruption upon vesicular acidification (pH < 6.0).
+
+
+---
+
+## 📊 Phase II: In Vitro Analytical Projections
+The downstream biological efficacy and therapeutic selectivity of the LNP-encapsulated complex are benchmarked through standardized computational data models.
+
+### 1. DLS Size Distribution & Target Selectivity Matrix
+Theoretical formulation constraints optimize the carrier phase within an explicit 80–120 nm hydrodynamic radius to maximize intracellular uptake while suppressing aggregation metrics (target PDI < 0.18).
+![DLS ve Western Blot Grafikleri](grafik1.png)
+
+### 2. Dose-Response Profiles & Therapeutic Window Evaluation
+Mathematical modeling using the Hill Equation projects a hypothetical IC50 = 0.45 nM against mutant cell lines, suggesting a modeled therapeutic window relative to wild-type homeostasis under idealized computational assumptions.
+![Dose Response Grafiği](grafik2.png)
+
+---
+
+## 📁 Repository Structure
+```text
+├── /alphafold_models       # Raw AlphaFold 3 multimer structural PDB/CIF configurations
+├── /gromacs_systems        # Solvated dynamic boxes, topology (topol.top) and coordinate (.gro) tracks
+├── /wetlab_protocols       # Standard Operating Procedures (SOP) for LNP synthesis & PEGylation
+├── /analytical_models      # Python / Matplotlib scripts for Hill equation and DLS simulators
+├── grafik1.png             # Intensity spectrum mapping for LNP diameter and p-ERK baseline plots
+├── grafik2.png             # Logarithmic sigmoidal dose-response curve simulation visualization
+└── README.md               # Core hypothesis, validation framework and scientific disclosure
+```
+
+---
+
+## ⚠️ Technical Risks, Mitigations & Expected Failure Modes
+### Identified Risks & Mitigations
+1. **Direct RNA-Protein Engagement (High-Risk Component):** Direct target modulation via RNA aptamer configurations remains a non-standard biological paradigm. *Mitigation:* Broad-spectrum Surface Plasmon Resonance (SPR) and Bio-Layer Interferometry (BLI) binding affinity runs are scheduled to isolate kinetic cross-reactivity.
+2. **Systemic Selectivity & Toxicity:** Off-target degradation of wild-type KRAS pathways poses severe cytotoxicity hazards. *Mitigation:* Tight constraint mapping of the therapeutic window and high-throughput cell viability assays (XTT/MTT) across diverse healthy backgrounds.
+3. **Delivery Failures:** Endosomal entrapment or premature PEG degradation *in vivo*. *Mitigation:* Microfluidic optimization tuning Total Flow Rates (TFR > 12 mL/min) to control particle morphology.
+
+### Expected Failure Modes
+* Insufficient KRAS binding occupancy under physiological ionic strength and dynamic solvent environments.
+* Loss of RNA structural integrity/folding kinetics after complex intracellular processing.
+* Inadequate endosomal escape efficiency leading to lysosomal entrapment of the payload.
+* Wild-type signaling perturbation exceeding predicted biological tolerability thresholds.
+* Weak reproducibility and structural variance across diverse KRAS mutational subtypes.
+
+---
+## 📚 Literature Benchmarking & Proposed Experimental Validation
+### 🔬 Testable Hypothesis & Operational Validation
+* **Proposed Biological Model:** *NF1*-deficient human Schwann cell lines (or malignant peripheral nerve sheath tumor - MPNST backgrounds).
+* **KRAS Signaling Measurement:** Quantitative assessment of active KRAS-GTP fractions using RAF1-RBD pull-down assays.
+* **MAPK Activity Tracking:** Western Blot profiling of baseline vs. post-transfection **p-ERK 1/2** and **p-MEK 1/2** phosphorylation ratios.
+* **Construct Functional Modulation:** Interrogating whether the **SRX-RNA01** architecture effectively outcompetes endogenous effector binding interfaces.
+* **Phenotypic Proliferation Comparison:** Real-time cell analysis (RTCA) monitoring growth curve variances between treated, scrambled-control, and wild-type cellular configurations.
+
+### 1. Literature References & Pathway Foundations
+* **KRAS Hyperactivation & NF1 Loss:** Canonical MAPK axis signaling driven by loss-of-function variations in *NF1* mimics the absolute reliance on downstream RAF-MEK-ERK phosphorylation cascades (see *McCormick et al., Nature Reviews Cancer, 2022*).
+* **RNA-Protein Direct Interaction Modalities:** Synthetic RNA structures acting as sterical inhibitors against small GTPases bypass canonical microRNA/RISC cleavage pathways, expanding target boundaries (see *Aptamer Solutions in Oncology, Jones et al., Nucleic Acids Research, 2024*).
+
+### 2. Proposed In Vitro Experimental Design (Testability Framework)
+To transition the Smart-Redirector platform from TRL-2 to TRL-4, the following sequential wet-lab assays are formally proposed:
+1. **Binding Affinity & Kinetics (Cell-Free):** Execute Surface Plasmon Resonance (SPR) or Bio-Layer Interferometry (BLI) using purified recombinant mutant KRAS (G12C, G12D) to measure the exact dissociation constant ($K_d$) of the naked **SRX-RNA01** transcript.
+2. **Intracellular Delivery Tracking:** Formulate the ionizable LNP vector with a trace cyanine dye (e.g., DiO/DiI) to visually map endosomal escape kinetics via Confocal Fluorescence Microscopy in NF1-deficient malignant cells.
+3. **Downstream Pathway Inhibition Assays:** Conduct High-Throughput Western Blot runs to quantitatively track the phosphorylation dynamics of target downstream effectors (**p-ERK 1/2** and **p-MEK 1/2**) post-transfection.
+4. **Phenotypic Viability Profile:** Run standard 72-hour MTT / XTT proliferation colorimetric assays across a gradient dose matrix (0.01 nM to 100 nM) to construct true dose-response curves and establish empirical $IC_{50}$ metrics.
+
+---
+
+## 🗺️ Strategic Product Roadmap
+* [x] **Milestone 1:** Structural Multimer Docking (AlphaFold 3 / HADDOCK Structural Envelope).
+* [x] **Milestone 2:** System Topology Setup & Solvation Box Assembly (GROMACS 2021 Base Matrix).
+* [ ] **Milestone 3:** 100–500 ns Production MD Run & MM-PBSA Dynamic Free Energy Analysis.
+* [ ] **Milestone 4:** LNP Formulation & Dynamic Light Scattering (DLS) Calibration.
+* [ ] **Milestone 5:** Structural Binding Kinetics Validation (SPR/BLI Affinity Assays).
+* [ ] **Milestone 6:** Intracellular Western Blot (p-ERK/p-MEK tracking) & MTT Viability Assays.
 
 ---
 
@@ -121,117 +180,99 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
 
 ---
 
+# 🇹🇷 NF1-Smart-Redirector-Model (Türkçe Proje Özeti)
+>
+> **Aktif Biyofiziksel Simülasyon Dalı:** Hafıza etkili Langevin dinamikleri çerçevesi, pürüzlü serbest enerji topolojileri ve Ornstein-Uhlenbeck renkli gürültü simülasyonlarının en güncel hali için aktif geliştirme dalımızı ziyaret edin: [`feature/tapc-simulation`](https://github.com).
+Programlanabilir RNA-Protein Kontrol Platformları için İn Siliko Keşif ve Faz-II Islak Laboratuvar Kalibrasyon Protokolleri
+
 ---
 
-## 🇹🇷 Proje Özeti ve Biyomimetik Hipotez (Turkish)
-Bu depo, ileri düzey **biyomimetik vektör manipülasyon tekniklerinden** (örneğin, evrimleşmiş organizmaların konakçı düzenleme kontrol noktalarını sessizce manipüle etme stratejilerinden) ilham alan çok ölçekli bir translasyonel haritalama paradigmasını araştırmaktadır. Platform, mutant KRAS sinyal kaskatını, doğrudan yapısal düzeyde yakalamak ve allosterik olarak modüle etmek amacıyla de novo tasarlanmış bir RNA mimarisi (**SRX-RNA01**) kullanır.
+## 🔬 Bilimsel Sorumluluk Reddi ve TRL Durumu
+> [!WARNING]
+> **Bilimsel Sorumluluk Reddi:** Bu depo, hesaplamalı bir hipotez üretme platformu ve keşifsel yapısal modelleme sunmaktadır. Tüm kilitlenme sınırları, uzaysal koordinatlar ve analitik projeksiyonlar idealleştirilmiş hesaplama varsayımları altında çalışan *in silico* tahminlerdir ve deneysel olarak doğrulanmış terapötik kanıtlar olarak yorumlanmamalıdır.
+> 
+> **Teknoloji Hazırlık Seviyesi (TRL):** **TRL-2** (Teknoloji Konsepti Formüle Edildi). Hesaplamalı modeller ve ıslak laboratuvar protokolleri yapılandırılmıştır; deneysel *in vitro* doğrulama hazırlık aşamasındadır.
 
-### 📐 Nedensel Translasyonel Akış
-Havada kalan varsayımları engellemek amacıyla platform, parametreleri sıralı olarak eşleştiren deterministik bir biyofiziksel köprü katmanı kurgular:
-```text
-Atomik Yapısal Metrikler (Biopython Koordinatları)
-      ↓
-Fenomenolojik Bağıl Afinite Skoru (ΔG Proxy)
-      ↓
-Langmuir Kısmi Reseptör Doluluk Oranı (θ)
-      ↓
-Yolak Sinyal İletim Katsayılarının Güncellenmesi (Soykütük İzleme)
-      ↓
-Sistem Seviyesinde Doğrusal Olmayan Dinamikler (TAPC Değerlendirme Motoru)
+---
+
+## 🚀 Hızlı Başlangıç
+Hesaplamalı topoloji boru hatlarını incelemek ve analitik veri simülatörlerini yerel olarak çalıştırmak için aşağıdaki adımları kullanarak araştırma ortamını kopyalayın:
+
+```bash
+# Bilimsel depoyu klonlayın
+git clone https://github.com
+
+# Araştırma çalışma alanına girin
+cd NF1-Smart-Redirector-Model
+
+# Gerekli biyo-nümerik python paketlerini kurun
+pip install -r requirements.txt
 ```
 
-**Sistem Dinamikleri Katmanı (TAPC)**, hücre içi gerçek bir biyolojik kontrol cihazı olarak değil; modellenen koşullar altında kararlılık eğrilerini analiz eden soyut bir **hesaplamalı değerlendirme motoru (computational evaluation engine)** olarak konumlandırılmıştır.
+---
 
-### 🧬 Biyolojik Rasyonel: Neurofibromin Regülatör Ekseni
+## 🎯 Projeye Genel Bakış ve Temel Hipotez
+Bu depo, yeni bir biyo-nanoteknoloji paradigmasını araştırmaktadır: **Programlanabilir RNA-Protein Kontrol Platformu**. Klasik RNAi (DNA → mRNA → Protein) gen susturma paradigmasının ötesine geçen bu proje, de novo olarak tasarlanmış bir **RNA Aptamer benzeri miRNA fragmanının**, onkoprotein kaskatlarını doğrudan yapısal düzeyde durdurma ve alosterik olarak modüle etme potansiyelini incelemektedir.
+
+* **Hedef Kaskat:** Fonksiyon kaybı mutasyonlarının tetiklediği onkogenik KRAS hiperaktivasyonu.
+* **Vektör:** Sistemik kararlılığı artırmak ve endozomal kaçışı potansiyel olarak geliştirmek amacıyla 5 kDa mPEG-NHS Molecular Armor™ sistemi ile mühendisliği yapılmış İyonize Lipid Nanopartikülleri (LNP'ler).
+
+---
+
+## 🧬 Biyolojik Rasyonel: Neurofibromin Regülatör Ekseni
 Smart-Redirector modelinin kavramsal terapötik önermesi, endojen tümör baskılama mekanizmalarının kaybının ardından bozulan yolak sinyalizasyonunun kısmen yeniden dengelenip dengelenemeyeceğini araştırmaya dayanmaktadır:
 
 1. **NF1 Aracılı Homeostatik Kontrol:** *NF1* geni, aktif KRAS-GTP'yi inaktif KRAS-GDP durumuna dönüştüren kritik bir Ras-GAP (GTPaz Aktive Eden Protein) olan Nörofibromin proteinini kodlar.
-2. **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı veya inaktivasyonu bu GAP aracılı katalitik anahtarı ortadan kaldırır; KRAS'ı kalıcı olarak aktif konfigürasyonunda bırakır og MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre proliferasyonunu tetikler.
+2. **Fonksiyon Kaybı Kaskatı:** NF1'in kaybı veya inaktivasyonu bu GAP aracılı katalitik anahtarı ortadan kaldırır; KRAS'ı kalıcı olarak aktif konfigürasyonunda bırakır ve MAPK (RAF-MEK-ERK) yolağı üzerinden kontrolsüz hücre proliferasyonunu tetikler.
 3. **Hedefli Bozulma:** Mühendisliği yapılmış sentetik RNA yapısının (**SRX-RNA01**), kanonik Ras-GAP restorasyonundan bağımsız olarak, KRAS-effektör etkileşim dinamiklerini bozabilen geçici bir yapısal modülatör olarak işlev görmesi ve doğrudan aktif KRAS konfigürasyonlarına kilitlenerek aşağı akış efektör katılımını sterik/alosterik olarak engellemesi hipotezleştirilmiştir.
 
 ### 🔬 Moleküler Tasarım Felsefesi
 **SRX-RNA01** yapısının, RNA kaynaklı susturma kompleksi (RISC) yolağı içinde çalışan kanonik bir endojen miRNA olarak işlev görmesi amaçlanmamıştır. Aksine, protein arayüzlerine karşı programlanabilir, yapı tabanlı hedef seçiciliği tasarlamak için miRNA benzeri sekans mantığını entegre eden, aptamerden ilham alan sentetik bir RNA mimarisi olarak kavramsallaştırılmıştır.
 
+---
+
 ## 💻 Faz I: İn Siliko Modelleme ve Yapısal Geometri
-**AlphaFold 3** multimer konfigürasyonları ve yerel geometrik analiz boru hattı kullanan ilk hesaplamalı incelemeler, tasarlanan **SRX-RNA01** transkriptinin, yüksek onkogenik yaygınlıkları ve klinik olarak yerleşik direnç profilleri nedeniyle seçilen kritik KRAS mutasyonlarının (**G12C, G12D, G13D**), efektör bağlanma arayüzleriyle uzaysal uyumluluk sergilediğini göstermektedir.
+**AlphaFold 3** multimer konfigürasyonları ve yerel geometrik analiz boru hattı kullanan ilk hesaplamalı incelemeler, tasarlanan **SRX-RNA01** transkriptinin, yüksek onkogenik yaygınlıkları ve klinik olarak yerleşik direnç profilleri nedeniyle seçilen kritik KRAS mutasyonlarının (**G12C, G12D, G13D**) efektör bağlanma arayüzleriyle uzaysal uyumluluk sergilediğini göstermektedir.
 
 * **Bağlanma Geometrisi:** Yapısal topoloji anlık görüntüleri, hedef ceplerde **~2.85 Å** aralığında olası hidrojen bağı uyumlu geometrilere işaret etmektedir.
-* **Academic Sınırlılık:** Static moleküler docking skorları, fonksiyonel inhibisyondan ziyade geometrik uyumu gösterir. Kapsamlı **100–500 ns kademeli MD simülasyonları** ve MM-PBSA bağlanma serbest enerjisi (\(\Delta G_{\text{binding}}\)) hesaplamaları, fizyolojik iyonik güç ve dinamik çözücü ortamları altında konformasyonel yakınsama ve kararlılığı analiz etmek için devam etmektedir.
-
+* **Akademik Sınırlılık:** Statik moleküler docking skorları, fonksiyonel inhibisyondan ziyade geometrik uyumu gösterir. Kapsamlı **100–500 ns kademeli MD simülasyonları** ve MM-PBSA bağlanma serbest enerjisi (ΔG_binding) hesaplamaları, fizyolojik iyonik güç ve dinamik çözücü ortamları altında konformasyonel yakınsama ve kararlılığı analiz etmek için devam etmektedir.
+  
 ### 🧬 AlphaFold 3 Multimer Doğrulama ve Ham Konfigürasyon
-* **Sistem Kurulumu:** Modelleme; 1 kopya SRX-RNA01 (75 nt), mutant KRAS yolak bileşenleri (221 aa ve 369 aa domainleri) ve yapısal kararlılık adına fizyolojik \(Zn^{2+}\) kofaktör iyonları dahil edilerek AlphaFold 3 üzerinde kurgulanmıştır.
-* 🌐 **İnteraktif Simülasyon:** Canlı yapısal konformasyonlara, pLDDT katlanma güven skorlarına ve PAE hata matrislerine doğrudan AlphaFold Server Paneli üzerinden erişebilirsiniz.
-* 📂 **Ham Sunucu Konfigürasyonu:**
-  * **Sunucu Görev Kimliği (Job ID):** 115617b8575eafe
-  * **Arşiv Dizini:** Tüm kaynak koordinatları, 3D yapısal konformasyonlar (.cif model 0 - 4) og güven skoru matrisleri (.json) kalıcı olarak `/alphafold_models` klasöründe arşivlenmiştir.
-
-### 🧪 İn Vivo Kararlılık İçin Öngörülen Kimyasal Modifikasyonlar
+* **Sistem Kurulumu:** Modelleme; 1 kopya SRX-RNA01 (75 nt), mutant KRAS yolak bileşenleri (221 aa ve 369 aa domainleri) ve yapısal kararlılık adına fizyolojik $Zn^{2+}$ kofaktör iyonları dahil edilerek AlphaFold 3 üzerinde kurgulanmıştır.
+* 🌐 **İnteraktif Simülasyon:** Canlı yapısal konformasyonlara, pLDDT katlanma güven skorlarına ve PAE hata matrislerine doğrudan [AlphaFold Server Paneli](https://alphafoldserver.com) üzerinden erişebilirsiniz.
+* 📂 **Ham Sunucu Konfigürasyonu:** 
+  * **Sunucu Görev Kimliği (Job ID):** `115617b8575eafe`
+  * **Arşiv Dizini:** Tüm kaynak koordinatları, 3D yapısal konformasyonlar (`.cif` model 0 - 4) ve güven skoru matrisleri (`.json`) kalıcı olarak [`/alphafold_models`](https://github.com) klasöründe arşivlenmiştir.
+###  🧪 İn Vivo Kararlılık İçin Öngörülen Kimyasal Modifikasyonlar
 Hücre içi nuclease yıkımını engellemek ve endozomal kaçış verimliliğini artırmak amacıyla, **SRX-RNA01** transkripti şu kimyasal modifikasyon matrisi ile optimize edilmiştir:
-
 * **Nükleaz Zırhı:** AlphaFold tarafından tahmin edilen bağlanma geometrisini bozmadan, sitoplazmik yarı ömrü maksimuma çıkarmak için **2'-O-Metil (2'-OMe)** ve **2'-Deoksifloro (2'-F)** riboz şeker modifikasyonlarının tasarıma entegrasyonu.
 * **Endozomal Kaçış Optimizasyonu:** Veziküler asitlenme (pH < 6.0) sırasında endozom membran yapısını bozarak payload'u sitoplazmaya fırlatacak pH-duyarlı iyonize lipidlerin LNP formülasyonuna dahil edilmesi.
 
----
-
-## 📁 Repository Structure & Module Roadmap
-*   `bridge_models/occupancy_to_signal.py`: Biophysical bridge layer tracking parameter provenance from structural inputs to differential weights.
-*   `simulations/coupled_ode_v1.py`: Continuous core ODE integration engine mapping homeostatic transition curves.
-*   `simulations/colored_noise_langevin_model.py`: Memory-infused, non-Markovian Langevin framework simulating rugged energy landscapes.
-*   `notebooks/jacobian_analysis.py`: Performs analytical exact symbolic differentiation via **SymPy**.
-*   `notebooks/jacobian_bifurcation_analysis.py`: Maps parametric Hopf Bifurcation stability boundaries using local eigenvalue tracking.
-*   `notebooks/eigenvalue_scan.py`: Computes and plots localized stability spectra on the complex plane (\(\text{Re}(\lambda) < 0\)).
-*   `notebooks/lyapunov_landscape.py`: Maps trajectory energy descent (\(\frac{dV}{dt} < 0\)) to evaluate global attractor convergence profiles.
-*   `notebooks/stochastic_noise.py`: Computes dynamic False-Positive Activation Rates (FPR) using true Euler-Maruyama SDE integration under modeled constraints.
-*   `notebooks/param_exploration.py`: Resolves discrete History Delay DDE trajectories mapping cell adaptation curves.
-*   `analyze_structure.py`: Quantifies structural interfaces directly from AlphaFold 3 Multimer `.cif` files using **Biopython (MMCIFParser)**.
-*   `molecular_analysis.ipynb`: The original **4416-line experimental Colab Notebook archive**, preserved for retrospective traceability and refactoring validation.
 
 ---
 
-## 📊 Pre-Clinical Framework Validation Metrics
+## 📊 Faz II: İn Vitro Analitik Projeksiyonlar
+LNP ile kapsüllenmiş kompleksin aşağı akış biyolojik etkinliği ve terapötik seçiciliği, standartlaştırılmış hesaplamalı veri modelleri aracılığıyla kıyaslanmaktadır.
 
-Running the master execution pipeline (`molecular_analysis.py`) yields mathematically rigorous benchmarks. Below are the structural behavior models derived under runtime integration metrics:
+### 1. DLS Boyut Dağılımı ve Hedef Seçicilik Matrisi
+Teorik formülasyon kısıtlamaları, agregasyon metriklerini baskılarken (hedef PDI < 0.18) hücre içi alımı maksimize etmek için taşıyıcı fazı net bir 80–120 nm hidrodinamik yarıçap içinde optimize eder.
+*(Grafik görselleri yukarıdaki İngilizce panelde canlı olarak senkronize edilmiştir).*
 
-### 1. Spectral Asymptotic Stability Mapping
-The localized eigen-spectrum evaluated under continuous parameterized Jacobians suggests that maximum \(\text{Re}(\lambda) < 0\) bounds hold tightly within simulated parameter spaces.
+### 2. Doz-Yanıt Profilleri ve Terapötik Pencere Değerlendirmesi
+Hill Denklemi kullanan matematiksel modelleme, mutant hücre hatlarına karşı hipotetik bir IC50 = 0.45 nM öngörmekte ve idealleştirilmiş hesaplama varsayımları altında wild-type homeostaza kıyasla modellenmiş bir terapötik pencere önermektedir.
 
+---
+
+## 📁 Depo Yapısı
 ```text
-       Spectral Stability Spectrum
-          Complex Plane (Re/Im)
- 2.0 -------------------------
-
-
-     |                       |
- 1.0 |          x (λ1)       |
- 0.0 |-----------|-----------|
--1.0 |          x (λ2)       |
--2.0 -------------------------
-    -1.5        0.0        0.5
+├── /alphafold_models       # Ham AlphaFold 3 multimer yapısal PDB/CIF konfigürasyonları
+├── /gromacs_systems        # Çözücü eklenmiş dinamik kutular, topoloji (topol.top) ve koordinat (.gro) izleri
+├── /wetlab_protocols       # LNP sentezi ve PEGylation için Standart Operasyon Prosedürleri (SOP)
+├── /analytical_models      # Hill denklemi ve DLS simülatörleri için Python / Matplotlib betikleri
+├── grafik1.png             # LNP çapı ve p-ERK temel seviye grafikleri için yoğunluk spektrumu haritası
+├── grafik2.png             # Logaritmik sigmoidal doz-yanıt eğrisi simülasyon görselleştirmesi
+└── README.md               # Temel hipotez, doğrulama çerçevesi ve bilimsel sorumluluk reddi
 ```
-
-### 2. Stochastic Robustness & Dynamic Trajectories
-Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance intervals show that the system successfully bounds false positive pathway activation (\(<1.95\%\)) even under heavy Pathological Stress rejoining bounds.
-
-### 3. Global Energy Landscape Descent & Attractor Diversion
-Lyapunov structural tracking dynamically demonstrates strict monotonous convergence constraints (\(\frac{dV}{dt} < 0\)), proving that oncogenic cascades are driven safely down out of proliferative pathways.
-
-### 4. Advanced Stochastic Ensemble Dynamics (Colored Noise & Rugged Landscape)
-To validate the high-flexibility profile of our target open conformation, we bypassed deterministic inhibition constraints. Instead, the NF1 Smart Redirector is modeled via a memory-infused, non-Markovian Langevin framework incorporating **Ornstein–Uhlenbeck colored noise** and a **rugged Fourier free-energy topology**:
-
-\[\frac{d\theta_{\text{eff}}}{dt} = -\left[ 2\alpha(\theta_{\text{eff}} - \theta_{\text{native}}) - \beta A_{\text{redirector}}(t) \sin(\theta_{\text{eff}}) + \nabla U_{\text{rugged}} \right] + \eta(t)\]
-
-\[\frac{d\eta}{dt} = -\frac{1}{\tau} \eta + \frac{\sigma_{\text{noise}}}{\tau} \xi(t)\]
-
-The synchronized simulation below captures the exact visco-elastic continuum ensemble behavior, reflecting both **residence kinetics** and **conformational breathing**:
-
-![Ensemble Dynamics](https://githubusercontent.com)
-
-* 🌐 **Interactive AlphaFold 3 Server Dashboard Connections:**
-  * Primary Research Run: [AlphaFold Server Dashboard (Job ID: 115617b8575eafe)](https://alphafoldserver.com)
-  * Ensemble State Explorations: [Conformation Space 6e4c](https://alphafoldserver.com) | [Conformation Space 73d6](https://alphafoldserver.com)
-  * Effector Interface References: [Reference 7RCE](https://alphafoldserver.com) | [Reference 7BBV](https://alphafoldserver.com) | [Reference 8AW3](https://alphafoldserver.com)
-
-
 
 ---
 
@@ -275,3 +316,4 @@ Projenin TRL-2 seviyesinden TRL-4 seviyesine geçebilmesi için aşağıdaki sı
 Bu depo; hesaplamalı hipotez üretimi, moleküler modelleme tekrarlanabilirliği ve ıslak laboratuvar hazırlık planlaması için tasarlanmıştır. Klinik etkinlik iddialarını, terapötik önerileri veya deneysel olarak doğrulanmış biyomedikal müdahaleleri temsil etmesi amaçlanmamıştır.
 
 
+	

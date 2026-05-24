@@ -120,12 +120,12 @@ If you utilize this computational model, framework, or wet-lab protocol matrix i
 ### BibTeX Format
 ```bibtex
 @software{nf1_smart_redirector_2026,
-  author       = {Ozen, Bahadir},
-  title        = {NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based PEGylated Encapsulation Protocols},
-  month        = may,
-  year         = 2026,
-  publisher    = {GitHub},
-  version      = {2.0.0},
-  url          = {https://github.com}
+  author = {Ozen, Bahadir},
+  title = {NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based PEGylated Encapsulation Protocols},
+  month = may,
+  year = 2026,
+  publisher = {GitHub},
+  version = {2.0.0},
+  url = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
 }
 ```

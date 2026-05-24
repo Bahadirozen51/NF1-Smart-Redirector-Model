@@ -1,6 +1,6 @@
-# 🔬 NF1-Smart-Redirector-Model: Faz 2 Laboratuvar ve Kalibrasyon Protokolleri
+# 🔬 NF1-Smart-Redirector-Model: Faz 3 Laboratuvar ve Kalibrasyon Protokolleri
 
-Bu döküman, in silico ortamda AlphaFold 3 ile kilitlenme başarısı doğrulanan ve GROMACS altyapısı kurulan **SRX-RNA01 yapay RNA aptamer sisteminin** ıslak laboratuvar (wet-lab) ortamında sentezlenmesi, karakterizasyonu ve diferansiyel denklem katsayılarının kalibrasyonu için Standart Operasyon Prosedürlerini (SOP) içerir.
+Bu döküman, in silico ortamda AlphaFold 3 ile kilitlenme başarısı doğrulanan ve GROMACS altyapısı kurulan **SRX-RNA01 yapay RNA-Aptamer sisteminin** ıslak laboratuvar (wet-lab) ortamında sentezlenmesi, karakterizasyonu ve SDE tabanlı hesaplamalı model parametrelerinin deneysel verilere göre kalibre edilmesi için Standart Operasyon Prosedürlerini (SOP) içerir.
 
 ---
 
@@ -40,22 +40,24 @@ Modifiye edilmiş yapay RNA yapısının negatif yük bariyerlerini aşarak sito
 
 ---
 
-## 🧬 Protokol 3: Hesaplamalı Model Kalibrasyonu (Parameter Fitting)
+## 🧬 Protokol 3: Hesaplamalı Model Kalibrasyonu (Structure-Informed SDE Sync)
 
-`notebooks/` ve `simulations/` içerisindeki diferansiyel denklemlerin (`coupled_ode_v1.py`) ve stokastik motorların (`stochastic_noise.py`) parametrelerinin deneysel in vitro verilerle kalibre edilmesi sürecidir.
+`simulations/confinement_analyzer.py` içerisindeki Stokastik Diferansiyel Denklem (SDE) ve global kararlılık motorunun parametrelerinin deneysel in vitro verilerle kalibre edilmesi sürecidir.
 
 ### Deneysel Basamaklar
 1.  **Hücre Modeli:** NF1 mutant Schwannoma veya MPNST (Malign Peripheral Nerve Sheath Tumor) hücre hatları kültüre edilir.
 2.  **Doz-Yanıt Protokolü:** Hücrelere farklı konsantrasyonlarda (0-100 nM) tasarlanan SRX-RNA01-LNP formülasyonu uygulanır.
-3.  **Kinetik Ölçüm:** İlaç uygulamasından sonraki 0, 15, 30, 60, 120 ve 240. dakikalarda hücre lizatları toplanır. Western Blot ve ELISA yöntemleriyle aktif **KRAS-GTP** ve fosforile **pERK1/2** konsantrasyonları nicel olarak ölçülür.
-4.  **Matematiksel Curve Fitting:** Elde edilen zaman-konsantrasyon grafikleri Python'daki `scipy.optimize.curve_fit` modülüne verilerek kodlarımızda yer alan biyokimyasal reaksiyon katsayıları (`k_act`, `k_fb` ve `tau_m`) optimize edilir. Kodlardaki teorik pERK sitotoksik limit eşiği ($3.5\ \mu\text{M}$) laboratuvardaki gerçek hücre ölüm (MTT testi) verileriyle senkronize edilir.
+3.  **Kinetik Ölçüm:** İlaç uygulamasından sonraki 0, 15, 30, 60, 120 ve 240. dakikalarda hücre lizatları toplanır. Western Blot ve ELISA yöntemleriyle aktif **KRAS-GTP** ve fosforile **pERK1/2** sinyal genlikleri nicel olarak ölçülür.
+4.  **Matematiksel Curve Fitting:** Elde edilen zaman-konsantrasyon grafikleri ve 72 saatlik MTT/XTT proliferasyon verileri Python'daki `experimental_calibration.py` kalibratörüne gömülü olan 4 Parametreli Lojistik (4PL) eğrisine fit edilir:
+    *   **K Parametresi Kalibrasyonu:** Doz-yanıt eğrisinin büküm noktasından türetilen deneysel görünür $EC_{50}$ değeri (~11.40 nM), SDE modelindeki Hill yarı-doygunluk parametresi olan **$K$** sabitine kilitlenir.
+    *   **R Parametresi Kalibrasyonu:** Western Blot Pull-down analizlerinden elde edilen p-ERK1/2 stabilizasyon eğrisinin sıfırlanmayan adaptif sızıntı taban yüzdesi (%5.5), saptırıcının eliptik çekim havzası yarıçapı olan **$R$** ($R=1.58$, $R^2=2.5$) sınırına doğrudan eşlenir.
 
 ---
 
-## 📊 Protokol 4: Kalite Kontrol (QC) Eşik Değerleri
+## 📊 Protokol 4: Kalite Kontrol (QC) & Topolojik Sınır Değerleri
 
-Sentez ve kalibrasyon sonrası ekibin onaylaması gereken kalite kriterleri:
-*   **DLS Analizi:** Dinamik Işık Saçılması ile hidrodinamik çap = 80 - 120 nm aralığında olmalı, PDI (Polidispersite İndeksi) < 0.2 seviyesinde kalmalıdır.
+Sentez ve kalibrasyon sonrası ekibin onaylaması gereken kalite ve kararlılık kriterleri:
+*   **DLS Analizi:** Dinamik Işık Saçılması ile hidrodinamik çap = 80 - 120 nm aralığında olmalı, PDI (Polidispersite İndeksi) < 0.18 seviyesinde kalmalıdır.
 *   **Enkapsülasyon Verimi (%EE):** RiboGreen floresan testi ile ölçülen RNA hapsetme başarısı %EE > %80 olmalıdır.
 *   **Nükleaz Kararlılığı:** %10 Fetal Bovine Serum (FBS) içeren ortamda 24 saat inkübasyon sonrası Agaroz Jel Elektroforezinde RNA bandının bütünlüğü korunmalıdır.
-
+*   **Stokastik Havza Robustness Doğrulaması:** Kalibre edilen parametreler gürültü testine tabi tutulduğunda, normal hücresel fluktuasyon seviyesinde ($\sigma = 0.4$) sistemin Lyapunov potansiyel kuyusundan kaçış olasılığı (Stochastic Basin Escape) < %1.0 sınırında kalarak metastable confinement rejimini doğrulamalıdır.

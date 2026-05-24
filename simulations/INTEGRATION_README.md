@@ -8,9 +8,8 @@ This document details the architectural link and state-dependent feedback loop e
 
 Rather than forcing a hard-coded geometric constraint directly into the precise biochemistry of the 4D state-space ($KRAS, pERK, ROS, M$), the repository utilizes an **Asymptotic Flux Modulation Interface**. This ensures that the mathematical limit cycle boundaries safely guide the cellular trajectories without causing structural decoupling or numerical instability.
 
-[ coupled_ode_v1.py ] (Core Biochemical Engine)│▼Composite Stress Index (S_t) ───► Threshold E (Exceeded?)│                               ││ (No: Homeostasis)             │ (Yes: Pathological)▼                               ▼[ Natural Relaxation ]          [ Trigger Manifold Switch (f_s) ]│▼[ Fetch Confinement Factor ]From: attractor_manifold_sandbox.py│▼k_prod Dynamic Attenuation│▼[ Target Attractor Confinement ]
-
----
+    [ coupled_ode_v1.py ] (Core Biochemical Engine)│▼Composite Stress Index (S_t) ───► Threshold E (Exceeded?)│                               ││ (No: Homeostasis)             │ (Yes: Pathological)▼                               ▼[ Natural Relaxation ]          [ Trigger Manifold Switch (f_s) ]│▼[ Fetch Confinement Factor ]From: attractor_manifold_sandbox.py│▼k_prod Dynamic Attenuation│▼[ Target Attractor Confinement ]
+    ---
 
 ## 📐 Mathematical Coupling Formulation
 
@@ -45,3 +44,5 @@ base_params = {
     'R_max_confinement': 2.5         # Target Attractor Basin radius
 }
 ```
+
+---

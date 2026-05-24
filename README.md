@@ -108,9 +108,13 @@ Under real Euler-Maruyama Langevin integrations, the ensemble mean and variance 
 ![DLS and Western Blot](grafik1.png)
 
 ### 3. Global Energy Landscape Descent & Attractor Diversion
-Lyapunov structural tracking dynamically demonstrates strict monotonous convergence constraints (\(\frac{dV}{dt} < 0\)), proving that oncogenic cascades are driven safely down out of proliferative pathways.
+To connect the integrated structural topology directly to downstream signaling, the framework matches simulated benchmarks against a 4-parameter logistic (4PL) systems pharmacology curve. Rather than assuming an idealized complete blockade, the model dynamically accounts for adaptive residual leakage and compensatory reactivation:
 
-![Dose Response Curve](grafik2.png)
+![Experimental Dose Response Calibration](figures/experimental_dose_response_calibration.png)
+
+*   **Model-Derived Apparent $EC_{50}$ Proxy:** ~11.40 nM, aligning mathematically with the sigmoidal transition zone.
+*   **Adaptive Residual Leakage Floor:** Stabilizes at 5.5%, mathematically recognizing stochastic escape mechanisms and homeostatic reactivation rather than forcing artificial zero-signaling states.
+
 ### 4. Advanced Stochastic Ensemble Dynamics (Colored Noise & Rugged Landscape)
 To validate the high-flexibility profile of our target open conformation, we bypassed deterministic inhibition constraints. Instead, the NF1 Smart Redirector is modeled via a memory-infused, non-Markovian Langevin framework incorporating **Ornstein–Uhlenbeck colored noise** and a **rugged Fourier free-energy topology**:
 

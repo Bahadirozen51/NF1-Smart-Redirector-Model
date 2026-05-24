@@ -86,7 +86,8 @@ Theoretical formulation constraints optimize the carrier phase within an explici
 
 To connect the integrated structural topology directly to downstream signaling, the framework matches simulated benchmarks against a 4-parameter logistic (4PL) systems pharmacology curve. Rather than assuming an idealized complete blockade, the model dynamically accounts for adaptive residual leakage and compensatory reactivation:
 
-![Experimental Dose Response Calibration](figures/experimental_dose_response_calibration.png)
+![Experimental Dose Response Calibration](https://githubusercontent.com)
+
 
 *   **Model-Derived Apparent $EC_{50}$ Proxy:** ~11.40 nM, aligning mathematically with the sigmoidal transition zone.
 *   **Adaptive Residual Leakage Floor:** Stabilizes at 5.5%, mathematically recognizing stochastic escape mechanisms and homeostatic reactivation rather than forcing artificial zero-signaling states.
@@ -267,7 +268,7 @@ Teorik formülasyon kısıtlamaları, agregasyon metriklerini baskılarken (hede
 
 Entegre yapısal topolojiyi doğrudan aşağı akış sinyal iletimine bağlamak amacıyla çerçeve, simüle edilen kriterleri 4 parametreli lojistik (4PL) bir sistem farmakolojisi eğrisiyle eşleştirir. Model, idealize edilmiş eksiksiz bir blokaj varsaymak yerine, adaptif rezidüel sızıntıyı ve kompensatuar reaktivasyonu dinamik olarak hesaba katar:
 
-![Experimental Dose Response Calibration](figures/experimental_dose_response_calibration.png)
+![Experimental Dose Response Calibration](https://githubusercontent.com)
 
 *   **Model Kaynaklı Görünür $EC_{50}$ Proxy Değeri:** ~11.40 nM, sigmoidal geçiş bölgesiyle matematiksel olarak kusursuz uyum sağlar.
 *   **Adaptif Rezidüel Sızıntı Tabanı:** %5.5 seviyesinde stabilize olur; yapay sıfır sinyal durumlarını zorlamak yerine stokastik kaçış mekanizmalarını ve homeostatik geri aktivasyonu matematiksel olarak tanır.

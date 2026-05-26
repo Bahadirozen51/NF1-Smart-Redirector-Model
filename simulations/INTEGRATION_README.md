@@ -44,7 +44,6 @@ The modulated production flow (\(k_{\text{prod}}^{(t)}\)) feeding the \(dX[A]/dt
 * **Minimal Functional Disturbance:** For baseline homeostatic breathing (\(S_t \le S_c\)), the feedback loop remains completely dormant.
 * **Phenomenological Distortion:** In hyper-activated states, the production rate smoothly scales down to guarantee stability.
 
-
 ## ⚙️ Implementation Parameters
 
 To switch between the standalone biochemical model and the integrated attractor framework, adjust the configuration dictionary in your execution script:
@@ -62,34 +61,38 @@ base_param = {
 
 ---
 
-## ⏳ Extended Coupling: Phase Lag & Delay-Coupled Oscillatory Feedback
+## ⏳ Extended Coupling: State-Dependent Dynamic Delay & Oscillatory Feedback
 
-To evaluate the system under realistic intracellular latencies (e.g., translation delays, protein folding lag, receptor recycling kinetics) without modifying the legacy deterministic coupling flags, a phase-lag extension has been formulated.
+To evaluate the system under realistic intracellular latencies without modifying legacy deterministic flags, a state-dependent phase-lag extension has been formulated.
 
 ### 🏛 Architectural Integration
 
-The independent module `simulations/delay_coupled_bifurcation.py` bypasses the static thresholds (\(S_c\)) and tests the global structural stability profile under persistent history-buffer delayed state allocations (\(x_{\tau}\)).
+The independent module `simulations/delay_coupled_bifurcation.py` bypasses the static thresholds (\(S_c\)) and tracks global structural stability under dynamic, signal-mediated history-buffer allocations (\(\tau_{eff}(x)\)).
 
 ```text
 [ Unstable Runaway Flow ] (t < t_activation)
          │
          ▼ (t >= t_activation Onset)
-[ Trigger Phase Lag Injection ] ───► Fetch Delayed State: x(t - tau)
+[ Compute Dynamic Latency ] ───► Overload Damping: tau_eff = f(x_current)
          │
          ▼
-[ Non-Linear Hill Damping ] ───► Radial Confinement: (R^2 - x^2 - y^2)
+[ Non-Linear Hill Confinement ] ───► Memory State Retrieval: x(t - tau_eff)
          │
          ▼
-[ Bounded Limit Cycle Attractor ] (Delay-Induced Hopf Transition)
+[ Bounded Metastable Oscillator ] (State-Dependent Hopf Transition)
 ```
 
 ### 📐 Mathematical Formulation
 
-When analyzing the temporally distributed regulatory feedback, the finite difference integrator tracks state trajectories via an explicit history-dependent coupling loop:
+When analyzing the temporally distributed regulatory feedback, the finite difference integrator tracks state trajectories via an explicit state-dependent history loop:
 
-\[\text{If } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)\]
+\[\text{If } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{eff}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)\]
 
-Where \(\tau\) models the cumulative cascade propagation latency (\(\tau_{steps} = 60\)). Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifurcation**, transforming the fixed-point geometric boundary into an asymmetric, macroscopically bounded **Stable Limit Cycle Attractor**.
+Where the cumulative cascade propagation latency \(\tau_{eff}\) scales dynamically based on downstream receptor saturation kinetics:
+
+\[\tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2}\]
+
+Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifurcation**, transforming the static geometric boundary into an asymmetric, macroscopically bounded **Stable Limit Cycle Attractor** exhibiting metabolic breathing characteristics.
 
 ---
 
@@ -126,19 +129,18 @@ Kompozit Stres İndeksi (S_t) ───► Eşik Değeri S_c (Aşıldı mı?)
 
 Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde, sistem kuplaj aktivasyon fonksiyonunu hesaplar:
 
-$$\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}$$
+\[\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
 
-$$\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{R_{\max}^2 - S_t^2}}{\dots}$$
+\[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
 
-$\frac{dX[A]}{dt}$ diferansiyel denklemini besleyen modüle edilmiş üretim akışı ($k_{\text{prod}}^{(t)}$), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
+\(dX[A]/dt\) diferansiyel denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
 
-$$k_{\text{prod}}^{(t)} = k_{\text{prod}} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
+\[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
 
 ### 💎 Bu Kuplajın Stratejik Avantajları:
-* **Sıfır Tekillik Riski ($f_s \rightarrow \text{Stabilizasyon}$):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
-* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için ($S_t \le S_c$), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
+* **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
+* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
 * **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
-
 
 ## ⚙️ Uygulama Parametreleri
 
@@ -157,18 +159,22 @@ base_param = {
 
 ---
 
-## ⏳ Genişletilmiş Bağlaşım: Faz Farkı ve Gecikme Karşıtlı Salınım Geri Beslemesi
+## ⏳ Genişletilmiş Bağlaşım: Duruma Bağlı Dinamik Gecikme ve Osilatör Geri Beslemesi
 
-Çekirdek modelin kararlı deterministik yapısını bozmadan; hücre içi zaman gecikmelerinin (sinyal iletim kaskadı latansı, transkripsiyonel gecikmeler veya reseptör geri dönüş kinetiği) sistem üzerindeki etkisini incelemek amacıyla yapıya bir faz farkı (phase lag) katmanı eklenmiştir.
+Çekirdek modelin kararlı deterministik yapısını bozmadan; hücre içi zaman gecikmelerinin sistem üzerindeki etkisini incelemek amacıyla yapıya duruma bağlı dinamik bir faz farkı (state-dependent phase lag) katmanı eklenmiştir.
 
 ### 🏛 Mimari Entegrasyon
 
-Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, statik eşik değerlerinden ($S_c$) bağımsız olarak, geçmiş durum hafızası (history-buffer) içeren gecikmeli durum atamaları ($x_{\tau}$) altında küresel kararlılık eğrilerini test eder.
+Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, anlık sinyal genliğine bağlı olarak değişen bir gecikme fonksiyonu ($\tau_{eff}(x)$) kullanarak, geçmiş durum hafızası üzerinden küresel kararlılık eğrilerini test eder.
 
 ### 📐 Matematiksel Formülasyon
 
-Zamansal olarak dağıtılmış düzenleyici geri besleme (temporally distributed regulatory feedback) analiz edilirken, sonlu farklar integratörü yörüngeleri geçmişe bağlı bir kuplaj döngüsü üzerinden izler:
+Zamansal olarak dağıtılmış dinamik düzenleyici geri besleme analiz edilirken, integratör yörüngeleri hücre içi protein doygunluk kinetiğine bağlı bir kuplaj döngüsü üzerinden izler:
 
-$$\text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)$$
+$$ \text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{eff}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x) $$
 
-Burada $\tau$ kümülatif hücresel gecikmeyi simüle eder ($\tau_{steps} = 60$). Bu formülasyon altında sistem kararlı bir **Gecikme Kaynaklı Hopf Çatallanması (Delay-Induced Hopf Bifurcation)** geçirerek, yörüngeyi statik bir hapis noktası yerine asimetrik ve makroskopik olarak sınırlandırılmış kararlı bir **Limit Çevrim Çekicisine (Stable Limit Cycle Attractor)** başarıyla bağlar.
+Burada kümülatif hücresel iletim gecikmesi $\tau_{eff}$, sinyal yoğunluğu arttıkça nükleer transport ve taşıyıcı mekanizmaların doyuma ulaşmasıyla dinamik olarak uzar:
+
+$$ \tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2} $$
+
+Bu formülasyon altında sistem kararlı bir **Gecikme Kaynaklı Hopf Çatallanması (Delay-Induced Hopf Bifurcation)** geçirerek, yörüngeyi statik bir hapis noktası yerine gürültü altında sürekli genişleyip daralabilen esnek bir **Limit Çevrim Çekicisine (Stable Limit Cycle Attractor)** başarıyla bağlar.

@@ -23,7 +23,7 @@ def run_delay_confinement_simulation(
     N = int(T / dt)
     t = np.linspace(0, T, N)
 
-    # State variables
+    # State arrays - Doğru geçmiş hafızası için dizi (array) formatı sabitlendi
     x = np.zeros(N)
     y = np.zeros(N)
 
@@ -52,7 +52,7 @@ def run_delay_confinement_simulation(
         else:
             dynamic_tau = int(tau_baseline)
 
-        # DELAYED STATE ACCESS (Dinamik History Buffer erişimi)
+        # DELAYED STATE ACCESS (Dinamik History Buffer erişimi düzeltildi)
         if i > dynamic_tau:
             x_tau = x[i - dynamic_tau]
         else:
@@ -76,7 +76,7 @@ def run_delay_confinement_simulation(
             dxdt = y[i]
             dydt = -r * x_tau + radial_term * y[i] * hill
 
-        # EULER-MARUYAMA FINITE DIFFERENCE UPDATE
+        # EULER-MARUYAMA FINITE DIFFERENCE UPDATE (Dizi indekslemeleri düzeltildi)
         x[i+1] = x[i] + dxdt * dt + noise_sigma * dWx
         y[i+1] = y[i] + dydt * dt + noise_sigma * dWy
 

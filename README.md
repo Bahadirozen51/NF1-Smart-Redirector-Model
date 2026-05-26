@@ -85,6 +85,15 @@ To connect the integrated structural topology directly to downstream signaling, 
 * **Model-Derived Apparent $EC_{50}$ Proxy:** ~11.40 nM, aligning mathematically with the sigmoidal transition zone.
 - **Adaptive Residual Leakage Floor:** Stabilizes at 5.5%, mathematically recognizing stochastic escape mechanisms and homeostatic reactivation rather than forcing artificial zero-signaling states.
 
+#### 📊 Quantitative Dose-Response Sensitivity Profile
+To map out the discrete concentration dynamics required for wet-lab validation, we simulated the system across a continuous nanomolar (nM) titration spectrum. The resulting sigmoidal transition profile explicitly reveals the operational bounds of the synthetic construct:
+
+*   **Inflection Point Coordination:** Maximum signaling sönümlenme ivmesi tam olarak öngörülen $EC_{50}$ proxy eşiğinde (~$11.40\text{ nM}$) gerçekleşir ve tek başına **%11.03** gürültü bastırma seviyesine ulaşır.
+*   **Saturation Saturation Isolation:** Concentration levels exceeding $50.0\text{ nM}$ lock into a tight saturation plateau (**%20.98** net suppression). This asymptotic behavior is directly enforced by the continuous residual leakage floor ($\lambda = 0.055$), preventing toxic receptor hyper-loading across higher physiological dosages.
+
+![SRX-RNA01 Dose-Response Curve](figures/grafik_doz_yanit_sensitivity.png)
+
+
 ### 4. Advanced Stochastic Ensemble Dynamics (Colored Noise & Rugged Landscape)
 To validate the high-flexibility profile of our target open conformation, we bypassed deterministic inhibition constraints. Instead, the NF1 Smart Redirector is modeled via a memory-infused, non-Markovian Langevin framework incorporating **Ornstein–Uhlenbeck colored noise** and a **rugged Fourier free-energy topology**:
 

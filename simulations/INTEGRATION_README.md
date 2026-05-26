@@ -44,7 +44,6 @@ The modulated production flow (\(k_{\text{prod}}^{(t)}\)) feeding the \(dX[A]/dt
 * **Minimal Functional Disturbance:** For baseline homeostatic breathing (\(S_t \le S_c\)), the feedback loop remains completely dormant.
 * **Phenomenological Distortion:** In hyper-activated states, the production rate smoothly scales down to guarantee stability.
 
-
 ## ⚙️ Implementation Parameters
 
 To switch between the standalone biochemical model and the integrated attractor framework, adjust the configuration dictionary in your execution script:
@@ -146,7 +145,6 @@ Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde
 * **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
 * **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
 * **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
-
 
 ## ⚙️ Uygulama Parametreleri
 

@@ -130,7 +130,7 @@ Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde
 
 \[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
 
-\(dX[A]/dt\) diferansiyel denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
+\(dX[A]/dt\) diferial denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
 
 \[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
 
@@ -172,4 +172,3 @@ Zamansal olarak dağıtılmış düzenleyici geri besleme (temporally distribute
 $$\text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)$$
 
 Burada $\tau$ kümülatif hücresel gecikmeyi simüle eder ($\tau_{steps} = 60$). Bu formülasyon altında sistem kararlı bir **Gecikme Kaynaklı Hopf Çatallanması (Delay-Induced Hopf Bifurcation)** geçirerek, yörüngeyi statik bir hapis noktası yerine asimetrik ve makroskopik olarak sınırlandırılmış kararlı bir **Limit Çevrim Çekicisine (Stable Limit Cycle Attractor)** başarıyla bağlar.
-

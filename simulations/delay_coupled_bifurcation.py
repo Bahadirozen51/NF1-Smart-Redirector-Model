@@ -1,9 +1,9 @@
 """
-NF1-Smart-Redirector-Model - Delay-Coupled Stochastic Attractor Model (DDE-SDE)
+NF1-Smart-Redirector-Model - State-Dependent Dynamic Delay Attractor Model (DDE-SDE)
 Author: Bahadir Ozen Hls Aydemir faz farkı alıntıdır
 Year: 2026
-Description: Independent simulation sandbox modeling phase lag and delay-induced 
-             Hopf bifurcation boundaries without altering the core legacy ODE engines.
+Description: Independent simulation sandbox modeling dynamic, state-dependent phase lag 
+             and delay-induced Hopf bifurcation boundaries without altering core legacy ODE engines.
 """
 
 import os
@@ -13,7 +13,8 @@ import matplotlib.pyplot as plt
 def run_delay_confinement_simulation(
     T=80,
     dt=0.01,
-    tau_steps=60,        # Faz gecikmesi (delay-induced lag)
+    tau_baseline=20,     # Hücrenin minimum bazal gecikme adımı
+    tau_max=60,          # Protein doyumu durumundaki maksimum ek gecikme adımı
     noise_sigma=0.05,
     activation_time=6.0,
     seed=2026
@@ -35,13 +36,25 @@ def run_delay_confinement_simulation(
     R = 1.58
     n_hill = 2.0
     K = 1.0
+    K_tau = 1.0  # Gecikme doyum sabiti (Sinyal seviyesiyle orantılı)
 
     for i in range(N - 1):
         current_t = t[i]
 
-        # DELAYED STATE ACCESS (History Buffer integration)
-        if i > tau_steps:
-            x_tau = x[i - tau_steps]
+        # =================================================
+        # DURUMA BAĞLI DİNAMİK GECİKME (State-Dependent Delay)
+        # =================================================
+        # Hücre içi sinyal yükü (x) arttıkça iletim mekanizmaları doyuma ulaşır 
+        # ve faz farkı / zaman gecikmesi dinamik olarak uzar.
+        current_x = x[i]
+        if current_x > 0:
+            dynamic_tau = int(tau_baseline + tau_max * (current_x**2) / (K_tau**2 + current_x**2))
+        else:
+            dynamic_tau = int(tau_baseline)
+
+        # DELAYED STATE ACCESS (Dinamik History Buffer erişimi)
+        if i > dynamic_tau:
+            x_tau = x[i - dynamic_tau]
         else:
             x_tau = x[0]
 
@@ -59,7 +72,7 @@ def run_delay_confinement_simulation(
             hill = (x[i]**n_hill) / (K**n_hill + x[i]**n_hill) if x[i] > 0 else 0
             radial_term = (R**2 - x[i]**2 - y[i]**2)
 
-            # Delay-coupled feedback implementation
+            # Delay-coupled dynamic feedback implementation
             dxdt = y[i]
             dydt = -r * x_tau + radial_term * y[i] * hill
 
@@ -70,11 +83,12 @@ def run_delay_confinement_simulation(
     return t, x, y, activation_time, R
 
 if __name__ == "__main__":
-    print("[+] Running Delay-Coupled Stochastic Attractor Simulation...")
+    print("[+] Running State-Dependent Dynamic Delay Attractor Simulation...")
     
-    # Execute simulation with specific bifurcation constraints
+    # Execute simulation with dynamic delay configurations
     t, x, y, t_act, R_val = run_delay_confinement_simulation(
-        tau_steps=60,
+        tau_baseline=20,
+        tau_max=60,
         noise_sigma=0.05,
         activation_time=6.0,
         seed=2026
@@ -87,9 +101,9 @@ if __name__ == "__main__":
 
     # 1. TIME SERIES VISUALIZATION
     ax1.plot(t[pre], x[pre], color='crimson', lw=2, label='Runaway Regime')
-    ax1.plot(t[post], x[post], color='royalblue', lw=1.8, label='Delay-Coupled Confinement')
+    ax1.plot(t[post], x[post], color='royalblue', lw=1.8, label='State-Dependent Confinement')
     ax1.axvline(x=t_act, color='purple', linestyle='--', lw=2, label='Activation Onset')
-    ax1.set_title("Delay-Coupled Stochastic Regulation")
+    ax1.set_title("Dynamic Delay Stochastic Regulation")
     ax1.set_xlabel("Time")
     ax1.set_ylabel("Signal Amplitude (x)")
     ax1.grid(True, linestyle=':')
@@ -97,12 +111,12 @@ if __name__ == "__main__":
 
     # 2. PHASE PORTRAIT VISUALIZATION
     ax2.plot(x[pre], y[pre], color='crimson', linestyle=':', lw=1.5, label='Runaway Trajectory')
-    ax2.plot(x[post], y[post], color='royalblue', lw=1.5, alpha=0.85, label='Delayed Attractor Confinement')
+    ax2.plot(x[post], y[post], color='royalblue', lw=1.5, alpha=0.85, label='Dynamic Attractor Confinement')
 
     # Overlapping theoretical static boundary
     theta = np.linspace(0, 2*np.pi, 300)
     ax2.plot(R_val*np.cos(theta), R_val*np.sin(theta), 'k--', lw=2, alpha=0.6, label='Theoretical Boundary')
-    ax2.set_title("Phase Portrait with Delay Coupling")
+    ax2.set_title("Phase Portrait with State-Dependent Delay")
     ax2.set_xlabel("x (Signal)")
     ax2.set_ylabel("y (Flux Velocity)")
     ax2.grid(True, linestyle=':')

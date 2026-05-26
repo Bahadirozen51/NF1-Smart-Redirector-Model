@@ -1,6 +1,6 @@
 """
 NF1-Smart-Redirector-Model - Delay-Coupled Stochastic Attractor Model (DDE-SDE)
-Author: Hls Aydemir duyma faz farkı
+Author: Bahadir Ozen Hls Aydemir faz farkı alıntıdır
 Year: 2026
 Description: Independent simulation sandbox modeling phase lag and delay-induced 
              Hopf bifurcation boundaries without altering the core legacy ODE engines.

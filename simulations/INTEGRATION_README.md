@@ -33,7 +33,7 @@ When the integration bridge flag `use_attractor_manifold` is enabled, the system
 
 \[\text{If } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
 
-\[\text{Confinement Factor } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
+\[\text{Confinement Factor } (\mathcal{C}) = \frac{\sqrt{R_{\text{max}}^2 - S_t^2}}{R_{\text{max}}}\]
 
 The modulated production flow (\(k_{\text{prod}}^{(t)}\)) feeding the \(dX[A]/dt\) differential equation is attenuated using the computed confinement metrics:
 
@@ -136,7 +136,7 @@ Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde
 
 \[\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
 
-\[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
+\[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{R_{\text{max}}^2 - S_t^2}}{R_{\text{max}}}\]
 
 \(dX[A]/dt\) diferansiyel denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
 

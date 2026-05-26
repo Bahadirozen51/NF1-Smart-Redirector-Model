@@ -44,6 +44,7 @@ The modulated production flow (\(k_{\text{prod}}^{(t)}\)) feeding the \(dX[A]/dt
 * **Minimal Functional Disturbance:** For baseline homeostatic breathing (\(S_t \le S_c\)), the feedback loop remains completely dormant.
 * **Phenomenological Distortion:** In hyper-activated states, the production rate smoothly scales down to guarantee stability.
 
+
 ## ⚙️ Implementation Parameters
 
 To switch between the standalone biochemical model and the integrated attractor framework, adjust the configuration dictionary in your execution script:
@@ -92,7 +93,11 @@ Where the cumulative cascade propagation latency \(\tau_{eff}\) scales dynamical
 
 \[\tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2}\]
 
-Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifurcation**, transforming the static geometric boundary into an asymmetric, macroscopically bounded **Stable Limit Cycle Attractor** exhibiting metabolic breathing characteristics.
+Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifurcation**, transforming the fixed-point geometric boundary into an asymmetric, macroscopically bounded **Stable Limit Cycle Attractor** exhibiting metabolic breathing characteristics.
+
+### 🌌 Phenomenological Visual Analogy: Phase-Space Spotting & Manifold Black-Out
+
+Under extreme pathway deregulation, the state-dependent phase lag acts as a temporal trap. When a damaged cell's trajectory becomes structurally confined within its own delayed feedback loops, it forms dense trajectory clusterings—phenomenologically resembling localized "spots" (local phase-space attractors) in the phase portrait. As metabolic saturation increases (\(\tau_{eff} \rightarrow \tau_{max}\)), these localized spots expand, destabilize, and overlap into dense, chaotic complex manifolds, effectively visualizing a structural "manifold black-out" where the cell is permanently trapped inside its own irreversible oncogenic feedback geometry.
 
 ---
 
@@ -142,6 +147,7 @@ Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde
 * **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
 * **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
 
+
 ## ⚙️ Uygulama Parametreleri
 
 Bağımsız çalışan biyokimyasal model ile entegre atraktör çerçevesi arasında geçiş yapmak için, yürütme betiğinizdeki konfigürasyon sözlüğünü ayarlayın:
@@ -165,16 +171,15 @@ base_param = {
 
 ### 🏛 Mimari Entegrasyon
 
-Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, anlık sinyal genliğine bağlı olarak değişen bir gecikme fonksiyonu ($\tau_{eff}(x)$) kullanarak, geçmiş durum hafızası üzerinden küresel kararlılık eğrilerini test eder.
+Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, anlık sinyal genliğine bağlı olarak değişen bir gecikme fonksiyonu (\(\tau_{eff}(x)\)) kullanarak, geçmiş durum hafızası üzerinden küresel kararlılık eğrilerini test eder.
 
 ### 📐 Matematiksel Formülasyon
 
 Zamansal olarak dağıtılmış dinamik düzenleyici geri besleme analiz edilirken, integratör yörüngeleri hücre içi protein doygunluk kinetiğine bağlı bir kuplaj döngüsü üzerinden izler:
 
-$$ \text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{eff}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x) $$
+\[\text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{eff}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)\]
 
-Burada kümülatif hücresel iletim gecikmesi $\tau_{eff}$, sinyal yoğunluğu arttıkça nükleer transport ve taşıyıcı mekanizmaların doyuma ulaşmasıyla dinamik olarak uzar:
+Burada kümülatif hücresel iletim gecikmesi \(\tau_{eff}\), sinyal yoğunluğu arttıkça nükleer transport ve taşıyıcı mekanizmaların doyuma ulaşmasıyla dinamik olarak uzar:
 
-$$ \tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2} $$
+\[\tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2}\]
 
-Bu formülasyon altında sistem kararlı bir **Gecikme Kaynaklı Hopf Çatallanması (Delay-Induced Hopf Bifurcation)** geçirerek, yörüngeyi statik bir hapis noktası yerine gürültü altında sürekli genişleyip daralabilen esnek bir **Limit Çevrim Çekicisine (Stable Limit Cycle Attractor)** başarıyla bağlar.

@@ -31,13 +31,14 @@ Composite Stress Index (S_t) ───► Threshold S_c (Exceeded?)
 
 When the integration bridge flag `use_attractor_manifold` is enabled, the system evaluates the coupling activation function:
 
-\[\text{If } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
+$$\text{If } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}$$
 
-\[\text{Confinement Factor } (\mathcal{C}) = \frac{\sqrt{R_{\text{max}}^2 - S_t^2}}{R_{\text{max}}}\]
+$$\text{Confinement Factor } (\mathcal{C}) = \frac{\sqrt{R_{\text{max}}^2 - S_t^2}}{R_{\text{max}}}$$
 
-The modulated production flow (\(k_{\text{prod}}^{(t)}\)) feeding the \(dX[A]/dt\) differential equation is attenuated using the computed confinement metrics:
+The modulated production flow ($k_{\text{prod}}^{(t)}$) feeding the $dX[A]/dt$ differential equation is attenuated using the computed confinement metrics:
 
-\[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
+$$k_{\text{prod}}^{(t)} = k_{\text{prod}} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
+
 
 ### 💎 Strategic Advantages of this Coupling:
 * **Zero Singularity Risk (\(f_s \rightarrow \text{Stabilization}\)):** The integration employs safe asymptotic bounds to prevent division-by-zero errors.
@@ -86,11 +87,11 @@ The independent module `simulations/delay_coupled_bifurcation.py` bypasses the s
 
 When analyzing the temporally distributed regulatory feedback, the finite difference integrator tracks state trajectories via an explicit state-dependent history loop:
 
-\[\text{If } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{eff}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)\]
+$$\text{If } t \ge t_{\text{activation}} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{\text{eff}}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \text{Hill}(x)$$
 
-Where the cumulative cascade propagation latency \(\tau_{eff}\) scales dynamically based on downstream receptor saturation kinetics:
+Where the cumulative cascade propagation latency $\tau_{\text{eff}}$ scales dynamically based on downstream receptor saturation kinetics:
 
-\[\tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2}\]
+$$\tau_{\text{eff}}(x) = \tau_{\text{baseline}} + \tau_{\text{max}} \cdot \frac{x^2}{K_{\tau}^2 + x^2}$$
 
 Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifurcation**, transforming the fixed-point geometric boundary into an asymmetric, macroscopically bounded **Stable Limit Cycle Attractor** exhibiting metabolic breathing characteristics.
 
@@ -133,13 +134,13 @@ Kompozit Stres İndeksi (S_t) ───► Eşik Değeri S_c (Aşıldı mı?)
 
 Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde, sistem kuplaj aktivasyon fonksiyonunu hesaplar:
 
-\[\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
+$$\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}$$
 
-\[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{R_{\text{max}}^2 - S_t^2}}{R_{\text{max}}}\]
+$$\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{R_{\text{max}}^2 - S_t^2}}{R_{\text{max}}}$$
 
-\(dX[A]/dt\) diferansiyel denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
+The $dX[A]/dt$ diferansiyel denklemini besleyen modüle edilmiş üretim akışı ($k_{\text{prod}}^{(t)}$), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
 
-\[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
+$$k_{\text{prod}}^{(t)} = k_{\text{prod}} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
 
 ### 💎 Bu Kuplajın Stratejik Avantajları:
 * **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
@@ -175,9 +176,10 @@ Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, anlık sinyal g
 
 Zamansal olarak dağıtılmış dinamik düzenleyici geri besleme analiz edilirken, integratör yörüngeleri hücre içi protein doygunluk kinetiğine bağlı bir kuplaj döngüsü üzerinden izler:
 
-\[\text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{eff}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)\]
+$$\text{Eğer } t \ge t_{\text{activation}} \implies \frac{dy}{dt} = -r \cdot x(t - \tau_{\text{eff}}) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \text{Hill}(x)$$
 
-Burada kümülatif hücresel iletim gecikmesi \(\tau_{eff}\), sinyal yoğunluğu arttıkça nükleer transport ve taşıyıcı mekanizmaların doyuma ulaşmasıyla dinamik olarak uzar:
+Burada kümülatif hücresel iletim gecikmesi $\tau_{\text{eff}}$, sinyal yoğunluğu arttıkça nükleer transport ve taşıyıcı mekanizmaların doyuma ulaşmasıyla dinamik olarak uzar:
 
-\[\tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2}\]
+$$\tau_{\text{eff}}(x) = \tau_{\text{baseline}} + \tau_{\text{max}} \cdot \frac{x^2}{K_{\tau}^2 + x^2}$$
+
 

@@ -196,12 +196,12 @@ If you utilize this computational model or framework, please cite this repositor
 
 ### BibTeX Format
 @software{nf1_smart_redirector_2026,
-  author = {Ozen, Bahadir},
-  title = {NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based PEGylated Encapsulation Protocols},
-  month = may,
-  year = 2026,
+  author    = {Ozen, Bahadir},
+  title     = {NF1-Smart-Redirector-Model: A Nonlinear Stochastic Systems Biology Sandbox and Attractor Confinement Framework},
+  month     = may,
+  year      = 2026,
   publisher = {GitHub},
-  version = {2.0.0},
-  url = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
+  version   = {2.0.0},
+  url       = {https://github.com/Bahadirozen51/NF1-Smart-Redirector-Model}
 }
 ```

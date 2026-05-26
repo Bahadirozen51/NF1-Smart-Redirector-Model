@@ -68,7 +68,7 @@ def plot_mutation_robustness_results():
     
     plt.tight_layout()
     plt.savefig("mutation_robustness_matrix.png", dpi=300)
-    print("BAST": "'mutation_robustness_matrix.png' dosyasi 300 DPI kalitesinde basildi ve kutu hatasi giderildi.")
+   print("BAŞARILI: 'mutation_robustness_matrix.png' dosyası 300 DPI kalitesinde basıldı ve kutu hatası giderildi.")
     plt.show()
 
 if __name__ == "__main__":

@@ -62,6 +62,7 @@ Atomik Yapısal Metrikler (Biopython Koordinatları) ↓ Fenomenolojik Bağıl A
 * `notebooks/stochastic_noise.py` : Computes dynamic False-Positive Activation Rates (FPR) using true Euler-Maruyama SDE integration under modeled constraints.
 * `notebooks/global_confinement_validation.py` : Integrates analytical Lyapunov derivative maps ($\dot{V} \leq 0$) and brute-force stochastic basin escape stress tests.
 * `notebooks/param_exploration.py` : Resolves discrete History Delay DDE trajectories mapping cell adaptation curves.
+* - simulations/delay_coupled_bifurcation.py : Independent stochastic delay-differential equation (DDE-SDE) sandbox tracking phase lag and delay-induced Hopf bifurcation boundaries.
 * `analyze_structure.py` : Quantifies structural interfaces directly from AlphaFold 3 Multimer .cif files using **Biopython (MMCIFParser)**.
 * `molecular_analysis.ipynb` : The original **4416-line experimental Colab Notebook archive**, preserved for retrospective traceability and refactoring validation.
 
@@ -101,6 +102,14 @@ The synchronized simulation below captures the exact visco-elastic continuum ens
 📂 **Data Transparency Note:** To maintain architectural cleanliness and bypass server session timeouts, all secondary ensemble states and reference crystal coordinates listed above are permanently archived as open-source standalone files within the separate sub-directory: `/alphafold_models/ensemble_and_references/`
 
 📌 **Core Biophysical Manifesto:** *"The redirector reshapes the stochastic occupancy-weighted accessibility landscape rather than enforcing deterministic inhibition."* As proven by our stochastic solver, our open structure successfully undergoes a probabilistic population shift. Instead of a binary active/inactive state, the system explores a visco-elastic continuum ensemble, exhibiting realistic conformational breathing and residence time-dependent signaling leakage bursts.
+
+### 5. Delay-Induced Hopf Transitions & Bounded Oscillatory Manifolds
+
+To evaluate the impact of intracellular response latencies (e.g., cascade propagation delay, transcription lag, or receptor recycling kinetics) without altering the core legacy ODE engines, an isolated stochastic delay-differential framework is implemented.
+
+*   **Mathematical Execution:** Subjected to explicit temporal distributed feedback ($\tau_{steps} = 60$) and ambient cellular noise ($\sigma = 0.05$), the system transitions away from static fixed-point convergence via a critical **Delay-Induced Hopf Bifurcation**.
+*   **Topological Behavior:** The trajectory breaks the idealized, static $R = 1.58$ boundary and anchors tightly into a robust, macroscopically bounded **Stable Limit Cycle Attractor**. 
+*   **Biophysical Conclusion:** This multi-scale simulation confirms that the *de novo* designed **SRX-RNA01** construct does not require an artificial complete shutoff of the pathway to maintain homeostatic safety; instead, under realistic biological latencies, it safely confines runaway oncogenic cascades into a controlled, periyodik cellular oscillator.
 
 ---
 

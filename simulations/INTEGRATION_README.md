@@ -31,17 +31,17 @@ Composite Stress Index (S_t) ───► Threshold S_c (Exceeded?)
 
 When the integration bridge flag `use_attractor_manifold` is enabled, the system evaluates the coupling activation function:
 
-$$\text{If } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}$$
+\[\text{If } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
 
-$$\text{Confinement Factor } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}$$
+\[\text{Confinement Factor } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
 
-The modulated production flow ($k_{\text{prod}}^{(t)}$) feeding the $dX[A]/dt$ differential equation is attenuated using the computed confinement metrics:
+The modulated production flow (\(k_{\text{prod}}^{(t)}\)) feeding the \(dX[A]/dt\) differential equation is attenuated using the computed confinement metrics:
 
-$$k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
+\[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
 
 ### 💎 Strategic Advantages of this Coupling:
-* **Zero Singularity Risk ($f_s \rightarrow \text{Stabilization}$):** The integration employs safe asymptotic bounds to prevent division-by-zero errors.
-* **Minimal Functional Disturbance:** For baseline homeostatic breathing ($S_t \le S_c$), the feedback loop remains completely dormant.
+* **Zero Singularity Risk (\(f_s \rightarrow \text{Stabilization}\)):** The integration employs safe asymptotic bounds to prevent division-by-zero errors.
+* **Minimal Functional Disturbance:** For baseline homeostatic breathing (\(S_t \le S_c\)), the feedback loop remains completely dormant.
 * **Phenomenological Distortion:** In hyper-activated states, the production rate smoothly scales down to guarantee stability.
 
 
@@ -59,6 +59,40 @@ base_param = {
     'R_max_confinement': 2.5          # Target Attractor Scale radius
 }
 ```
+
+---
+
+## ⏳ Extended Coupling: Phase Lag & Delay-Coupled Oscillatory Feedback
+
+To evaluate the system under realistic intracellular latencies (e.g., translation delays, protein folding lag, receptor recycling kinetics) without modifying the legacy deterministic coupling flags, a phase-lag extension has been formulated.
+
+### 🏛 Architectural Integration
+
+The independent module `simulations/delay_coupled_bifurcation.py` bypasses the static thresholds (\(S_c\)) and tests the global structural stability profile under persistent history-buffer delayed state allocations (\(x_{\tau}\)).
+
+```text
+[ Unstable Runaway Flow ] (t < t_activation)
+         │
+         ▼ (t >= t_activation Onset)
+[ Trigger Phase Lag Injection ] ───► Fetch Delayed State: x(t - tau)
+         │
+         ▼
+[ Non-Linear Hill Damping ] ───► Radial Confinement: (R^2 - x^2 - y^2)
+         │
+         ▼
+[ Bounded Limit Cycle Attractor ] (Delay-Induced Hopf Transition)
+```
+
+### 📐 Mathematical Formulation
+
+When analyzing the temporally distributed regulatory feedback, the finite difference integrator tracks state trajectories via an explicit history-dependent coupling loop:
+
+\[\text{If } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)\]
+
+Where \(\tau\) models the cumulative cascade propagation latency (\(\tau_{steps} = 60\)). Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifurcation**, transforming the fixed-point geometric boundary into an asymmetric, macroscopically bounded **Stable Limit Cycle Attractor**.
+
+---
+
 # 📑 Dinamik Entegrasyon Protokolü: Çekirdek GRT ve Atraktör Manifoldu Köprüsü
 
 Bu doküman, Çekirdek Biyokimyasal Motor (Core Biochemical Engine) ile Atraktör Manifoldu Simülasyon Alanı (Attractor Manifold Sandbox) arasındaki mimari bağıntıyı ve duruma bağlı geri besleme döngüsünü detaylandırmaktadır.
@@ -92,18 +126,18 @@ Kompozit Stres İndeksi (S_t) ───► Eşik Değeri S_c (Aşıldı mı?)
 
 Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde, sistem kuplaj aktivasyon fonksiyonunu hesaplar:
 
-$$\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}$$
+\[\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
 
-$$\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}$$
+\[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
 
-$dX[A]/dt$ diferansiyel denklemini besleyen modüle edilmiş üretim akışı ($k_{\text{prod}}^{(t)}$), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
+\(dX[A]/dt\) diferansiyel denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
 
-$$k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
+\[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
 
 ### 💎 Bu Kuplajın Stratejik Avantajları:
-* **Sıfır Tekillik Riski ($f_s \rightarrow \text{Stabilizasyon}$):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
-* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için ($S_t \le S_c$), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
-* **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
+* **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
+* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
+* **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde abajo doğru ölçeklendirilir.
 
 
 ## ⚙️ Uygulama Parametreleri
@@ -120,6 +154,24 @@ base_param = {
     'R_max_confinement': 2.5          # Hedef Atraktör Ölçek yarıçapı
 }
 ```
+
+---
+
+## ⏳ Genişletilmiş Bağlaşım: Faz Farkı ve Gecikme Karşıtlı Salınım Geri Beslemesi
+
+Çekirdek modelin kararlı deterministik yapısını bozmadan; hücre içi zaman gecikmelerinin (sinyal iletim kaskadı latansı, transkripsiyonel gecikmeler veya reseptör geri dönüş kinetiği) sistem üzerindeki etkisini incelemek amacıyla yapıya bir faz farkı (phase lag) katmanı eklenmiştir.
+
+### 🏛 Mimari Entegrasyon
+
+Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, statik eşik değerlerinden ($S_c$) bağımsız olarak, geçmiş durum hafızası (history-buffer) içeren gecikmeli durum atamaları ($x_{\tau}$) altında küresel kararlılık eğrilerini test eder.
+
+### 📐 Matematiksel Formülasyon
+
+Zamansal olarak dağıtılmış düzenleyici geri besleme (temporally distributed regulatory feedback) analiz edilirken, sonlu farklar integratörü yörüngeleri geçmişe bağlı bir kuplaj döngüsü üzerinden izler:
+
+$$\text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)$$
+
+Burada $\tau$ kümülatif hücresel gecikmeyi simüle eder ($\tau_{steps} = 60$). Bu formülasyon altında sistem kararlı bir **Gecikme Kaynaklı Hopf Çatallanması (Delay-Induced Hopf Bifurcation)** geçirerek, yörüngeyi statik bir hapis noktası yerine asimetrik ve makroskopik olarak sınırlandırılmış kararlı bir **Limit Çevrim Çekicisine (Stable Limit Cycle Attractor)** başarıyla bağlar.
 
 
 

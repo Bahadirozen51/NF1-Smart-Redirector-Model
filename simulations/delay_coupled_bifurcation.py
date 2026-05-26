@@ -1,9 +1,9 @@
 """
-NF1-Smart-Redirector-Model - State-Dependent Dynamic Delay Attractor Model (DDE-SDE)
+NF1-Smart-Redirector-Model - Cell-Line Specific Dynamic Delay Attractor Model (DDE-SDE)
 Author: Bahadir Ozen Hls Aydemir faz farkı alıntıdır
 Year: 2026
-Description: Independent simulation sandbox modeling dynamic, state-dependent phase lag 
-             and delay-induced Hopf bifurcation boundaries without altering core legacy ODE engines.
+Description: Independent simulation sandbox modeling cell-line specific dynamic phase lag 
+             and delay-induced Hopf bifurcation boundaries based on tumor aggressive profiles.
 """
 
 import os
@@ -13,8 +13,7 @@ import matplotlib.pyplot as plt
 def run_delay_confinement_simulation(
     T=80,
     dt=0.01,
-    tau_baseline=20,     # Hücrenin minimum bazal gecikme adımı
-    tau_max=60,          # Protein doyumu durumundaki maksimum ek gecikme adımı
+    cell_line="Schwannoma", # "Schwannoma", "MPNST" veya "Custom" seçilebilir
     noise_sigma=0.05,
     activation_time=6.0,
     seed=2026
@@ -23,7 +22,7 @@ def run_delay_confinement_simulation(
     N = int(T / dt)
     t = np.linspace(0, T, N)
 
-    # State arrays - Doğru geçmiş hafızası için dizi (array) formatı sabitlendi
+    # State variables
     x = np.zeros(N)
     y = np.zeros(N)
 
@@ -36,23 +35,39 @@ def run_delay_confinement_simulation(
     R = 1.58
     n_hill = 2.0
     K = 1.0
-    K_tau = 1.0  # Gecikme doyum sabiti (Sinyal seviyesiyle orantılı)
+    K_tau = 1.0  # Gecikme doyum sabiti
+
+    # =========================================================================
+    # HÜCRE TİPİNE GÖRE OTO-KALİBRASYON (Cell-Line Specific Parameter Tuning)
+    # =========================================================================
+    if cell_line == "Schwannoma":
+        # Benign/Yavaş döngülü NF1-mutant hücre hattı profili
+        tau_baseline = 25  
+        tau_max = 65       
+        print("[*] Profile Configured: NF1-Mutant Schwannoma (Standard Latency Profile)")
+    elif cell_line == "MPNST":
+        # Agresif/Hızlı adapte olan malign tümör hattı profili (Daha kısa iletim latansı)
+        tau_baseline = 12  
+        tau_max = 35       
+        print("[*] Profile Configured: Malignant Peripheral Nerve Sheath Tumor - MPNST (Accelerated Latency)")
+    else:
+        # Varsayılan / Özelleştirilmiş orta hat profili
+        tau_baseline = 20
+        tau_max = 50
+        print("[*] Profile Configured: Custom / Generic Cellular Line")
 
     for i in range(N - 1):
         current_t = t[i]
 
-        # =================================================
-        # DURUMA BAĞLI DİNAMİK GECİKME (State-Dependent Delay)
-        # =================================================
-        # Hücre içi sinyal yükü (x) arttıkça iletim mekanizmaları doyuma ulaşır 
-        # ve faz farkı / zaman gecikmesi dinamik olarak uzar.
+        # DURUMA BAĞLI DİNAMİK GECİKME (State-Dependent Dynamic Delay Calculation)
         current_x = x[i]
         if current_x > 0:
+            # Hücre tipi parametreleri doğrultusunda anlık sinyal genliğine bağlı dinamik gecikme
             dynamic_tau = int(tau_baseline + tau_max * (current_x**2) / (K_tau**2 + current_x**2))
         else:
             dynamic_tau = int(tau_baseline)
 
-        # DELAYED STATE ACCESS (Dinamik History Buffer erişimi düzeltildi)
+        # DELAYED STATE ACCESS (Dinamik History Buffer geçmiş erişimi)
         if i > dynamic_tau:
             x_tau = x[i - dynamic_tau]
         else:
@@ -76,19 +91,20 @@ def run_delay_confinement_simulation(
             dxdt = y[i]
             dydt = -r * x_tau + radial_term * y[i] * hill
 
-        # EULER-MARUYAMA FINITE DIFFERENCE UPDATE (Dizi indekslemeleri düzeltildi)
+        # EULER-MARUYAMA FINITE DIFFERENCE UPDATE
         x[i+1] = x[i] + dxdt * dt + noise_sigma * dWx
         y[i+1] = y[i] + dydt * dt + noise_sigma * dWy
 
-    return t, x, y, activation_time, R
+    return t, x, y, activation_time, R, cell_line
 
 if __name__ == "__main__":
-    print("[+] Running State-Dependent Dynamic Delay Attractor Simulation...")
+    print("[+] Running Multi-Profile Cell-Line Delay Attractor Simulation...")
     
-    # Execute simulation with dynamic delay configurations
-    t, x, y, t_act, R_val = run_delay_confinement_simulation(
-        tau_baseline=20,
-        tau_max=60,
+    # İstediğiniz hücre hattını buradan test edebilirsiniz: "Schwannoma" veya "MPNST"
+    target_cell = "MPNST" 
+    
+    t, x, y, t_act, R_val, active_profile = run_delay_confinement_simulation(
+        cell_line=target_cell,
         noise_sigma=0.05,
         activation_time=6.0,
         seed=2026
@@ -101,9 +117,9 @@ if __name__ == "__main__":
 
     # 1. TIME SERIES VISUALIZATION
     ax1.plot(t[pre], x[pre], color='crimson', lw=2, label='Runaway Regime')
-    ax1.plot(t[post], x[post], color='royalblue', lw=1.8, label='State-Dependent Confinement')
+    ax1.plot(t[post], x[post], color='royalblue', lw=1.8, label=f'Confinement ({active_profile})')
     ax1.axvline(x=t_act, color='purple', linestyle='--', lw=2, label='Activation Onset')
-    ax1.set_title("Dynamic Delay Stochastic Regulation")
+    ax1.set_title(f"Dynamic Delay Stochastic Regulation - {active_profile}")
     ax1.set_xlabel("Time")
     ax1.set_ylabel("Signal Amplitude (x)")
     ax1.grid(True, linestyle=':')
@@ -116,7 +132,7 @@ if __name__ == "__main__":
     # Overlapping theoretical static boundary
     theta = np.linspace(0, 2*np.pi, 300)
     ax2.plot(R_val*np.cos(theta), R_val*np.sin(theta), 'k--', lw=2, alpha=0.6, label='Theoretical Boundary')
-    ax2.set_title("Phase Portrait with State-Dependent Delay")
+    ax2.set_title(f"Phase Portrait ({active_profile} Profile)")
     ax2.set_xlabel("x (Signal)")
     ax2.set_ylabel("y (Flux Velocity)")
     ax2.grid(True, linestyle=':')
@@ -124,9 +140,8 @@ if __name__ == "__main__":
 
     plt.tight_layout()
     
-    # Automatic figure export tracking for retrospective traceability
     output_dir = "figures"
     os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, "delay_bifurcation_output.png")
+    output_path = os.path.join(output_dir, f"delay_bifurcation_{active_profile.lower()}.png")
     plt.savefig(output_path, dpi=120)
-    print(f"[+] Simulation finished. Phase portrait successfully exported to: {output_path}")
+    print(f"[+] Simulation finished. Chart successfully exported to: {output_path}")

@@ -129,17 +129,17 @@ Kompozit Stres İndeksi (S_t) ───► Eşik Değeri S_c (Aşıldı mı?)
 
 Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde, sistem kuplaj aktivasyon fonksiyonunu hesaplar:
 
-\[\text{Eğer } S_t > S_c \implies f_s = \frac{E_{rt}^2}{S_t + E_{rt}^2}\]
+$$f_s = \begin{cases} \frac{E_{rt}^2}{S_t + E_{rt}^2}, & \text{Eğer } S_t > S_c \\ 0, & \text{Eğer } S_t \le S_c \end{cases}$$
 
-\[\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\dots}\]
+$$\text{Sınırlama Faktörü } (\mathcal{C}) = \frac{\sqrt{\text{R}_{\text{max}}^2 - S_t^2}}{\text{R}_{\text{max}}}$$
 
-\(dX[A]/dt\) diferansiyel denklemini besleyen modüle edilmiş üretim akışı (\(k_{\text{prod}}^{(t)}\)), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
+$$\frac{dX[A]}{dt}$$ diferansiyel denklemini besleyen modüle edilmiş üretim akışı ($k_{\text{prod}}^{(t)}$), hesaplanan sınırlama metrikleri kullanılarak zayıflatılır:
 
-\[k_{\text{prod}}^{(t)} = k_{prod} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]\]
+$$k_{\text{prod}}^{(t)} = k_{\text{prod}} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
 
 ### 💎 Bu Kuplajın Stratejik Avantajları:
-* **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
-* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
+* **Sıfır Tekillik Riski ($f_s \rightarrow \text{Stabilizasyon}$):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
+* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için ($S_t \le S_c$), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
 * **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
 
 ## ⚙️ Uygulama Parametreleri

@@ -48,9 +48,11 @@ Modifiye edilmiş yapay RNA yapısının negatif yük bariyerlerini aşarak sito
 1.  **Hücre Modeli:** NF1 mutant Schwannoma veya MPNST (Malign Peripheral Nerve Sheath Tumor) hücre hatları kültüre edilir.
 2.  **Doz-Yanıt Protokolü:** Hücrelere farklı konsantrasyonlarda (0-100 nM) tasarlanan SRX-RNA01-LNP formülasyonu uygulanır.
 3.  **Kinetik Ölçüm:** İlaç uygulamasından sonraki 0, 15, 30, 60, 120 ve 240. dakikalarda hücre lizatları toplanır. Western Blot ve ELISA yöntemleriyle aktif **KRAS-GTP** ve fosforile **pERK1/2** sinyal genlikleri nicel olarak ölçülür.
-4.  **Matematiksel Curve Fitting:** Elde edilen zaman-konsantrasyon grafikleri ve 72 saatlik MTT/XTT proliferasyon verileri Python'daki `experimental_calibration.py` kalibratörüne gömülü olan 4 Parametreli Lojistik (4PL) eğrisine fit edilir:
-    *   **K Parametresi Kalibrasyonu:** Doz-yanıt eğrisinin büküm noktasından türetilen deneysel görünür $EC_{50}$ değeri (~11.40 nM), SDE modelindeki Hill yarı-doygunluk parametresi olan **$K$** sabitine kilitlenir.
-    *   **R Parametresi Kalibrasyonu:** Western Blot Pull-down analizlerinden elde edilen p-ERK1/2 stabilizasyon eğrisinin sıfırlanmayan adaptif sızıntı taban yüzdesi (%5.5), saptırıcının eliptik çekim havzası yarıçapı olan **$R$** ($R=1.58$, $R^2=2.5$) sınırına doğrudan eşlenir.
+4. **Matematiksel Curve Fitting & Parametrik Eşleme:** Elde edilen zaman-konsantrasyon grafikleri ve 72 saatlik MTT/XTT proliferasyon verileri, Python'daki `bridge_models/evidence_weighted_calibration.py` kalibratörüne gömülü olan non-linear Hill saturasyon fonksiyonuna fit edilir:
+    - **C_eff Katsayısının Kilitlenmesi:** HADDOCK 2.4'ten elde edilen $-71.8 \pm 5.1$ skoru, Hill kooperativite sabiti ($n=2.0$) ve yarı-saturasyon sabiti ($K_{half}=75.0$) parametreleri altında işlenerek $C_{eff} = 0.4519$ olarak kilitlenir.
+    - **τ (Gecikme) Modülasyonu:** Zaman serisi Western Blot analizlerindeki pERK1/2 sinyal faz kaymaları, bazal gecikmenin $\tau_{eff} = \tau_0 \cdot (1 + \alpha \cdot C_{eff})$ formülüyle $\tau_{eff} = 2.36$ değerine kalibre edilmesiyle eşlenir. Bu durum, ligandın konformasyonel nefes alma (conformational breathing) dinamiklerini doğrular.
+    - **σ (Volatilite) Azaltımı:** Hücre içi stokastik fluktuasyonların baskılanma derecesi, gürültü katsayısının $\sigma_{eff} = \sigma_0 \cdot (1 - \beta \cdot C_{eff})$ formülü üzerinden $\sigma_{eff} = 0.43$ değerine sönümlenmesiyle kalibre edilir.
+
 
 ---
 
@@ -60,4 +62,4 @@ Sentez ve kalibrasyon sonrası ekibin onaylaması gereken kalite ve kararlılık
 *   **DLS Analizi:** Dinamik Işık Saçılması ile hidrodinamik çap = 80 - 120 nm aralığında olmalı, PDI (Polidispersite İndeksi) < 0.18 seviyesinde kalmalıdır.
 *   **Enkapsülasyon Verimi (%EE):** RiboGreen floresan testi ile ölçülen RNA hapsetme başarısı %EE > %80 olmalıdır.
 *   **Nükleaz Kararlılığı:** %10 Fetal Bovine Serum (FBS) içeren ortamda 24 saat inkübasyon sonrası Agaroz Jel Elektroforezinde RNA bandının bütünlüğü korunmalıdır.
-*   **Stokastik Havza Robustness Doğrulaması:** Kalibre edilen parametreler gürültü testine tabi tutulduğunda, normal hücresel fluktuasyon seviyesinde ($\sigma = 0.4$) sistemin Lyapunov potansiyel kuyusundan kaçış olasılığı (Stochastic Basin Escape) < %1.0 sınırında kalarak metastable confinement rejimini doğrulamalıdır.
+*   **Stokastik Havza & Frekans Filtreleme Doğrulaması:** Kalibre edilen parametreler Ornstein–Uhlenbeck renkli gürültü testine tabi tutulduğunda, Welch metoduyla hesaplanan Güç Spektrumu Yoğunluğu (PSD) analizi, patolojik mutant kaskat üzerinde **net %23.35 oranında bir gürültü bastırma performansı** sergilemelidir. Bu spektral filtreleme gücü, sistemin Lyapunov potansiyel kuyusundan kaçış olasılığını (Stochastic Basin Escape) $<\%1.0$ sınırında tutarak metastable confinement rejimini wet-lab kinetiğinde de doğrulamalıdır.

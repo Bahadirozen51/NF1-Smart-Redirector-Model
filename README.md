@@ -164,6 +164,20 @@ Where $\gamma = 0.5$ represents baseline degradation and $g = 0.3$ is the feedba
 
 ![Lyapunov Landscape Topology](figures/grafik_lyapunov_landscape.png)
 
+### 7. Stage 1 Robustness: Negative Control Matrix & Selectivity Stress Test
+
+To rigorously ensure that the simulated phase confinement is driven by sequence-specific topological constraints rather than stochastic artifacts or generic electrostatic interactions, the computational core is subjected to an explicit negative control filter array.
+
+The multi-arm control matrix introduces exploratory heuristic docking energy proxies ($S$) representing distinct molecular structural alterations:
+*   **Scrambled RNA (Non-Specific Sequence Control):** Evaluated at a weak proxy score ($S = -12.4$).
+*   **Truncated RNA (Incomplete Structural Backbone):** Evaluated at an intermediate partial affinity proxy ($S = -28.1$).
+
+#### 📊 Specificity Mapping & Artifact Rejection Metrics
+*   **Baseline Convergence Breakdown:** The non-linear Hill saturation equations yield negligible effective modulation confidence coefficients for non-specific constructs ($C_{eff}^{\text{scrambled}} = 0.0251$ and $C_{eff}^{\text{truncated}} = 0.1163$). 
+*   **Signal Variance Preservation:** As illustrated in the trajectory matrix below, the scrambled (orange dashed) and truncated (purple dash-dot) arms fail to achieve variance attenuation, mapping tightly alongside the unmodulated pathological baseline ($\sigma_{eff} \approx 0.50$).
+*   **Isolated Attenuation:** Only the fully optimized interface structural configuration ($SRX-RNA01$, green line) triggers the state-dependent damping matrix required to isolate and confine runaway cascade fluktuations, demonstrating clear in silico therapeutic selectivity signals.
+
+![Stage 1 Negative Control Matrix](figures/grafik_negatif_kontrol_matrix.png)
 
 ---
 

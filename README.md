@@ -1,17 +1,17 @@
-# 🔬 NF1-Smart-Redirector-Model (Multi-Scale Biomimetic Hypothesis Framework)
+# 🔬 NF1-Smart-Redirector-Model (Nonlinear Stochastic Systems Biology & Attractor Confinement Framework)
 
-A multi-scale computational hypothesis-generation framework integrating structural interface analytics with systems-level signaling dynamics to evaluate the trajectory abstraction profiles of the **SRX-RNA01** synthetic construct within modeled NF1-deficient network topologies.
+A multi-scale computational sandbox and hypothesis-generation platform focusing on modeling signaling instability topologies, state-dependent trajectory abstraction, and metastable confinement regimes. This framework serves as a theoretical modeling environment rather than empirical pharmacology.
 
 ---
 
 ## 🔬 Scientific Disclaimer & TRL Status
 
-> ⚠️ **Warning: Exploratory Research Framework**
-> This repository presents a computational hypothesis-generation platform and exploratory structural modeling operating under idealized simulation constraints.
+> ⚠️ **Warning: Theoretical Computational Sandbox**
+> This repository presents an exploratory computational environment operating under idealized mathematical simulation constraints.
 >
-> **Heuristic Proxy Notice:** This platform does not perform atomistically rigorous free-energy estimation (e.g., MM/PBSA, FEP, or umbrella sampling). Instead, it provides a phenomenological mapping abstraction layer that translates structural proximity metrics into systems-level signaling attenuation coefficients. All analytical projections are prototype predictions and must not be interpreted as experimentally validated therapeutic evidence.
+> **Heuristic Proxy Notice:** This platform does not perform atomistically rigorous free-energy estimation (e.g., MM/PBSA, FEP, or umbrella sampling). Instead, it provides a phenomenological mapping abstraction layer that translates structural interface metrics into systems-level signaling attenuation coefficients. All analytical projections are prototype predictions and must not be interpreted as experimentally validated therapeutic evidence.
 >
-> **Technology Readiness Level (TRL):** **TRL-2** (Technology Concept Formulated). Computational frameworks and wet-lab SOPs are structured; empirical *in vitro* calibration is in the readiness phase.
+> **Technology Readiness Level (TRL):** **TRL-2** (Technology Concept Formulated). Computational frameworks and wet-lab validation protocols are structured strictly for hypothesis generation.
 
 ---
 
@@ -25,27 +25,28 @@ This framework functions strictly as a **Structure-Informed Nonlinear Stochastic
 
 ---
 
-## 🇬🇧 Project Overview & Biomimetic Hypothesis (English)
+## 🇬🇧 Project Overview & Abstract Structural Hypothesis (English)
 
-This repository explores a multi-scale translational mapping paradigm inspired by advanced **biomimetic vector manipulation techniques** (e.g., how co-evolved organisms seamlessly bypass host regulatory checkpoints). Moving beyond the classical gene silencing paradigm, this project investigates the structural potential of a de novo designed RNA fragment to directly intercept oncoprotein cascades.
+This repository explores a multi-scale translational mapping sandbox inspired by structural redirection topologies. Moving beyond classical deterministic inhibition paradigms, this project investigates the theoretical potential of structure-informed constraints to dynamically confine simulated oncoprotein cascades within safe homeostatic boundaries.
 
 ### 📐 The Causal Translational Flow
 To prevent isolated assumptions, the platform utilizes a deterministic causal bridge layer mapping parameters sequentially:
-Atomic Structural Metrics (Biopython Coordinates) ↓ Phenomenological Proxy Affinity (ΔG Surface Mapping) ↓ Langmuir Fractional Receptor Occupancy (θ) ↓ Pathway Signaling Coefficients Update (Provenance Tracking) ↓ Systems-Level Nonlinear Dynamics (TAPC Computational Evaluation Engine)
+Atomic Structural Metrics (Biopython Coordinates) ↓ Heuristic Proxy Affinity (ΔG Surface Mapping) ↓ Langmuir Fractional Receptor Occupancy (θ) ↓ Pathway Signaling Coefficients Update (Provenance Tracking) ↓ Systems-Level Nonlinear Dynamics (TAPC Computational Evaluation Engine)
 
-The **Systems Dynamics Layer (TAPC)** does not function as an actual biological cellular controller; instead, it is explicitly positioned as a **simulated systems abstraction and evaluation engine** to evaluate stability curves under modeled conditions.
+The **Systems Dynamics Layer (TAPC)** does not function as an actual biological cellular controller; instead, it is explicitly positioned as a **simulated systems abstraction engine** to evaluate stability curves under modeled conditions.
 
 ---
 
-## 🇹🇷 Proje Özeti ve Biyomimetik Hipotez (Türkçe)
+## 🇹🇷 Proje Özeti ve Soyut Yapısal Hipotez (Türkçe)
 
-Bu depo, ileri düzey **biyomimetik vektör manipülasyon tekniklerinden** (örneğin, evrimleşmiş organizmaların konakçı düzenleme kontrol noktalarını sessizce manipüle etme stratejilerinden) ilham alan çok ölçekli bir translasyonel haritalama paradigmasını araştırmaktadır. Platform, mutant KRAS sinyal kaskatını, doğrudan yapısal düzeyde yakalamak ve allosterik olarak modüle etmek amacıyla de novo tasarlanmış bir RNA mimarisi (**SRX-RNA01**) kullanır.
+Bu depo, yapısal yeniden yönlendirme topolojilerinden ilham alan çok ölçekli bir translasyonel haritalama sandbox'ını araştırmaktadır. Klasik deterministik inhibisyon paradigmalarının ötesine geçen platform, simüle edilmiş mutant sinyal kaskatını duruma bağlı faz uzayı sınırlamalarıyla (confinement) kontrol altına almak amacıyla yapı enformasyonlu kısıtların teorik potansiyelini analiz eder.
 
 ### 📐 Nedensel Translasyonel Akış
-Havada kalan varsayımları engellemek amacıyla platform, parametreleri sıralı olarak eşleştiren deterministik bir biyofiziksel köprü katmanı kurgular:
+
+Parametreleri sıralı olarak eşleştiren deterministik bir biyofiziksel köprü katmanı kurgulanmıştır: 
 Atomik Yapısal Metrikler (Biopython Koordinatları) ↓ Fenomenolojik Bağıl Afinite Skoru (ΔG Proxy) ↓ Langmuir Kısmi Reseptör Doluluk Oranı (θ) ↓ Yolak Sinyal İletim Katsayılarının Güncellenmesi (Soykütük İzleme) ↓ Sistem Seviyesinde Doğrusal Olmayan Dinamikler (TAPC Değerlendirme Motoru)
 
-**Sistem Dinamikleri Katmanı (TAPC)**, hücre içi gerçek bir biyolojik kontrol cihazı olarak değil; modellenen koşullar altında kararlılık eğrilerini analiz eden soyut bir **hesaplamalı değerlendirme motoru (computational evaluation engine)** olarak konumlandırılmıştır.
+**Sistem Dinamikleri Katmanı (TAPC)**, hücre içi gerçek bir biyolojik tedavi cihazı olarak değil; modellenen koşullar altında kararlılık eğrilerini analiz eden soyut bir **hesaplamalı değerlendirme motoru (computational evaluation engine)** olarak konumlandırılmıştır.
 
 ---
 
@@ -186,16 +187,14 @@ The multi-arm control matrix introduces exploratory heuristic docking energy pro
 Computational parameters are tightly synchronized with empirical protocols detailed in `LAB_PROTOCOLS.md`. Quantitative in vitro kinetics derived from NF1-mutant Schwannoma or MPNST lines (e.g., Western blot and ELISA tracking of active KRAS-GTP vs pERK1/2) are explicitly designed to be processed via `scipy.optimize.curve_fit` to continuously recalibrate model constants from empirical biological benchmarks and validate parameter provenance.
 
 ---
-
 ## 📄 Citation
 
-If you utilize this computational model, framework, or wet-lab protocol matrix in your research, please cite this repository using the standardized formats below:
+If you utilize this computational model or framework, please cite this repository using the standardized formats below:
 
 ### APA Format
-Özen, B. (2026). NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based PEGylated Encapsulation Protocols (Version 2.0.0). GitHub. https://github.com
+Özen, B. (2026). NF1-Smart-Redirector-Model: A Nonlinear Stochastic Systems Biology Sandbox and Attractor Confinement Framework (Version 2.0.0). GitHub. https://github.com
 
 ### BibTeX Format
-```bibtex
 @software{nf1_smart_redirector_2026,
   author = {Ozen, Bahadir},
   title = {NF1-Smart-Redirector-Model: In Silico AlphaFold 3 Simulation and LNP-Based PEGylated Encapsulation Protocols},

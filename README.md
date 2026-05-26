@@ -107,11 +107,12 @@ The synchronized simulation below captures the exact visco-elastic continuum ens
 
 To evaluate the impact of intracellular response latencies (e.g., cascade propagation delay, transcription lag, or receptor recycling kinetics) without altering the core legacy ODE engines, an isolated stochastic delay-differential framework is implemented.
 
-* **Mathematical Execution & State-Dependency:** Subjected to an explicit dynamic, signal-mediated history-buffer allocation, the system computes cumulative cascade propagation latency dynamically based on downstream receptor saturation kinetics:
+*  **Mathematical Execution & State-Dependency:** Subjected to an explicit dynamic, signal-mediated history-buffer allocation, the system computes cumulative cascade propagation latency dynamically based on downstream receptor saturation kinetics:
   $$\tau_{eff}(x) = \tau_{baseline} + \tau_{max} \cdot \frac{x^2}{K_{\tau}^2 + x^2}$$
   Under this state-dependent formulation, the system transitions away from static fixed-point convergence via a critical **Delay-Induced Hopf Bifurcation**.
-* **Topological Behavior:** The trajectory breaks the idealized, static $R = 1.58$ boundary and anchors tightly into a robust, macroscopically bounded **Stable Limit Cycle Attractor** exhibiting flexible, metabolic breathing characteristics under ambient cellular noise ($\sigma = 0.05$).
-* **Biophysical Conclusion:** This multi-scale simulation confirms that the *de novo* designed **SRX-RNA01** construct safely confines runaway oncogenic cascades into a controlled, periyodik cellular oscillator. Instead of a binary active/inactive complete blockade, the dynamic phase lag introduces an adaptive homeostatic breathing profile that absorbs metabolic overload bursts.
+* **Topological Behavior & Phase-Space Spotting:** Extreme pathway deregulation leads to temporal traps, forming dense trajectory clusters (local attractors) or "spots" in the phase portrait. Unregulated, these expand and overlap into a chaotic **"Manifold Black-Out,"** trapping the cell in irreversible, hyper-activated oncogenic feedback loops.
+* **Biophysical Conclusion:** The *de novo* designed **SRX-RNA01** construct acts as a dynamic controller, safely confining runaway cascades into a controlled, periodic **Stable Limit Cycle Attractor** with flexible homeostatic breathing. Instead of a toxic, binary blockade that triggers rapid drug resistance, the dynamic phase lag introduces an adaptive profile that absorbs metabolic overload bursts.
+
 
 
 ---

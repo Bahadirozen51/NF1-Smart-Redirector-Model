@@ -97,7 +97,7 @@ Under this formulation, the system undergoes a stable **Delay-Induced Hopf Bifur
 
 ### 🌌 Phenomenological Visual Analogy: Phase-Space Spotting & Manifold Black-Out
 
-Under extreme pathway deregulation, the state-dependent phase lag acts as a temporal trap. When a damaged cell's trajectory becomes structurally confined within its own delayed feedback loops, it forms dense trajectory clusterings—phenomenologically resembling localized "spots" (local phase-space attractors) in the phase portrait. As metabolic saturation increases (\(\tau_{eff} \rightarrow \tau_{max}\)), these localized spots expand, destabilize, and overlap into dense, chaotic complex manifolds, effectively visualizing a structural "manifold black-out" where the cell is permanently trapped inside its own irreversible oncogenic feedback geometry.
+Under extreme pathway deregulation, the state-dependent phase lag acts as a temporal trap. When a damaged cell's trajectory becomes structurally confined within its own delayed feedback loops, it forms dense trajectory clusterings—phenomenologically resembling localized "spots" (local phase-space attractors) in the phase portrait. As metabolic saturation increases ($\tau_{\text{eff}} \rightarrow \tau_{\text{max}}$), these localized spots expand, destabilize, and overlap into dense, chaotic complex manifolds, effectively visualizing a structural "manifold black-out" where the cell is permanently trapped inside its own irreversible oncogenic feedback geometry.
 
 ---
 
@@ -170,7 +170,7 @@ base_param = {
 
 ### 🏛 Mimari Entegrasyon
 
-Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, anlık sinyal genliğine bağlı olarak değişen bir gecikme fonksiyonu (\(\tau_{eff}(x)\)) kullanarak, geçmiş durum hafızası üzerinden küresel kararlılık eğrilerini test eder.
+Bağımsız `simulations/delay_coupled_bifurcation.py` modülü, anlık sinyal genliğine bağlı olarak değişen bir gecikme fonksiyonu $\tau_{\text{eff}}(x)$ kullanarak, geçmiş durum hafızası üzerinden küresel kararlılık eğrilerini test eder.
 
 ### 📐 Matematiksel Formülasyon
 

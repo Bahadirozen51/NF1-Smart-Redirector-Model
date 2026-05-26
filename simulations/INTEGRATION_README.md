@@ -137,7 +137,7 @@ Entegrasyon köprüsü bayrağı `use_attractor_manifold` etkinleştirildiğinde
 ### 💎 Bu Kuplajın Stratejik Avantajları:
 * **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
 * **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
-* **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde abajo doğru ölçeklendirilir.
+* **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
 
 
 ## ⚙️ Uygulama Parametreleri
@@ -172,6 +172,3 @@ Zamansal olarak dağıtılmış düzenleyici geri besleme (temporally distribute
 $$\text{Eğer } t \ge t_{activation} \implies \frac{dy}{dt} = -r \cdot x(t - \tau) + \left( R^2 - x^2 - y^2 \right) \cdot y \cdot \mathcal{H}ill(x)$$
 
 Burada $\tau$ kümülatif hücresel gecikmeyi simüle eder ($\tau_{steps} = 60$). Bu formülasyon altında sistem kararlı bir **Gecikme Kaynaklı Hopf Çatallanması (Delay-Induced Hopf Bifurcation)** geçirerek, yörüngeyi statik bir hapis noktası yerine asimetrik ve makroskopik olarak sınırlandırılmış kararlı bir **Limit Çevrim Çekicisine (Stable Limit Cycle Attractor)** başarıyla bağlar.
-
-
-

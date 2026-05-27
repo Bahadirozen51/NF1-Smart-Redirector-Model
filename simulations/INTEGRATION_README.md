@@ -144,8 +144,8 @@ The $dX[A]/dt$ diferansiyel denklemini besleyen modüle edilmiş üretim akış�
 $$k_{\text{prod}}^{(t)} = k_{\text{prod}} \cdot \left[1.0 - f_s \cdot (1.0 - \mathcal{C})\right]$$
 
 ### 💎 Bu Kuplajın Stratejik Avantajları:
-* **Sıfır Tekillik Riski (\(f_s \rightarrow \text{Stabilizasyon}\)):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
-* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için (\(S_t \le S_c\)), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
+* **Sıfır Tekillik Riski ($f_s \rightarrow \text{Stabilizasyon}$):** Entegrasyon, sıfıra bölünme hatalarını önlemek için güvenli asemptotik sınırlar kullanır.
+* **Minimum Fonksiyonel Bozulma:** Standart homeostatik solunum için ($S_t \le S_c$), geri besleme döngüsü tamamen pasif (uyku modunda) kalır.
 * **Fenomenolojik Bozulma Önleme:** Aşırı aktifleşmiş durumlarda, stabiliteyi garanti altına almak için üretim hızı pürüzsüz bir şekilde aşağı doğru ölçeklendirilir.
 
 ## ⚙️ Uygulama Parametreleri

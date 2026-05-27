@@ -41,11 +41,12 @@ $$k_{\text{prod}}^{(t)} = k_{\text{prod}} \cdot \left[1.0 - f_s \cdot (1.0 - \ma
 
 
 ### 💎 Strategic Advantages of this Coupling:
-* **Zero Singularity Risk (\(f_s \rightarrow \text{Stabilization}\)):** The integration employs safe asymptotic bounds to prevent division-by-zero errors.
-* **Minimal Functional Disturbance:** For baseline homeostatic breathing (\(S_t \le S_c\)), the feedback loop remains completely dormant.
+* **Zero Singularity Risk ($f_s \rightarrow \text{Stabilization}$):** The integration employs safe asymptotic bounds to prevent division-by-zero errors.
+* **Minimal Functional Disturbance:** For baseline homeostatic breathing ($S_t \le S_c$), the feedback loop remains completely dormant.
 * **Phenomenological Distortion:** In hyper-activated states, the production rate smoothly scales down to guarantee stability.
 
 ## ⚙️ Implementation Parameters
+
 
 To switch between the standalone biochemical model and the integrated attractor framework, adjust the configuration dictionary in your execution script:
 

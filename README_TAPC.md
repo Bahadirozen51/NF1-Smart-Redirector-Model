@@ -90,3 +90,4 @@ Once the AlphaFold 3 queue finishes computation, structural analytics will extra
 2. **PAE Matrix Alignment:** Confirms low relative aligned error ($\text{PAE} < 5\text{ \AA}$) between Entity 2 (NF1) and Entity 3 (RNA), validating a firm, stable binding configuration.
 3. **BSA Reverse Injection:** The atomistic interface area (BSA) will be fed back into `bridge_models/evidence_weighted_calibration.py` to continuously adjust the systemic drift damping coefficient ($\sigma_{eff}$) and finish the computational verification loop.
 
+

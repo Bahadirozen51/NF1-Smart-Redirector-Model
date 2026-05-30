@@ -14,17 +14,13 @@ When no structural redirector is introduced, solving for steady-state fixed poin
 * \(x_2^* = 0.000\) (Unstable Saddle Point Barrier)
 * \(x_3^* \approx -1.516\) (Dormant / Healthy Basin)
 
+*Trajectory Status:* Starting from malignant baseline states (\(x_0 = 2.5\)) automatically traps the system tightly into the \(+1.516\) malignant basin. The local noise envelope cannot cross the saddle barrier without external driving forcing.
 
-## 🧬 Trajectory-Smoothness Driven Genetic Optimizer
+### 2. Controlled Global Attractor Regime (\(\gamma = 1.9\))
+Upon introducing the fully optimized synthetic construct with a validated redirection gain (\(\gamma = 1.9\)), the potential energy profile undergoes an asymmetric tilt, eliminating the malignant basin entirely by solving \(x^3 - 2.3x + 1.9 = 0\).
+* **Global Attractor Solution:** \(x_{target}^* \approx -1.8156\)
 
-The core evolutionary algorithm (`optimization/genetic_optimizer.py`) evaluates candidates to minimize trajectory kinetic energy and isolate optimal interface parameters via a multi-objective function:
-
-$$\text{Fitness} = 2.5 \cdot S_{\text{conf}} + 1.5 \cdot TSI - 0.4 \cdot E_{\text{osc}} - 4.0 \cdot P_{\text{div}}$$
-
-* **Analytic Confinement Error ($S_{\text{conf}}$):** Minimizes deviation directly from the true root $\left(1.0 / (1.0 + \text{MSE}_{x^* = -1.8156})\right)$.
-* **Trajectory Smoothness Index ($TSI$):** Rewards smooth, localized asymptotic stabilization $\left(1.0 / (1.0 + \text{Var}(dx/dt))\right)$.
-* **Oscillation Energy ($E_{\text{osc}}$):** Penalizes high-frequency pathologically erratic metabolic bursts.
-* **Continuous Divergence Penalty ($P_{\text{div}}$):** Filters out non-physical mathematical anomalies exceeding biological boundaries ($\lvert x \rvert > 3.5$).
+*Trajectory Status:* The system collapses the multi-basin landscape into a single global attractor domain. Runaway signaling configurations are unconditionally forced to shift smoothly across the zero boundary and lock directly onto the new analytical coordinate.
 
 ---
 
@@ -41,12 +37,12 @@ To eliminate risks of stochastic exploits or overfitting to a singular random wa
 
 The core evolutionary algorithm (`optimization/genetic_optimizer.py`) evaluates candidates to minimize trajectory kinetic energy and isolate optimal interface parameters via a multi-objective function:
 
-\[\text{Fitness} = 2.5 \cdot S_{conf} + 1.5 \cdot TSI - 0.4 \cdot E_{osc} - 4.0 \cdot P_{div}\]
+\[\text{Fitness} = 2.5 \cdot S_{\text{conf}} + 1.5 \cdot TSI - 0.4 \cdot E_{\text{osc}} - 4.0 \cdot P_{\text{div}}\]
 
-* **Analytic Confinement Error (\(S_{conf}\)):** Minimizes deviation directly from the true root \(\left(1.0 / (1.0 + \text{MSE}_{x^* = -1.8156})\right)\).
+* **Analytic Confinement Error (\(S_{\text{conf}}\)):** Minimizes deviation directly from the true root \(\left(1.0 / (1.0 + \text{MSE}_{x^* = -1.8156})\right)\).
 * **Trajectory Smoothness Index (\(TSI\)):** Rewards smooth, localized asymptotic stabilization \(\left(1.0 / (1.0 + \text{Var}(dx/dt))\right)\).
-* **Oscillation Energy (\(E_{osc}\)):** Penalizes high-frequency pathologically erratic metabolic bursts.
-* **Continuous Divergence Penalty (\(P_{div}\)):** Filters out non-physical mathematical anomalies exceeding biological boundaries (\(\lvert x \rvert > 3.5\)).
+* **Oscillation Energy (\(E_{\text{osc}}\)):** Penalizes high-frequency pathologically erratic metabolic bursts.
+* **Continuous Divergence Penalty (\(P_{\text{div}}\)):** Filters out non-physical mathematical anomalies exceeding biological boundaries (\(\lvert x \rvert > 3.5\)).
 
 ---
 
@@ -82,7 +78,7 @@ The job was initialized across a 4-entity hybrid macromolecular layout under str
 
 #### 4. Entity 4: Catalytic Cofactor
 * **Type:** `Ion` | **Copies:** 1
-* **Selection:** $\text{Mg}^{2+}$ (Magnesium)
+* **Selection:** $\text{Mg}^{2+}$
 * **Functional Rationale:** Essential for maintaining structural integrity within the intracellular nucleotide-binding pockets of the RAS-GAP interfacial domain.
 
 ---
@@ -93,5 +89,6 @@ Once the AlphaFold 3 queue finishes computation, structural analytics will extra
 1. **pLDDT Verification:** Validates the thermodynamic folding stability of the highly dense 30-nt GC-rich loop.
 2. **PAE Matrix Alignment:** Confirms low relative aligned error ($\text{PAE} < 5\text{ \AA}$) between Entity 2 (NF1) and Entity 3 (RNA), validating a firm, stable binding configuration.
 3. **BSA Reverse Injection:** The atomistic interface area (BSA) will be fed back into `bridge_models/evidence_weighted_calibration.py` to continuously adjust the systemic drift damping coefficient ($\sigma_{eff}$) and finish the computational verification loop.
+
 
 

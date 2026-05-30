@@ -7,7 +7,6 @@ class EvidenceWeightedCalibration:
         """
         Evidence-Weighted Parametric Calibration Framework.
         HADDOCK skorlarını Hill-Tipi saturasyon fonksiyonu ile C_eff katsayısına dönüştürür.
-        Ana README.md dosyasındaki %5.5 residual leakage kısıtıyla tam uyumludur.
         """
         self.n_hill = n_hill
         self.k_half = k_half
@@ -27,7 +26,7 @@ class EvidenceWeightedCalibration:
         """
         Prior constraint yama mantığı:
         A) tau_eff = tau_0 * (1 + alpha * C_eff)
-        | B) sigma_eff = sigma_0 * (1 - beta * C_eff)
+        B) sigma_eff = sigma_0 * (1 - beta * C_eff)
         """
         c_eff = self.calculate_c_eff(haddock_score)
         tau_eff = tau_0 * (1.0 + alpha * c_eff)
@@ -36,10 +35,9 @@ class EvidenceWeightedCalibration:
 
     def constrain_parameter_space(self, haddock_score_proxy, bsa_proxy, fcc=0.75):
         """
-        genetic_optimizer.py modülünün eski kod tabanı ve süzgeç mantığıyla 
-        uyumlu çalışabilmesi için eklenen parametre köprü katmanı.
+        HİBRİT KÖPRÜ: genetic_optimizer.py modülünün ve yeni çeker analizlerinin eski kod 
+        tabanıyla çakışmadan, hatasız çalışabilmesi için eklenen parametre köprü katmanı.
         """
-        # Gelen ampirik HADDOCK skorunu doğrudan mevcut Hill süzgecine gönderir
         c_eff = self.calculate_c_eff(haddock_score_proxy)
         
         # README.md Bölüm 4'teki "Target Modulated" dönüşüm katsayıları
@@ -75,7 +73,8 @@ def load_haddock_score_from_json(json_path="simulations/haddock_outputs.json"):
         return -62.3, 3.0
 
 def compute_continuous_ceff(haddock_score, c_max=0.4519, k=0.1, s0=-62.3):
-    """Kaba esik degerlerini ortadan kaldiran kesintisiz lojistik fonksiyon."""
+    """***Kaba esik degerlerini ortadan kaldiran kesintisiz lojistik fonksiyon.***"""
     if haddock_score == 0:
         return 0.0
     return c_max / (1.0 + np.exp(-k * (haddock_score - s0)))
+

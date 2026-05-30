@@ -6,7 +6,9 @@ This document serves as the theoretical and mathematical extension for the `feat
 
 The system's non-Markovian dynamics and deterministic drift interactions are rigorously derived from an analytical double-well potential modulated by a structural control input \(\gamma\):
 
-\[\frac{dx}{dt} = -(x^3 - 2.3x) - \gamma \cdot C_{eff} + \sigma_{eff} \cdot \eta(t)\]
+```math
+\frac{dx}{dt} = -(x^3 - 2.3x) - \gamma \cdot C_{eff} + \sigma_{eff} \cdot \eta(t)
+```
 
 ### 1. Uncontrolled Pathological Regime (\(\gamma = 0\))
 When no structural redirector is introduced, solving for steady-state fixed points (\(x(x^2 - 2.3) = 0\)) yields three analytical solutions:
@@ -37,12 +39,14 @@ To eliminate risks of stochastic exploits or overfitting to a singular random wa
 
 The core evolutionary algorithm (`optimization/genetic_optimizer.py`) evaluates candidates to minimize trajectory kinetic energy and isolate optimal interface parameters via a multi-objective function:
 
-\[\text{Fitness} = 2.5 \cdot S_{\text{conf}} + 1.5 \cdot TSI - 0.4 \cdot E_{\text{osc}} - 4.0 \cdot P_{\text{div}}\]
+```math
+\text{Fitness} = 2.5 \cdot S_{conf} + 1.5 \cdot TSI - 0.4 \cdot E_{osc} - 4.0 \cdot P_{div}
+```
 
-* **Analytic Confinement Error (\(S_{\text{conf}}\)):** Minimizes deviation directly from the true root \(\left(1.0 / (1.0 + \text{MSE}_{x^* = -1.8156})\right)\).
-* **Trajectory Smoothness Index (\(TSI\)):** Rewards smooth, localized asymptotic stabilization \(\left(1.0 / (1.0 + \text{Var}(dx/dt))\right)\).
-* **Oscillation Energy (\(E_{\text{osc}}\)):** Penalizes high-frequency pathologically erratic metabolic bursts.
-* **Continuous Divergence Penalty (\(P_{\text{div}}\)):** Filters out non-physical mathematical anomalies exceeding biological boundaries (\(\lvert x \rvert > 3.5\)).
+* **Analytic Confinement Error (\(S_{conf}\)):** Minimizes deviation directly from the true root (\(1.0 / (1.0 + \text{MSE}_{x^* = -1.8156})\)).
+* **Trajectory Smoothness Index (\(TSI\)):** Rewards smooth, localized asymptotic stabilization (\(1.0 / (1.0 + \text{Var}(dx/dt))\)).
+* **Oscillation Energy (\(E_{osc}\)):** Penalizes high-frequency pathologically erratic metabolic bursts.
+* **Continuous Divergence Penalty (\(P_{div}\)):** Filters out non-physical mathematical anomalies exceeding biological boundaries (\(\lvert x \rvert > 3.5\)).
 
 ---
 
@@ -89,6 +93,3 @@ Once the AlphaFold 3 queue finishes computation, structural analytics will extra
 1. **pLDDT Verification:** Validates the thermodynamic folding stability of the highly dense 30-nt GC-rich loop.
 2. **PAE Matrix Alignment:** Confirms low relative aligned error ($\text{PAE} < 5\text{ \AA}$) between Entity 2 (NF1) and Entity 3 (RNA), validating a firm, stable binding configuration.
 3. **BSA Reverse Injection:** The atomistic interface area (BSA) will be fed back into `bridge_models/evidence_weighted_calibration.py` to continuously adjust the systemic drift damping coefficient ($\sigma_{eff}$) and finish the computational verification loop.
-
-
-

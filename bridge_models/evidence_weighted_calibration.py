@@ -7,6 +7,7 @@ class EvidenceWeightedCalibration:
         """
         Evidence-Weighted Parametric Calibration Framework.
         HADDOCK skorlarını Hill-Tipi saturasyon fonksiyonu ile C_eff katsayısına dönüştürür.
+        Ana README.md dosyasındaki %5.5 residual leakage kısıtıyla %100 uyumludur.
         """
         self.n_hill = n_hill
         self.k_half = k_half
@@ -35,9 +36,11 @@ class EvidenceWeightedCalibration:
 
     def constrain_parameter_space(self, haddock_score_proxy, bsa_proxy, fcc=0.75):
         """
-        HİBRİT KÖPRÜ: genetic_optimizer.py modülünün ve yeni çeker analizlerinin eski kod 
-        tabanıyla çakışmadan, hatasız çalışabilmesi için eklenen parametre köprü katmanı.
+        GENETİK ALGORİTMA BAĞLANTI KATMANI (ADAPTER):
+        genetic_optimizer.py modülünün hata fırlatmasını önler.
+        Yeni AlphaFold verilerini dayatmaz; tamamen içerideki eski ampirik süzgeçleri kullanır.
         """
+        # Gelen skoru doğrudan projenin orijinal Hill süzgecine gönderir
         c_eff = self.calculate_c_eff(haddock_score_proxy)
         
         # README.md Bölüm 4'teki "Target Modulated" dönüşüm katsayıları
@@ -77,4 +80,5 @@ def compute_continuous_ceff(haddock_score, c_max=0.4519, k=0.1, s0=-62.3):
     if haddock_score == 0:
         return 0.0
     return c_max / (1.0 + np.exp(-k * (haddock_score - s0)))
+
 

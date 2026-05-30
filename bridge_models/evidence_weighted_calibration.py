@@ -2,11 +2,11 @@ import numpy as np
 
 class EvidenceWeightedCalibration:
     def __init__(self):
-        # AlphaFold 3 Server Yapısal Çıktı Metrikleri (Nihai Deneysel Veri)
+        # AlphaFold 3 Server Yapısal Çıktı Metrikleri (README_TAPC.md ile Bağlı)
         self.af3_ptm = 0.44
         self.af3_iptm = 0.09
         
-        # Baz Parametre Sınırları
+        # Baz Dinamik Parametre Sınırları
         self.tau_0 = 5.0
         self.sigma_0 = 0.60
 
@@ -14,6 +14,7 @@ class EvidenceWeightedCalibration:
         """
         AlphaFold 3'ten türetilen ipTM ve pTM metriklerini Hill-tipi saturasyon
         fonksiyonuna dahil ederek SDE/DDE için esnek parametre sınırlarını hesaplar.
+        README_TAPC.md ve genetic_optimizer.py mimarisiyle tam entegredir.
         """
         # ipTM ve pTM değerlerinin geometrik ortalaması efektif modülasyon güvenini (C_eff) belirler
         # Düşük ipTM (0.09), ilacın proteini felç etmediğini (soft modulation) temsil eder
@@ -25,7 +26,7 @@ class EvidenceWeightedCalibration:
         k_smd = 0.35  # Soft modulation dağılım sabiti
         c_eff = (structural_confidence ** n_hill) / (k_smd ** n_hill + structural_confidence ** n_hill)
         
-        # Dönüşüm Katsayıları (README_TAPC.md ile tam uyumlu)
+        # Dönüşüm Katsayıları (README_TAPC.md dökümanı ile %100 senkronize)
         alpha = 0.60  # Zaman gecikmesi uzatma faktörü
         beta = 0.80   # Gürültü sönümleme faktörü
         
@@ -38,5 +39,3 @@ class EvidenceWeightedCalibration:
             "tau_constrained": max(1, tau_constrained),
             "sigma_constrained": max(0.01, sigma_constrained)
         }
-
-

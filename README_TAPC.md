@@ -14,13 +14,17 @@ When no structural redirector is introduced, solving for steady-state fixed poin
 * \(x_2^* = 0.000\) (Unstable Saddle Point Barrier)
 * \(x_3^* \approx -1.516\) (Dormant / Healthy Basin)
 
-*Trajectory Status:* Starting from malignant baseline states (\(x_0 = 2.5\)) automatically traps the system tightly into the \(+1.516\) malignant basin. The local noise envelope cannot cross the saddle barrier without external driving forcing.
 
-### 2. Controlled Global Attractor Regime (\(\gamma = 1.9\))
-Upon introducing the fully optimized synthetic construct with a validated redirection gain (\(\gamma = 1.9\)), the potential energy profile undergoes an asymmetric tilt, eliminating the malignant basin entirely by solving \(x^3 - 2.3x + 1.9 = 0\).
-* **Global Attractor Solution:** \(x_{target}^* \approx -1.8156\)
+## 🧬 Trajectory-Smoothness Driven Genetic Optimizer
 
-*Trajectory Status:* The system collapses the multi-basin landscape into a single global attractor domain. Runaway signaling configurations are unconditionally forced to shift smoothly across the zero boundary and lock directly onto the new analytical coordinate.
+The core evolutionary algorithm (`optimization/genetic_optimizer.py`) evaluates candidates to minimize trajectory kinetic energy and isolate optimal interface parameters via a multi-objective function:
+
+$$\text{Fitness} = 2.5 \cdot S_{\text{conf}} + 1.5 \cdot TSI - 0.4 \cdot E_{\text{osc}} - 4.0 \cdot P_{\text{div}}$$
+
+* **Analytic Confinement Error ($S_{\text{conf}}$):** Minimizes deviation directly from the true root $\left(1.0 / (1.0 + \text{MSE}_{x^* = -1.8156})\right)$.
+* **Trajectory Smoothness Index ($TSI$):** Rewards smooth, localized asymptotic stabilization $\left(1.0 / (1.0 + \text{Var}(dx/dt))\right)$.
+* **Oscillation Energy ($E_{\text{osc}}$):** Penalizes high-frequency pathologically erratic metabolic bursts.
+* **Continuous Divergence Penalty ($P_{\text{div}}$):** Filters out non-physical mathematical anomalies exceeding biological boundaries ($\lvert x \rvert > 3.5$).
 
 ---
 
